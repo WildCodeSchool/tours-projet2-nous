@@ -21,6 +21,7 @@ import { CategorieComponent } from './categorie/categorie.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
