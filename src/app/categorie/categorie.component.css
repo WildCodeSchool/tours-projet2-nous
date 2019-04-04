@@ -38,6 +38,14 @@
     border-radius: 20%;
 }
 
+.col {
+    padding: 0px;
+}
+
+.card {
+    border: 2px #fff
+}
+
 .hovereffect h2 {
     text-transform: uppercase;
     color: #fff;
