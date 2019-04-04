@@ -1,3 +1,49 @@
-<p>
-  searchbar works!
-</p>
+<div class="main btn-primary w-60">
+    <div class="container">
+        <div class="row ">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-md ">
+                    <a> <input class="btn btn-secondary m-2" type="text">
+                    </a>
+
+                    
+                    <div class="date" ngbDropdown >
+                        <button class="btn btn-danger m-2 "  ngbDropdownToggle>Date</button>
+                        <div ngbDropdownMenu ="dropdownBasic1">
+                            <button ngbDropdownItem>Action - 1</button>
+                            <button ngbDropdownItem>Another Action</button>
+                            <button ngbDropdownItem>Something else is here</button>
+                        </div>
+                    </div>
+
+                    <div ngbDropdown >
+                        <button class="btn btn-danger m-2"  ngbDropdownToggle>Heure</button>
+                        <div ngbDropdownMenu ="dropdownBasic1">
+                            <button ngbDropdownItem>Action - 1</button>
+                            <button ngbDropdownItem>Another Action</button>
+                            <button ngbDropdownItem>Something else is here</button>
+                        </div>
+                    </div>
+
+                    <div ngbDropdown >
+                        <button class="btn btn-danger m-2"  ngbDropdownToggle>Nombre de personnes</button>
+                        <div ngbDropdownMenu ="dropdownBasic1">
+                            <button ngbDropdownItem>Action - 1</button>
+                            <button ngbDropdownItem>Another Action</button>
+                            <button ngbDropdownItem>Something else is here</button>
+                        </div>
+                    </div>
+
+
+
+
+                    <a class="ml-auto">
+                        <button class="btn btn-dark m-2">Rechercher</button>
+                    </a>
+
+
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
