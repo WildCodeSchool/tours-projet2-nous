@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tours-projet2-nous';
+  categories = ['burger', 'pizza', 'gastro', 'chinese', 'steackhouse', 'fishes'];
+  myCat = this.categories[0];
 }

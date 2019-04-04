@@ -39,7 +39,7 @@
     color: #fff;
     text-align: center;
     position: relative;
-    font-size: 17px;
+    font-size: 30px;
     background: rgba(0, 0, 0, 0.6);
     -webkit-transform: translatey(-100px);
     -ms-transform: translatey(-100px);
@@ -60,12 +60,12 @@
     filter: alpha(opacity=0);
     -webkit-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
-    margin: 50px 0 0;
+    margin: 170px 0 0;
     padding: 7px 14px;
 }
 
 .hovereffect a.info:hover {
-    box-shadow: 0 0 5px #fff;
+    box-shadow: 0 0 15px #fff;
 }
 
 .hovereffect:hover img {
