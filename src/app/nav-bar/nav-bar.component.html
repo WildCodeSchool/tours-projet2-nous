@@ -1,32 +1,29 @@
 <div class="main bg-primary">
     <div class="container ">
-    <div class="row">
-    <div class="col-md-12 ">
-    <nav class="navbar navbar-expand-md ">
-    <a class="pr-5 pt-5">
-    <span class="site-name">Angular Bootstrap</span>
-    </a>
-    <button class="navbar-toggler ml-auto custom-toggler"type="button"data-toggle="collapse"
-   (click)="isCollapsed= !isCollapsed">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-          <div ngbDropdown class="d-inline-block pr-3 pt-3">
-            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
-            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-              <button ngbDropdownItem>Action - 1</button>
-              <button ngbDropdownItem>Another Action</button>
-              <button ngbDropdownItem>Something else is here</button>
+        <div class="row">
+            <div class="col-md-12 ">
+                <nav class="navbar navbar-expand-md mr-auto">
+                    <a class="mr-auto">
+                        <span class="site-name">Angular Bootstrap</span>
+                    </a>
+                    <button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse"
+                        (click)="isCollapsed= !isCollapsed">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+            
+                    <div ngbDropdown class="d-inline-block mr-auto">
+                        <button  id="dropdownBasic1" ngbDropdownToggle>Categorie</button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                            <button ngbDropdownItem>Burger</button>
+                            <button ngbDropdownItem>Poisson</button>
+                            <button ngbDropdownItem>Asiatique</button>
+                        </div>
+                    </div>
+
+                    <button class="d-flex justify-content-end mr-1">Contactez nous</button>
+                    <button class="d-flex justify-content-end">Login</button>
+                </nav>
             </div>
         </div>
-      
-   
-    <!-- The menu items -->
-    <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">-->
-    
-    <button>Contactez nous</button>
-    <button>Login</button>
-    </nav>
     </div>
-    </div>
-    </div>
-   </div>
+</div>
