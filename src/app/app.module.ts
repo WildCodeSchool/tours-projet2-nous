@@ -22,7 +22,6 @@ import { CategorieComponent } from './categorie/categorie.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    
   ],
   providers: [],
   bootstrap: [AppComponent],

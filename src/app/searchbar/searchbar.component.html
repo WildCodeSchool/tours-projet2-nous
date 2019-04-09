@@ -1,49 +1,43 @@
-<div class="main bg-secondary w-60">
-    <div class="container">
-        <div class="row ">
-            <div class="col-12">
-                <nav class="navbar navbar-expand-md ">
-                    <a> <input class="btn btn-secondary m-2 " placeholder="Nom du restaurant ..." type="text">
-                    </a>
+<div class="main w-60">
+  <div class="container">
+    <div class="row">
+      <div class="col-10 offset-1 bg-secondary">
+        <nav class="navbar navbar-expand-md ">
+          <input
+            class="btn btn-secondary m-2 bg-light"
+            placeholder="Nom du restaurant ..."
+            type="text"
+          />
 
- 
-                    <div class="date" ngbDropdown >
-                        <button class="btn btn-danger m-2 "  ngbDropdownToggle>Date</button>
-                        <div ngbDropdownMenu ="dropdownBasic1">
-                            <button ngbDropdownItem>Action - 1</button>
-                            <button ngbDropdownItem>Another Action</button>
-                            <button ngbDropdownItem>Something else is here</button>
-                        </div>
-                    </div>
-
-                    <div ngbDropdown >
-                        <button class="btn btn-danger m-2"  ngbDropdownToggle>Heure</button>
-                        <div ngbDropdownMenu ="dropdownBasic1">
-                            <button ngbDropdownItem>Action - 1</button>
-                            <button ngbDropdownItem>Another Action</button>
-                            <button ngbDropdownItem>Something else is here</button>
-                        </div>
-                    </div>
-
-                    <div ngbDropdown >
-                        <button class="btn btn-danger m-2"  ngbDropdownToggle>Nombre de personnes</button>
-                        <div ngbDropdownMenu ="dropdownBasic1">
-                            <button ngbDropdownItem>Action - 1</button>
-                            <button ngbDropdownItem>Another Action</button>
-                            <button ngbDropdownItem>Something else is here</button>
-                        </div>
-                    </div>
-
-
-
-
-                    <a class="ml-auto">
-                        <button class="btn btn-dark m-2" >Rechercher</button>
-                    </a>
-
-
-                </nav>
+          <div class="date" ngbDropdown>
+            <button class="btn btn-danger m-2 " ngbDropdownToggle>Date</button>
+            <div ngbDropdownMenu="dropdownBasic1">
+              <ngb-datepicker #d></ngb-datepicker>
             </div>
-        </div>
+          </div>
+          <div ngbDropdown>
+            <button class="btn btn-danger m-2" ngbDropdownToggle>Heure</button>
+            <div ngbDropdownMenu="dropdownBasic1">
+            <ngb-timepicker></ngb-timepicker>
+            </div>
+          </div>
+
+          <div ngbDropdown>
+            <button class="btn btn-danger m-2" ngbDropdownToggle>
+              Nombre de personnes
+            </button>
+            <div ngbDropdownMenu="dropdownBasic1">
+              <button ngbDropdownItem>1</button>
+              <button ngbDropdownItem>2</button>
+              <button ngbDropdownItem>3</button>
+              <button ngbDropdownItem>4</button>
+              <button ngbDropdownItem>5</button>
+              <button ngbDropdownItem>5+</button>
+            </div>
+          </div>
+          <button class="btn ml-auto btn-dark m-2">Rechercher</button>
+        </nav>
+      </div>
     </div>
+  </div>
 </div>
