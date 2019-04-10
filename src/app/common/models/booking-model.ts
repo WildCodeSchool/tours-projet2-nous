@@ -4,10 +4,6 @@ export class booking {
             am : {
                 start : Date,
                 end : Date,
-            },
-            pm : {
-                start : Date,
-                end : Date,
             }
         },
         public owner : {
@@ -21,7 +17,7 @@ export class booking {
             contact: {
                 phone: String,
                 email: String,
-            }    
+            }
         },
         public numbers: Number,
         public establishment: String,
