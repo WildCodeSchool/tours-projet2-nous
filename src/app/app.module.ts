@@ -9,7 +9,15 @@ import { FooterComponent } from './footer/footer.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { CategorieComponent } from './categorie/categorie.component';
 import { ProfileComponent } from './profile/profile.component';
+import { FormsModule, ReactiveFormsModule, Validators, FormBuilder } from '@angular/forms';
+import {Route, RouterModule} from '@angular/router';
 
+const appRoute: Route[] = [
+  {
+    path: '',
+    component: HomeComponent
+  }
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +32,10 @@ import { ProfileComponent } from './profile/profile.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot(appRoute)
+
     
   ],
   providers: [],
