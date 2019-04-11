@@ -8,6 +8,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { CategorieComponent } from './categorie/categorie.component';
+import { JwtModule } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,13 @@ import { CategorieComponent } from './categorie/categorie.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem('token');
+        },
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
