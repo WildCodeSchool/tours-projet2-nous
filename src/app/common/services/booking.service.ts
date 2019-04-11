@@ -16,8 +16,8 @@ export class BookingService {
   constructor(public param_service: HttpClient) { 
     this.service = param_service;
 }
-public getBoockingForm(): Observable<Booking>{
-  const  obs1:Observable<any> = this.service.get("http://open-reza.herokuapp.com/api/bookings/5cadddf64170bf000fdb8315");
+public getBoockingForm(id:string): Observable<Booking>{
+  const  obs1:Observable<any> = this.service.get(`http://open-reza.herokuapp.com/api/bookings/${id}`);
   const  treatment  = ( param_data:any) => {
       return  param_data as Booking;
   };
