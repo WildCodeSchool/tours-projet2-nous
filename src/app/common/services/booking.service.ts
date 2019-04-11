@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { map } from  "rxjs/operators";
 import { Booking } from '../models/booking-model';
 
-
 @Injectable({
   providedIn: 'root'
 })
