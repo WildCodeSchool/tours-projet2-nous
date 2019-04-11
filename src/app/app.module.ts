@@ -12,6 +12,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { FormsModule, ReactiveFormsModule, Validators, FormBuilder } from '@angular/forms';
 import {Route, RouterModule} from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoute: Route[] = [
   {
@@ -36,6 +37,7 @@ const appRoute: Route[] = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoute),
+    HttpClientModule,
 
     
     JwtModule.forRoot({

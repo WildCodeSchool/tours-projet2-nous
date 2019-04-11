@@ -5,9 +5,9 @@ export class Profile{
         public siret: string,
         public siren: string,
         public key: string,
-        public adresse: {
+        public address: {
             street: string,
-            zipcode: string,
+            zipCode: string,
             city: string,
             number: string,
         },

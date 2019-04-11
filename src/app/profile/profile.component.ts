@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { ProfileService } from '../common/services/profile.service'
+import { Profile } from '../common/models/profile.model'
 
 @Component({
   selector: 'app-profile',
@@ -8,31 +10,43 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 })
 export class ProfileComponent implements OnInit {
   public myForm: FormGroup;
-  constructor(private fb: FormBuilder) { }
-
-  ngOnInit(){
+  public profil: Profile
+  private service :ProfileService;
+  constructor(private fb: FormBuilder,param_service:ProfileService) { 
+    this.service = param_service
 
     this.myForm = this.fb.group({
-      firstName: [''],
-      lastName: [''],
-      siret: [''],
-      siren: [''],
-      key: [''],
+      'firstName': [''],
+      'lastName': [''],
+      'siret': [''],
+      'siren': [''],
+      'key': [''],
       address:this.fb.group({
-        street: [''],
-        zipCode: [''],
-        city: [''],
-        number: ['']
+        'street': [''],
+        'zipCode': [''],
+        'city': [''],
+        'number': ['']
       }),
       contact:this.fb.group({
-        fax: [''],
-        phone: [''],
-        email: ['']
+        'fax': [''],
+        'phone': [''],
+        'email': ['']
       })
 
       
     })
-    
+   
+  }
+
+  ngOnInit(){
+      this.service.getProfile().subscribe(
+          (param_profil: Profile) => {
+              this.profil =param_profil
+              console.log(param_profil)
+              this.myForm.patchValue(param_profil)
+          }
+      
+      );
   }
   submit(){
     console.log(this.myForm.valid)
