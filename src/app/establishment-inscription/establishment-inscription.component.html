@@ -1,0 +1,127 @@
+<div class="container">
+  <h2>Inscription d'établissement</h2>
+  <form FormGroupName="establishmentForm">
+    <div>
+      <label for="name"
+        >Nom de l'établissement :
+        <input
+          formControlName="name"
+          name="name"
+          type="text"
+          value=""
+        />
+      </label>
+    </div>
+    <div>
+      <label for="type"
+        >Catégorie :
+        <input formControlName="type" name="type" type="text" value="" />
+      </label>
+    </div>
+    <div FormGroupName="adress">
+      <h4>Adresse</h4>
+      <div>
+        <label for="number"
+          >Numéro de rue :
+          <input
+            formControlName="number"
+            name="number"
+            type="number"
+            value=""
+          />
+        </label>
+      </div>
+      <div>
+        <label for="street"
+          >Rue :
+          <input formControlName="street" name="street" type="text" value="" />
+        </label>
+      </div>
+      <div>
+        <label for="zipCode"
+          >Code postal :
+          <input
+            formControlName="zipCode"
+            name="zipCode"
+            type="text"
+            value=""
+          />
+        </label>
+      </div>
+      <div>
+        <label for="city"
+          >Ville :
+          <input formControlName="city" name="city" type="text" value="" />
+        </label>
+      </div>
+    </div>
+    <div>
+      <label for="description"
+        >Description :
+        <input
+          formControlName="description"
+          name="description"
+          type="text"
+          value=""
+        />
+      </label>
+    </div>
+    <div FormGroupName="contact">
+      <h4>Contact</h4>
+      <div>
+        <label for="phone"
+          >Numéro de téléphone :
+          <input formControlName="phone" name="phone" type="tel" value="" />
+        </label>
+      </div>
+      <div>
+        <label for="email"
+          >E-mail :
+          <input formControlName="email" name="email" type="email" value="" />
+        </label>
+      </div>
+      <div>
+        <label for="site"
+          >Vous contacter :
+          <input formControlName="site" name="site" type="url" value="" />
+        </label>
+      </div>
+    </div>
+    <div FormGroupName="networks">
+      <h4>Networks</h4>
+      <div>
+        <label for="name"
+          >Réseau social :
+          <input formControlName="name" name="name" type="text" value="" />
+        </label>
+      </div>
+      <div>
+        <label for="link"
+          >Lien :
+          <input formControlName="link" name="link" type="url" value="" />
+        </label>
+      </div>
+    </div>
+    <div FormGroupName="medias">
+      <h4>Médias</h4>
+      <div>
+        <label for="url"
+          >Photo de votre établissement :
+          <input formControlName="url" name="url" type="url" value="" />
+        </label>
+      </div>
+      <div>
+        <label for="order"
+          >Photo du menu :
+          <input formControlName="order" name="order" type="number" value="" />
+        </label>
+      </div>
+    </div>
+    <div>
+      <label for="profile"
+        >Profile :
+        <input formControlName="profile" name="profile" type="text" value="" />
+      </label>
+    </div>
+  </form>
+</div>
