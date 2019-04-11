@@ -13,9 +13,23 @@ export class ProfileComponent implements OnInit {
   ngOnInit(){
 
     this.myForm = this.fb.group({
-      username: new FormControl('',),
-      email:  new FormControl(''),
-      password: new FormControl(''),
+      firstName: [''],
+      lastName: [''],
+      siret: [''],
+      siren: [''],
+      key: [''],
+      address:this.fb.group({
+        street: [''],
+        zipCode: [''],
+        city: [''],
+        number: ['']
+      }),
+      contact:this.fb.group({
+        fax: [''],
+        phone: [''],
+        email: ['']
+      })
+
       
     })
     

@@ -11,6 +11,7 @@ import { CategorieComponent } from './categorie/categorie.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule, ReactiveFormsModule, Validators, FormBuilder } from '@angular/forms';
 import {Route, RouterModule} from '@angular/router';
+import { JwtModule } from '@auth0/angular-jwt';
 
 const appRoute: Route[] = [
   {
@@ -34,9 +35,16 @@ const appRoute: Route[] = [
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoute)
+    RouterModule.forRoot(appRoute),
 
     
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem('token');
+        },
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
