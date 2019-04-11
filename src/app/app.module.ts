@@ -8,6 +8,11 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { CategorieComponent } from './categorie/categorie.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ProfilemessageComponent } from './profilemessage/profilemessage.component';
+import { MessageService } from './common/services/message.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -17,14 +22,18 @@ import { CategorieComponent } from './categorie/categorie.component';
     FooterComponent,
     SearchbarComponent,
     CategorieComponent,
+    ProfilemessageComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    ReactiveFormsModule,
+    HttpClientModule
     
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
