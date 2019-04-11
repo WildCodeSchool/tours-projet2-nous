@@ -13,6 +13,7 @@ import { ProfilemessageComponent } from './profilemessage/profilemessage.compone
 import { MessageService } from './common/services/message.service';
 import { HttpClientModule } from '@angular/common/http';
 
+import { JwtModule } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,14 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
     
+    JwtModule.forRoot({
+      config: {
+        whitelistedDomains: ['open-reza.herokuapp.com'],
+        tokenGetter: () => {
+          return localStorage.getItem('token');
+        },
+      },
+    }),
   ],
   providers: [MessageService],
   bootstrap: [AppComponent],
