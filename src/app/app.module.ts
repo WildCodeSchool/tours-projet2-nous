@@ -33,6 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
     
     JwtModule.forRoot({
       config: {
+        whitelistedDomains: ['open-reza.herokuapp.com'],
         tokenGetter: () => {
           return localStorage.getItem('token');
         },
