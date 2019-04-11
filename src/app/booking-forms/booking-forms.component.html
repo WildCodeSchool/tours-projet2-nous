@@ -1,3 +1,68 @@
-<p>
-  booking-forms works!
-</p>
+<div class="container pl-4 text-center">
+  <form [formGroup]="userForm">
+    <div formGroupName="date">
+      <h4>Date</h4>
+      <label>
+        date start :
+        <input type="date" formControlName="dateStart">
+        date end :
+        <input type="date" formControlName="dateEnd">
+      </label>
+    </div>
+    
+    <div formGroupName="ownerUserForm">
+      <h4>Owner info</h4>
+      <label>
+        <div>
+          name :
+          <input type="text" formControlName="name">
+        </div>
+      </label>
+      <div formGroupName="adressUserForm">
+        <label>
+          <div>
+            street :
+            <input type="text" formControlName="street">
+          </div>
+          <div>
+            zip :
+            <input type="text" formControlName="zip">
+          </div>
+          <div>
+            city :
+            <input type="text" formControlName="city">
+          </div>
+          <div>
+            number :
+            <input type="number" formControlName="numCity">
+          </div>
+        </label>
+      </div>
+      
+      <div formGroupName="contactUserForm">
+        <h4>Contact</h4>
+        <label>
+          <div>
+            phone :
+            <input type="text" formControlName="phone">
+          </div>
+          <div>
+            email :
+            <input type="text" formControlName="email">
+          </div>
+        </label>
+      </div>
+      <label>
+        <div>
+          number :
+          <input type="text" formControlName="number">
+        </div>
+        <div>
+          establishment :
+          <input type="text" formControlName="establishment">
+        </div>
+      </label>
+    </div>
+    </form>
+    
+  </div>
