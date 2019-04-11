@@ -10,7 +10,7 @@ import { BookingService } from '../common/services/booking.service'
 })
 export class BookingFormsComponent implements OnInit {
   userForm: FormGroup;
-  public bookingForm = '';
+  public bookingForm: booking;
   title = 'BookingService';
   public service:BookingService;
   
@@ -18,33 +18,34 @@ export class BookingFormsComponent implements OnInit {
     this.service  =  param_service;
     this.userForm = this.formBuilder.group({
       date : this.formBuilder.group({
-        'dateStart': [''],
-        'dateEnd': [''],
+        'start': [''],
+        'end': [''],
       }),
-      ownerUserForm : this.formBuilder.group({
+      owner : this.formBuilder.group({
         'name': [''],
-        adressUserForm : this.formBuilder.group({
+        address : this.formBuilder.group({
           'street': [''],
-          'zip': [''],
+          'zipCode': [''],
           'city': [''],
-          'numCity': [''],
+          'number': [''],
         }),
-        contactUserForm : this.formBuilder.group({
+        contact: this.formBuilder.group({
           'phone': [''],
           'email': [''], 
         }),
-        'number': [''],
-        'establishment': [''],
-      })
+      }),
+      'numbers': [''],
+      'establishment': [''],
     })
   }
   
   ngOnInit(){
     this.service.getBoockingForm().subscribe(
-      (param_book:string) => {
+      (param_book:booking) => {
           this.bookingForm  =  param_book;
-          console.log("")})
-    console.log(this.userForm.value.ownerUserForm);
+          this.userForm.patchValue(param_book)
+          console.log(param_book)})
+    // console.log(this.userForm.value.ownerUserForm);
   }
   
   submit(){

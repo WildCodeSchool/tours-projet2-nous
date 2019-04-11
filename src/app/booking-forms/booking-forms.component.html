@@ -4,13 +4,13 @@
       <h4>Date</h4>
       <label>
         start :
-        <input type="date" formControlName="dateStart">
+        <input type="date" formControlName="start">
         end :
-        <input type="date" formControlName="dateEnd">
+        <input type="date" formControlName="end">
       </label>
     </div>
     
-    <div formGroupName="ownerUserForm">
+    <div formGroupName="owner">
       <h4>Owner info</h4>
       <label>
         <div>
@@ -18,7 +18,7 @@
           <input type="text" formControlName="name">
         </div>
       </label>
-      <div formGroupName="adressUserForm">
+      <div formGroupName="address">
         <label>
           <div>
             street :
@@ -26,7 +26,7 @@
           </div>
           <div>
             zip :
-            <input type="text" formControlName="zip">
+            <input type="text" formControlName="zipCode">
           </div>
           <div>
             city :
@@ -34,12 +34,12 @@
           </div>
           <div>
             number :
-            <input type="number" formControlName="numCity">
+            <input type="text" formControlName="number">
           </div>
         </label>
       </div>
       
-      <div formGroupName="contactUserForm">
+      <div formGroupName="contact">
         <h4>Contact</h4>
         <label>
           <div>
@@ -52,17 +52,17 @@
           </div>
         </label>
       </div>
+    </div>
       <label>
         <div>
           number :
-          <input type="text" formControlName="number">
+          <input type="text" formControlName="numbers">
         </div>
         <div>
           establishment :
           <input type="text" formControlName="establishment">
         </div>
       </label>
-    </div>
     <input class="btn btn-primary" type="submit" value="submit">
     </form>
     
