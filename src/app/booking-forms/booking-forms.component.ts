@@ -10,9 +10,12 @@ import { BookingService } from '../common/services/booking.service'
 })
 export class BookingFormsComponent implements OnInit {
   userForm: FormGroup;
+  public bookingForm = '';
+  title = 'BookingService';
+  public service:BookingService;
   
-  constructor(public formBuilder: FormBuilder) {  
-    
+  constructor(param_service:BookingService,public formBuilder: FormBuilder) {  
+    this.service  =  param_service;
     this.userForm = this.formBuilder.group({
       date : this.formBuilder.group({
         'dateStart': [''],
@@ -37,29 +40,14 @@ export class BookingFormsComponent implements OnInit {
   }
   
   ngOnInit(){
+    this.service.getBoockingForm().subscribe(
+      (param_book:string) => {
+          this.bookingForm  =  param_book;
+          console.log("")})
     console.log(this.userForm.value.ownerUserForm);
   }
   
   submit(){
     console.log(this.userForm.value)
   }
-}
-
-export class AppComponent implements OnInit {
-  public bookingForm = '';
-  title = 'NasaService';
-
-  public service:BookingService;
-
-    constructor( param_service:BookingService ){
-        this.service  =  param_service;
-    }
-
-    public  ngOnInit():void{
-        this.service.getBoockingForm().subscribe(
-            (param_book:string) => {
-                this.bookingForm  =  param_book;
-            }
-        );
-    }
 }

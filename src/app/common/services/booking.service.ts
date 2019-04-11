@@ -18,7 +18,7 @@ export class BookingService {
 public getBoockingForm(): Observable<string>{
   const  obs1:Observable<any> = this.service.get("http://open-reza.herokuapp.com:80/api/bookings/");
   const  treatment  = ( param_data:any) => {
-      return  param_data.userForm;
+      return  param_data;
   };
   return  obs1.pipe( map( treatment) );
 }
