@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
-import { booking } from '../common/models/booking-model';
+import { Booking } from '../common/models/booking-model';
 import { BookingService } from '../common/services/booking.service'
 
 @Component({
@@ -10,12 +10,13 @@ import { BookingService } from '../common/services/booking.service'
 })
 export class BookingFormsComponent implements OnInit {
   userForm: FormGroup;
-  public bookingForm: booking;
+  public bookingForm: Booking;
   title = 'BookingService';
   public service:BookingService;
   
   constructor(param_service:BookingService,public formBuilder: FormBuilder) {  
     this.service  =  param_service;
+
     this.userForm = this.formBuilder.group({
       date : this.formBuilder.group({
         'start': [''],
@@ -41,11 +42,10 @@ export class BookingFormsComponent implements OnInit {
   
   ngOnInit(){
     this.service.getBoockingForm().subscribe(
-      (param_book:booking) => {
+      (param_book:Booking) => {
           this.bookingForm  =  param_book;
           this.userForm.patchValue(param_book)
           console.log(param_book)})
-    // console.log(this.userForm.value.ownerUserForm);
   }
   
   submit(){

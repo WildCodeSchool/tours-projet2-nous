@@ -1,4 +1,4 @@
-export class booking {
+export class Booking {
     constructor(
         public date : {
             date : {
