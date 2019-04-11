@@ -21,5 +21,5 @@ export class Booking {
         },
         public numbers: Number,
         public establishment: String,
-    ){}
-}
+        ){}
+    }

@@ -17,7 +17,7 @@ export class BookingFormsComponent implements OnInit {
   id : string;
   constructor(param_service:BookingService,public formBuilder: FormBuilder,public activetedroute: ActivatedRoute) {  
     this.service  =  param_service;
-
+    
     this.userForm = this.formBuilder.group({
       date : this.formBuilder.group({
         'start': [''],
@@ -43,18 +43,18 @@ export class BookingFormsComponent implements OnInit {
   
   ngOnInit(){
     this.activetedroute.paramMap.subscribe((params: ParamMap) => {
-    const id = params.get('id');
-
-    this.service.getBoockingForm(id).subscribe(
-      (param_book:Booking) => {
+      const id = params.get('id');
+      
+      this.service.getBoockingForm(id).subscribe(
+        (param_book:Booking) => {
           this.bookingForm  =  param_book;
           this.userForm.patchValue(param_book)
           console.log(param_book)})
+        }
+        )
+      }
+      
+      submit(){
+        console.log(this.userForm.value)
+      }
     }
-  )
-}
-
-  submit(){
-    console.log(this.userForm.value)
-  }
-}

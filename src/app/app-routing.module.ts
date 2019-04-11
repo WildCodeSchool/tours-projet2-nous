@@ -11,7 +11,7 @@ const routes: Routes = [{path: 'bookings/:id', component: BookingFormsComponent}
   exports: [RouterModule],
 })
 export class AppRoutingModule {
-
-
-
-  }
+  
+  
+  
+}

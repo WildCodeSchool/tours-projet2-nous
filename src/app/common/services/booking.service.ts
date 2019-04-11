@@ -9,17 +9,17 @@ import { Booking } from '../models/booking-model';
 })
 
 export class BookingService {
-
+  
   public service: HttpClient;
-
+  
   constructor(public param_service: HttpClient) { 
     this.service = param_service;
-}
-public getBoockingForm(id:string): Observable<Booking>{
-  const  obs1:Observable<any> = this.service.get(`http://open-reza.herokuapp.com/api/bookings/${id}`);
-  const  treatment  = ( param_data:any) => {
+  }
+  public getBoockingForm(id:string): Observable<Booking>{
+    const  obs1:Observable<any> = this.service.get(`http://open-reza.herokuapp.com/api/bookings/${id}`);
+    const  treatment  = ( param_data:any) => {
       return  param_data as Booking;
-  };
-  return  obs1.pipe( map( treatment) );
-}
+    };
+    return  obs1.pipe( map( treatment) );
+  }
 }
