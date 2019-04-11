@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
-import { booking } from '../common/models/booking-model'
+import { booking } from '../common/models/booking-model';
+import { BookingService } from '../common/services/booking.service'
 
 @Component({
   selector: 'app-booking-forms',
@@ -39,4 +40,26 @@ export class BookingFormsComponent implements OnInit {
     console.log(this.userForm.value.ownerUserForm);
   }
   
+  submit(){
+    console.log(this.userForm.value)
+  }
+}
+
+export class AppComponent implements OnInit {
+  public bookingForm = '';
+  title = 'NasaService';
+
+  public service:BookingService;
+
+    constructor( param_service:BookingService ){
+        this.service  =  param_service;
+    }
+
+    public  ngOnInit():void{
+        this.service.getBoockingForm().subscribe(
+            (param_book:string) => {
+                this.bookingForm  =  param_book;
+            }
+        );
+    }
 }

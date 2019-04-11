@@ -1,11 +1,11 @@
 <div class="container pl-4 text-center">
-  <form [formGroup]="userForm">
+  <form [formGroup]="userForm" (submit)="submit()">
     <div formGroupName="date">
       <h4>Date</h4>
       <label>
-        date start :
+        start :
         <input type="date" formControlName="dateStart">
-        date end :
+        end :
         <input type="date" formControlName="dateEnd">
       </label>
     </div>
@@ -63,6 +63,7 @@
         </div>
       </label>
     </div>
+    <input class="btn btn-primary" type="submit" value="submit">
     </form>
     
   </div>

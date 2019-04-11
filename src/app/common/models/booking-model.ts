@@ -1,7 +1,7 @@
 export class booking {
     constructor(
         public date : {
-            am : {
+            date : {
                 start : Date,
                 end : Date,
             }
