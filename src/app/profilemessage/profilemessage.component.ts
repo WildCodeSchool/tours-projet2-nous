@@ -32,11 +32,11 @@ export class ProfilemessageComponent implements OnInit {
       const id = params.get('id');
 
       this.service.getMessage(id).subscribe(
-        (PARAM_MESSAGE: Message) => {
-          this.messageForm = PARAM_MESSAGE;
+        (message: Message) => {
+          this.messageForm = message;
           /// this.myForm.patchValue(pa//message)
-          this.myForm.patchValue(PARAM_MESSAGE);
-          console.log(PARAM_MESSAGE);
+          this.myForm.patchValue(message);
+          console.log(message);
         });
     });
   }
