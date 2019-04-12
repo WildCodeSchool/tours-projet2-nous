@@ -1,0 +1,81 @@
+<div class="container text-center">
+  
+  <form [formGroup]="userForm" (submit)="submit()">
+    <div formGroupName="date">
+      <h4 class="pt-2 pb-2">Date</h4>
+      <label>
+        <div class="pt-2 pb-2">
+          start :
+        </div>
+        <input type="date" formControlName="start">
+        <div class="pt-2 pb-2">
+          end :
+        </div>
+        <input type="date" formControlName="end">
+      </label>
+    </div>
+    
+    <div formGroupName="owner">
+      <h4 class="pt-2 pb-2">Owner info</h4>
+      <label>
+        <div class="pt-2 pb-2">
+          name :
+        </div>
+        <input type="text" formControlName="name">
+      </label>
+      <div formGroupName="address">
+        <label>
+          <div class="pt-2 pb-2">
+            street :
+          </div>
+          <input type="text" formControlName="street">
+          <div class="pt-2 pb-2">
+            zip :
+          </div>
+          <input type="text" formControlName="zipCode">
+          <div class="pt-2 pb-2">
+            city :
+          </div>
+          <input type="text" formControlName="city">
+          <div class="pt-2 pb-2">
+            number :
+          </div>
+          <input type="text" formControlName="number">
+        </label>
+      </div>
+      
+      <div formGroupName="contact">
+        <h4 class="pt-2 pb-2">Contact</h4>
+        <label>
+          <div class="pt-2 pb-2">
+            phone :
+          </div>
+          <input type="text" formControlName="phone">
+          <div class="pt-2 pb-2">
+            email :
+          </div>
+          <input type="text" formControlName="email">
+        </label>
+      </div>
+    </div>
+    <label>
+      <div class="pt-2 pb-2">
+        number :
+      </div>
+      <div>
+        <input class="pt-2 pb-2" type="text" formControlName="numbers">
+      </div>
+      <div class="pt-2 pb-2">
+        establishment :
+      </div>
+      <div>
+        <input type="text" class="pt-2 pb-2" formControlName="establishment">
+      </div>
+    </label>
+    <div class="pt-2 pb-2">
+      <input class="btn btn-primary" type="submit" value="submit">
+    </div>
+    
+  </form>
+  
+</div>
