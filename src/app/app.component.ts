@@ -12,9 +12,9 @@ export class AppComponent {
   myCat = this.categories[0];
 
   private  service:MessageService;
-  constructor( param_service:MessageService ){
-    // le service est stocké dans param_service
-    this.service  =  param_service;
-}
-public  ngOnInit(){}
+  constructor(PARAM_SERVICE:MessageService) {
+    // le service est stocké dans PARAM_SERVICE
+    this.service  =  PARAM_SERVICE;
+  }
+  public ngOnInit() {}
 }

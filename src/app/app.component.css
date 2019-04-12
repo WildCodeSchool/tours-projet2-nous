@@ -1,4 +1,4 @@
 body {
-    background-image: url("/assets/img/body-background.jpeg");
-    background-size: contain;
+    background-image: url("https://images.pexels.com/photos/347139/pexels-photo-347139.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: 100%;
 }

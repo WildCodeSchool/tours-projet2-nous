@@ -24,15 +24,15 @@ import { JwtModule } from '@auth0/angular-jwt';
     SearchbarComponent,
     CategorieComponent,
     ProfilemessageComponent,
-    
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
-    HttpClientModule
-    
+    HttpClientModule,
+
     JwtModule.forRoot({
       config: {
         whitelistedDomains: ['open-reza.herokuapp.com'],
