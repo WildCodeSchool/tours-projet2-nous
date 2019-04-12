@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Booking } from '../common/models/booking-model';
-import { BookingService } from '../common/services/booking.service'
+import { BookingService } from '../common/services/booking.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-booking-forms',
   templateUrl: './booking-forms.component.html',
-  styleUrls: ['./booking-forms.component.css']
+  styleUrls: ['./booking-forms.component.css'],
 })
 export class BookingFormsComponent implements OnInit {
   userForm: FormGroup;
@@ -15,46 +15,49 @@ export class BookingFormsComponent implements OnInit {
   title = 'BookingService';
   public service:BookingService;
   id : string;
-  constructor(param_service:BookingService,public formBuilder: FormBuilder,public activetedroute: ActivatedRoute) {  
-    this.service  =  param_service;
-    
+  constructor(PARAM_SERVICE:BookingService,
+              public formBuilder: FormBuilder,
+              public activetedroute: ActivatedRoute) {
+    this.service  =  PARAM_SERVICE;
+
     this.userForm = this.formBuilder.group({
       date : this.formBuilder.group({
-        'start': [''],
-        'end': [''],
+        start: [''],
+        end: [''],
       }),
       owner : this.formBuilder.group({
-        'name': [''],
+        name: [''],
         address : this.formBuilder.group({
-          'street': [''],
-          'zipCode': [''],
-          'city': [''],
-          'number': [''],
+          street: [''],
+          zipCode: [''],
+          city: [''],
+          number: [''],
         }),
         contact: this.formBuilder.group({
-          'phone': [''],
-          'email': [''], 
+          phone: [''],
+          email: [''],
         }),
       }),
-      'numbers': [''],
-      'establishment': [''],
-    })
+      numbers: [''],
+      establishment: [''],
+    });
   }
-  
-  ngOnInit(){
+
+  ngOnInit() {
     this.activetedroute.paramMap.subscribe((params: ParamMap) => {
       const id = params.get('id');
-      
+
       this.service.getBoockingForm(id).subscribe(
-        (param_book:Booking) => {
-          this.bookingForm  =  param_book;
-          this.userForm.patchValue(param_book)
-          console.log(param_book)})
-        }
-        )
-      }
-      
-      submit(){
-        console.log(this.userForm.value)
-      }
-    }
+        (PARAM_BOOK:Booking) => {
+          this.bookingForm  =  PARAM_BOOK;
+          this.userForm.patchValue(PARAM_BOOK);
+          console.log(PARAM_BOOK);
+        });
+    },
+        );
+  }
+
+  submit() {
+    console.log(this.userForm.value);
+  }
+}
