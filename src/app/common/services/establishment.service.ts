@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Establishment } from './common/models/establishment.model';
+import { Establishment } from '../models/establishment.model';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -11,16 +11,14 @@ export class EstablishmentService {
 
   public service: HttpClient;
 
-  constructor(public paramService: HttpClient) {
-    this.service = paramService;
-  }
+  constructor(public http: HttpClient) {}
 
   public getEstablishment(id: string): Observable<Establishment> {
-    const obs1: Observable<any> = this.paramService.get(
+    const obs1: Observable<any> = this.http.get(
       `http://open-reza.herokuapp.com/api/establishments/${ id }`,
     );
-    const treatment = (paramData: any) => {
-      return paramData as Establishment;
+    const treatment = (response: any) => {
+      return response as Establishment;
     };
     return obs1.pipe(map(treatment));
   }

@@ -10,13 +10,11 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class EstablishmentInscriptionComponent implements OnInit {
   public establishmentForm: FormGroup;
-  public service: EstablishmentService;
   public establishment: Establishment;
 
   constructor(private fb: FormBuilder,
-              private paramService: EstablishmentService,
+              private service: EstablishmentService,
               public activatedRoute: ActivatedRoute) {
-    this.service = paramService;
 
     this.establishmentForm = this.fb.group({
       name: [''],
@@ -49,10 +47,10 @@ export class EstablishmentInscriptionComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
       const id = params.get('id');
 
-      this.paramService.getEstablishment(id).subscribe(
-      (paramEstablishment: Establishment) => {
-        this.establishment = paramEstablishment;
-        this.establishmentForm.patchValue(paramEstablishment);
+      this.service.getEstablishment(id).subscribe(
+      (establishment: Establishment) => {
+        this.establishment = establishment;
+        this.establishmentForm.patchValue(establishment);
       });
     },
     );
