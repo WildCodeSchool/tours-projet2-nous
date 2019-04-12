@@ -13,12 +13,10 @@ export class ProfileComponent implements OnInit {
   public id: string;
   public myForm: FormGroup;
   public profil: Profile;
-  private service: ProfileService;
-// tslint:disable-next-line: max-line-length
+
   constructor(private fb: FormBuilder,
-              PARAM_SERVICE: ProfileService,
+              private service: ProfileService,
               public activetedroute: ActivatedRoute) {
-    this.service = PARAM_SERVICE;
 
     this.myForm = this.fb.group({
       firstName: [''],
