@@ -22,7 +22,6 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     SearchbarComponent,
     CategorieComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -30,7 +29,6 @@ import { HttpClientModule } from '@angular/common/http';
     NgbModule,
     ReactiveFormsModule,
     HttpClientModule,
-    
     JwtModule.forRoot({
       config: {
         whitelistedDomains: ['open-reza.herokuapp.com'],
