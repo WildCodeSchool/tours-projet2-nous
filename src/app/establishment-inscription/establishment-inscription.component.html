@@ -1,141 +1,14 @@
-<div class="pt-2 pb-2" class="container text-center form-horizontal">
+<div class="mt-4 mb-4 pt-2 pb-2 bg-opacity-20 container rounded text-center form-horizontal">
   <h1>Inscription d'établissement</h1>
   <form
     class="form-group"
     [formGroup]="establishmentForm"
     (ngSubmit)="onSubmit()"
   >
-    <div class="pt-2 pb-2">
-      <label for="name" class="control-label required"
-        >Nom de l'établissement
-        <input
-          formControlName="name"
-          class="form-control"
-          name="name"
-          type="text"
-          value=""
-        />
-      </label>
-    </div>
-    <div class="pt-2 pb-2">
-      <label for="type"
-        >Catégorie
-        <input
-          formControlName="type"
-          class="form-control"
-          name="type"
-          type="text"
-          value=""
-        />
-      </label>
-    </div>
-    <div class="pt-2 pb-2" formGroupName="address">
-      <h2>Adresse</h2>
-      <div class="pt-2 pb-2">
-        <label for="number"
-          >Numéro
-          <input
-            formControlName="number"
-            class="form-control"
-            name="number"
-            type="text"
-            value=""
-          />
-        </label>
-      </div>
-      <div class="pt-2 pb-2">
-        <label for="street"
-          >Rue
-          <input
-            formControlName="street"
-            class="form-control"
-            name="street"
-            type="text"
-            value=""
-          />
-        </label>
-      </div>
-      <div class="pt-2 pb-2">
-        <label for="zipCode"
-          >Code postal
-          <input
-            formControlName="zipCode"
-            class="form-control"
-            name="zipCode"
-            type="text"
-            value=""
-          />
-        </label>
-      </div>
-      <div class="pt-2 pb-2">
-        <label for="city"
-          >Ville
-          <input
-            formControlName="city"
-            class="form-control"
-            name="city"
-            type="text"
-            value=""
-          />
-        </label>
-      </div>
-    </div>
-    <div class="pt-2 pb-2">
-      <label for="description"
-        >Description
-        <input
-          formControlName="description"
-          class="form-control"
-          name="description"
-          type="text"
-          value=""
-        />
-      </label>
-    </div>
-    <div class="pt-2 pb-2" formGroupName="contact">
-      <h2>Contact</h2>
-      <div class="pt-2 pb-2">
-        <label for="phone"
-          >Numéro de téléphone
-          <input
-            formControlName="phone"
-            class="form-control"
-            name="phone"
-            type="tel"
-            value=""
-          />
-        </label>
-      </div>
-      <div class="pt-2 pb-2">
-        <label for="email"
-          >E-mail
-          <input
-            formControlName="email"
-            class="form-control"
-            name="email"
-            type="email"
-            value=""
-          />
-        </label>
-      </div>
-      <div class="pt-2 pb-2">
-        <label for="site"
-          >Vous contacter
-          <input
-            formControlName="site"
-            class="form-control"
-            name="site"
-            type="url"
-            value=""
-          />
-        </label>
-      </div>
-    </div>
-    <div class="pt-2 pb-2" formGroupName="networks">
-      <h2>Networks</h2>
-      <div class="pt-2 pb-2">
-        <label for="name"
-          >Réseau social
+    <div class="row">
+      <div class="col-6 text-left">
+        <label for="name" class="control-label text-center required"
+          >Nom de l'établissement :
           <input
             formControlName="name"
             class="form-control"
@@ -145,49 +18,184 @@
           />
         </label>
       </div>
-      <div class="pt-2 pb-2">
-        <label for="link"
-          >Lien
+      <div class="col-6 text-right">
+        <label for="type" class="text-center"
+          >Catégorie :
           <input
-            formControlName="link"
+            formControlName="type"
             class="form-control"
-            name="link"
-            type="url"
+            name="type"
+            type="text"
             value=""
           />
         </label>
+      </div>
+    </div>
+    <div class="pt-2 pb-2" formGroupName="address">
+      <h2>Adresse</h2>
+      <div class="row">
+        <div class="col-3">
+          <label for="number"
+            >Numéro :
+            <input
+              formControlName="number"
+              class="form-control"
+              name="number"
+              type="text"
+              value=""
+            />
+          </label>
+        </div>
+        <div class="col-3">
+          <label for="street"
+            >Rue :
+            <input
+              formControlName="street"
+              class="form-control"
+              name="street"
+              type="text"
+              value=""
+            />
+          </label>
+        </div>
+        <div class="col-3">
+          <label for="zipCode"
+            >Code postal :
+            <input
+              formControlName="zipCode"
+              class="form-control"
+              name="zipCode"
+              type="text"
+              value=""
+            />
+          </label>
+        </div>
+        <div class="col-3">
+          <label for="city"
+            >Ville :
+            <input
+              formControlName="city"
+              class="form-control"
+              name="city"
+              type="text"
+              value=""
+            />
+          </label>
+        </div>
+      </div>
+    </div>
+    <h2>Description</h2>
+    <div class="row">
+      <div class="col-12">
+        <input
+          formControlName="description"
+          class="form-control"
+          name="description"
+        />
+      </div>
+    </div>
+    <div class="pt-2 pb-2" formGroupName="contact">
+      <h2>Contact</h2>
+      <div class="row">
+        <div class="col-4">
+          <label for="phone"
+            >Numéro de téléphone :
+            <input
+              formControlName="phone"
+              class="form-control"
+              name="phone"
+              type="tel"
+              value=""
+            />
+          </label>
+        </div>
+        <div class="col-4">
+          <label for="email"
+            >E-mail :
+            <input
+              formControlName="email"
+              class="form-control"
+              name="email"
+              type="email"
+              value=""
+            />
+          </label>
+        </div>
+        <div class="col-4">
+          <label for="site"
+            >Vous contacter :
+            <input
+              formControlName="site"
+              class="form-control"
+              name="site"
+              type="url"
+              value=""
+            />
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="pt-2 pb-2" formGroupName="networks">
+      <h2>Networks</h2>
+      <div class="row">
+        <div class="col-6 text-left">
+          <label for="name" class="text-center"
+            >Réseau social :
+            <input
+              formControlName="name"
+              class="form-control"
+              name="name"
+              type="text"
+              value=""
+            />
+          </label>
+        </div>
+        <div class="col-6 text-right">
+          <label for="link" class="text-center"
+            >Lien :
+            <input
+              formControlName="link"
+              class="form-control"
+              name="link"
+              type="url"
+              value=""
+            />
+          </label>
+        </div>
       </div>
     </div>
     <div class="pt-2 pb-2" formGroupName="medias">
       <h2>Médias</h2>
-      <div class="pt-2 pb-2">
-        <label for="url"
-          >Photo de votre établissement
-          <input
-            formControlName="url"
-            name="url"
-            class="form-control"
-            type="string"
-            value=""
-          />
-        </label>
-      </div>
-      <div class="pt-2 pb-2">
-        <label for="order"
-          >Photo du menu
-          <input
-            formControlName="order"
-            name="order"
-            class="form-control"
-            type="number"
-            value=""
-          />
-        </label>
+      <div class="row">
+        <div class="col-6 text-left">
+          <label for="url" class="text-center"
+            >Photo de votre établissement :
+            <input
+              formControlName="url"
+              name="url"
+              class="form-control"
+              type="string"
+              value=""
+            />
+          </label>
+        </div>
+        <div class="col-6 text-right">
+          <label for="order" class="text-center"
+            >Photo du menu :
+            <input
+              formControlName="order"
+              name="order"
+              class="form-control"
+              type="number"
+              value=""
+            />
+          </label>
+        </div>
       </div>
     </div>
     <div class="pt-2 pb-2">
       <label for="profile"
-        >Profile
+        >Profile :
         <input
           formControlName="profile"
           class="form-control"
@@ -197,6 +205,6 @@
         />
       </label>
     </div>
-    <input class="btn btn-primary" type="submit" />
+    <input class="btn btn-danger" type="submit" />
   </form>
 </div>
