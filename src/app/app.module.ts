@@ -9,12 +9,13 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { CategorieComponent } from './categorie/categorie.component';
-import { ProfileComponent } from './profile/profile.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ProfilemessageComponent } from './profilemessage/profilemessage.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { EstablishmentInscriptionComponent }
   from './establishment-inscription/establishment-inscription.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     CategorieComponent,
     ProfileComponent,
     EstablishmentInscriptionComponent,
+    ProfilemessageComponent,
+
   ],
   imports: [
     BrowserModule,
