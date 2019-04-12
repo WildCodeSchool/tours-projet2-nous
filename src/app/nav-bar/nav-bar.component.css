@@ -35,7 +35,8 @@ nav {
 }
 
 .logo {
-    width: 15%;
+    width: 12%;
+    margin-left:30px;
     float: left;
     text-transform: uppercase;
     color: #fff;
@@ -90,5 +91,4 @@ nav:after {
     top: 100%;
     right: 0;
 }
-
 

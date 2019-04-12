@@ -12,6 +12,8 @@ import { CategorieComponent } from './categorie/categorie.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
+import { EstablishmentInscriptionComponent }
+  from './establishment-inscription/establishment-inscription.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -24,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     SearchbarComponent,
     CategorieComponent,
     ProfileComponent,
+    EstablishmentInscriptionComponent,
   ],
   imports: [
     BrowserModule,
