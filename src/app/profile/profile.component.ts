@@ -42,10 +42,10 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.service.getProfile().subscribe(
-      (PARAM_PROFIL: Profile) => {
-        this.profil = PARAM_PROFIL;
-        console.log(PARAM_PROFIL);
-        this.myForm.patchValue(PARAM_PROFIL);
+      (profile: Profile) => {
+        this.profil = profile;
+        console.log(profile);
+        this.myForm.patchValue(profile);
       },
     );
   }
