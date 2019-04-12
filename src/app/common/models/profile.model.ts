@@ -1,20 +1,20 @@
 export class Profile{
-    constructor(
+  constructor(
         public firstName: string,
         public lastName: string,
         public siret: string,
         public siren: string,
         public key: string,
         public address: {
-            street: string,
-            zipCode: string,
-            city: string,
-            number: string,
+          street: string,
+          zipCode: string,
+          city: string,
+          number: string,
         },
         public conctat: {
-            fax: string,
-            phone: string,
-            email: string,
-        }
-    ){}
+          fax: string,
+          phone: string,
+          email: string,
+        },
+    ) {}
 }
