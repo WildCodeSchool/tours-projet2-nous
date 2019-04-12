@@ -9,6 +9,10 @@ import { FooterComponent } from './footer/footer.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { CategorieComponent } from './categorie/categorie.component';
 import { JwtModule } from '@auth0/angular-jwt';
+// tslint:disable-next-line: max-line-length
+import { EstablishmentInscriptionComponent } from './establishment-inscription/establishment-inscription.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,11 +22,15 @@ import { JwtModule } from '@auth0/angular-jwt';
     FooterComponent,
     SearchbarComponent,
     CategorieComponent,
+    EstablishmentInscriptionComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: () => {

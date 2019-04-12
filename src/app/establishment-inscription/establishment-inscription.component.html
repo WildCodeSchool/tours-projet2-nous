@@ -1,127 +1,202 @@
-<div class="container">
-  <h2>Inscription d'établissement</h2>
-  <form FormGroupName="establishmentForm">
-    <div>
-      <label for="name"
-        >Nom de l'établissement :
+<div class="pt-2 pb-2" class="container text-center form-horizontal">
+  <h1>Inscription d'établissement</h1>
+  <form
+    class="form-group"
+    [formGroup]="establishmentForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="pt-2 pb-2">
+      <label for="name" class="control-label required"
+        >Nom de l'établissement
         <input
           formControlName="name"
+          class="form-control"
           name="name"
           type="text"
           value=""
         />
       </label>
     </div>
-    <div>
+    <div class="pt-2 pb-2">
       <label for="type"
-        >Catégorie :
-        <input formControlName="type" name="type" type="text" value="" />
+        >Catégorie
+        <input
+          formControlName="type"
+          class="form-control"
+          name="type"
+          type="text"
+          value=""
+        />
       </label>
     </div>
-    <div FormGroupName="adress">
-      <h4>Adresse</h4>
-      <div>
+    <div class="pt-2 pb-2" formGroupName="address">
+      <h2>Adresse</h2>
+      <div class="pt-2 pb-2">
         <label for="number"
-          >Numéro de rue :
+          >Numéro
           <input
             formControlName="number"
+            class="form-control"
             name="number"
-            type="number"
+            type="text"
             value=""
           />
         </label>
       </div>
-      <div>
+      <div class="pt-2 pb-2">
         <label for="street"
-          >Rue :
-          <input formControlName="street" name="street" type="text" value="" />
+          >Rue
+          <input
+            formControlName="street"
+            class="form-control"
+            name="street"
+            type="text"
+            value=""
+          />
         </label>
       </div>
-      <div>
+      <div class="pt-2 pb-2">
         <label for="zipCode"
-          >Code postal :
+          >Code postal
           <input
             formControlName="zipCode"
+            class="form-control"
             name="zipCode"
             type="text"
             value=""
           />
         </label>
       </div>
-      <div>
+      <div class="pt-2 pb-2">
         <label for="city"
-          >Ville :
-          <input formControlName="city" name="city" type="text" value="" />
+          >Ville
+          <input
+            formControlName="city"
+            class="form-control"
+            name="city"
+            type="text"
+            value=""
+          />
         </label>
       </div>
     </div>
-    <div>
+    <div class="pt-2 pb-2">
       <label for="description"
-        >Description :
+        >Description
         <input
           formControlName="description"
+          class="form-control"
           name="description"
           type="text"
           value=""
         />
       </label>
     </div>
-    <div FormGroupName="contact">
-      <h4>Contact</h4>
-      <div>
+    <div class="pt-2 pb-2" formGroupName="contact">
+      <h2>Contact</h2>
+      <div class="pt-2 pb-2">
         <label for="phone"
-          >Numéro de téléphone :
-          <input formControlName="phone" name="phone" type="tel" value="" />
+          >Numéro de téléphone
+          <input
+            formControlName="phone"
+            class="form-control"
+            name="phone"
+            type="tel"
+            value=""
+          />
         </label>
       </div>
-      <div>
+      <div class="pt-2 pb-2">
         <label for="email"
-          >E-mail :
-          <input formControlName="email" name="email" type="email" value="" />
+          >E-mail
+          <input
+            formControlName="email"
+            class="form-control"
+            name="email"
+            type="email"
+            value=""
+          />
         </label>
       </div>
-      <div>
+      <div class="pt-2 pb-2">
         <label for="site"
-          >Vous contacter :
-          <input formControlName="site" name="site" type="url" value="" />
+          >Vous contacter
+          <input
+            formControlName="site"
+            class="form-control"
+            name="site"
+            type="url"
+            value=""
+          />
         </label>
       </div>
     </div>
-    <div FormGroupName="networks">
-      <h4>Networks</h4>
-      <div>
+    <div class="pt-2 pb-2" formGroupName="networks">
+      <h2>Networks</h2>
+      <div class="pt-2 pb-2">
         <label for="name"
-          >Réseau social :
-          <input formControlName="name" name="name" type="text" value="" />
+          >Réseau social
+          <input
+            formControlName="name"
+            class="form-control"
+            name="name"
+            type="text"
+            value=""
+          />
         </label>
       </div>
-      <div>
+      <div class="pt-2 pb-2">
         <label for="link"
-          >Lien :
-          <input formControlName="link" name="link" type="url" value="" />
+          >Lien
+          <input
+            formControlName="link"
+            class="form-control"
+            name="link"
+            type="url"
+            value=""
+          />
         </label>
       </div>
     </div>
-    <div FormGroupName="medias">
-      <h4>Médias</h4>
-      <div>
+    <div class="pt-2 pb-2" formGroupName="medias">
+      <h2>Médias</h2>
+      <div class="pt-2 pb-2">
         <label for="url"
-          >Photo de votre établissement :
-          <input formControlName="url" name="url" type="url" value="" />
+          >Photo de votre établissement
+          <input
+            formControlName="url"
+            name="url"
+            class="form-control"
+            type="string"
+            value=""
+          />
         </label>
       </div>
-      <div>
+      <div class="pt-2 pb-2">
         <label for="order"
-          >Photo du menu :
-          <input formControlName="order" name="order" type="number" value="" />
+          >Photo du menu
+          <input
+            formControlName="order"
+            name="order"
+            class="form-control"
+            type="number"
+            value=""
+          />
         </label>
       </div>
     </div>
-    <div>
+    <div class="pt-2 pb-2">
       <label for="profile"
-        >Profile :
-        <input formControlName="profile" name="profile" type="text" value="" />
+        >Profile
+        <input
+          formControlName="profile"
+          class="form-control"
+          name="profile"
+          type="text"
+          value=""
+        />
       </label>
     </div>
+    <input class="btn btn-primary" type="submit" />
   </form>
 </div>
