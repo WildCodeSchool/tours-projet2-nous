@@ -13,12 +13,10 @@ export class BookingFormsComponent implements OnInit {
   userForm: FormGroup;
   public bookingForm: Booking;
   title = 'BookingService';
-  public service:BookingService;
   id : string;
-  constructor(PARAM_SERVICE:BookingService,
+  constructor(public service:BookingService,
               public formBuilder: FormBuilder,
               public activetedroute: ActivatedRoute) {
-    this.service  =  PARAM_SERVICE;
 
     this.userForm = this.formBuilder.group({
       date : this.formBuilder.group({
@@ -48,10 +46,10 @@ export class BookingFormsComponent implements OnInit {
       const id = params.get('id');
 
       this.service.getBoockingForm(id).subscribe(
-        (PARAM_BOOK:Booking) => {
-          this.bookingForm  =  PARAM_BOOK;
-          this.userForm.patchValue(PARAM_BOOK);
-          console.log(PARAM_BOOK);
+        (booking: Booking) => {
+          this.bookingForm  =  booking;
+          this.userForm.patchValue(booking);
+          console.log(booking);
         });
     },
         );
