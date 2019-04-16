@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Establishment } from '../common/models/establishment.model';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { EstablishmentService } from '../establishment.service';
+import { EstablishmentService } from '../common/services/establishment.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 @Component({
   selector: 'app-establishment-inscription',
