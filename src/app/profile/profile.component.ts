@@ -15,8 +15,8 @@ export class ProfileComponent implements OnInit {
   public profil: Profile;
 
   constructor(private fb: FormBuilder,
-    private service: ProfileService,
-    public activetedroute: ActivatedRoute) {
+              private service: ProfileService,
+              public activetedroute: ActivatedRoute) {
 
     this.myForm = this.fb.group({
       firstName: [''],
