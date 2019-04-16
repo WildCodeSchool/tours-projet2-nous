@@ -23,4 +23,22 @@ export class BookingService {
     };
     return  obs1.pipe(map(treatment));
   }
+
+  public create (form:Booking) {
+    const  obs2:Observable<any> = this.service
+    .post('http://open-reza.herokuapp.com/api/bookings', form);
+    const  treatment  = (response:any) => {
+      return  response as Booking;
+    };
+    return  obs2.pipe(map(treatment));
+  }
+
+  public update (form:Booking, id:string) {
+    const  obs3:Observable<any> = this.service
+    .put(`http://open-reza.herokuapp.com/api/bookings/${id}`, form);
+    const  treatment  = (response:any) => {
+      return  response as Booking;
+    };
+    return  obs3.pipe(map(treatment));
+  }
 }

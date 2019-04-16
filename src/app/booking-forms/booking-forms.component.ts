@@ -10,10 +10,10 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./booking-forms.component.css'],
 })
 export class BookingFormsComponent implements OnInit {
-  userForm: FormGroup;
+  public userForm: FormGroup;
   public bookingForm: Booking;
   title = 'BookingService';
-  id : string;
+  public id : string;
   constructor(public service:BookingService,
               public formBuilder: FormBuilder,
               public activetedroute: ActivatedRoute) {
@@ -44,7 +44,6 @@ export class BookingFormsComponent implements OnInit {
   ngOnInit() {
     this.activetedroute.paramMap.subscribe((params: ParamMap) => {
       const id = params.get('id');
-
       this.service.getBoockingForm(id).subscribe(
         (booking: Booking) => {
           this.bookingForm  =  booking;
@@ -56,6 +55,33 @@ export class BookingFormsComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.userForm.value);
+    this.activetedroute.paramMap.subscribe((params: ParamMap) => {
+      const id = params.get('id');
+      if (id) {
+        this.service.update(this.userForm.value, id).subscribe(
+      (booking : Booking) => {
+        this.bookingForm  =  booking;
+        this.userForm.patchValue(booking);
+        console.log('Enregistrement terminé !');
+      },
+      (error) => {
+        console.log(`Erreur ! : ${error}`);
+      },
+    );
+      }
+      else {
+        console.log(this.userForm.value);
+        this.service.create(this.userForm.value).subscribe(
+      (booking : Booking) => {
+        this.bookingForm  =  booking;
+        this.userForm.patchValue(booking);
+        console.log('Enregistrement terminé !');
+      },
+      (error) => {
+        console.log(`Erreur ! : ${error}`);
+      },
+    );
+      }
+    });
   }
 }
