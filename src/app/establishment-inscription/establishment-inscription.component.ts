@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Establishment } from '../common/models/establishment.model';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { EstablishmentService } from '../establishment.service';
+import { EstablishmentService } from '../common/services/establishment.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 @Component({
   selector: 'app-establishment-inscription',
@@ -11,6 +11,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 export class EstablishmentInscriptionComponent implements OnInit {
   public establishmentForm: FormGroup;
   public establishment: Establishment;
+  public id: string;
 
   constructor(private fb: FormBuilder,
               private service: EstablishmentService,
@@ -57,6 +58,24 @@ export class EstablishmentInscriptionComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.establishmentForm.value);
+    this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
+      const id = params.get('id');
+      if (id) {
+        console.log(this.establishmentForm.value);
+        this.service.update(id, this.establishmentForm.value).subscribe(
+    (establishment: Establishment) => {
+      this.establishment = establishment;
+      this.establishmentForm.patchValue(establishment);
+// tslint:disable-next-line: brace-style
+    }); }else{
+        console.log(this.establishmentForm.value);
+        this.service.create(this.establishmentForm.value).subscribe(
+      (establishment: Establishment) => {
+        this.establishment = establishment;
+        this.establishmentForm.patchValue(establishment);
+// tslint:disable-next-line: brace-style
+      }); }
+    });
+
   }
 }

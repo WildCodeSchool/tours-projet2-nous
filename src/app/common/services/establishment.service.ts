@@ -22,4 +22,20 @@ export class EstablishmentService {
     };
     return obs1.pipe(map(treatment));
   }
+  public update(id: string, myForm: Establishment){
+    const obs2: Observable<any> = this.http.put(
+      `http://open-reza.herokuapp.com/api/establishments/${id}`, myForm);
+    const treatment = (response: any) => {
+      return response as Establishment;
+    };
+    return obs2.pipe(map(treatment));
+  }
+  public create(myForm: Establishment) {
+    const obs3: Observable<any> = this.http.post(
+      'http://open-reza.herokuapp.com/api/establishments/', myForm);
+    const treatment = (response: any) => {
+      return response as Establishment;
+    };
+    return obs3.pipe(map(treatment));
+  }
 }
