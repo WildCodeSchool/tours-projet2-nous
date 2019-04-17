@@ -1,4 +1,10 @@
 export class Message {
+  saveMessageToServer(): any {
+    throw new Error("Method not implemented.");
+  }
+  saveMessagesToServer(): any {
+    throw new Error("Method not implemented.");
+  }
   constructor(
         public from: String,
         public to: String,
