@@ -41,7 +41,7 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.service.getProfile().subscribe(
+    this.service.get().subscribe(
       (profile: Profile) => {
         this.profil = profile;
         console.log(profile);
@@ -52,5 +52,12 @@ export class ProfileComponent implements OnInit {
 
   submit() {
     console.log(this.myForm.valid);
+    this.service.update(this.myForm.value).subscribe(
+      (profile: Profile) => {
+        this.profil = profile;
+        console.log(profile);
+        this.myForm.patchValue(profile);
+      },
+    );
   }
 }
