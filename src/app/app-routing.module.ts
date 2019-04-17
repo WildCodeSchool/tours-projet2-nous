@@ -11,10 +11,10 @@ const routes: Routes = [
   { path: 'establishments/:id', component: EstablishmentInscriptionComponent },
   { path: '', component: CategorieComponent },
   { path: 'profiles', component: ProfileComponent },
-  { path: 'bookings/:id', component: BookingFormsComponent },
-  { path:'messages/:id', component:ProfilemessageComponent },
   { path:'bookings/create', component: BookingFormsComponent },
+  { path: 'bookings/:id', component: BookingFormsComponent },
   { path:'bookings/:id/update', component: BookingFormsComponent },
+  { path:'messages/:id', component:ProfilemessageComponent },
 ];
 
 @NgModule({
