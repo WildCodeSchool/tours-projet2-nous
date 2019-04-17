@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, observable } from 'rxjs';
 import { map } from  'rxjs/operators';
 import { Booking } from '../models/booking-model';
 
@@ -50,4 +50,20 @@ export class BookingService {
     };
     return  obs1.pipe(map(treatment));
   }
+
+  del(id) {
+    this.service.delete(`http://open-reza.herokuapp.com/api/bookings/${id}`)
+        .subscribe(
+            (val) => {
+              console.log('DELETE call successful value returned in body',
+                          val);
+            },
+            response => {
+              console.log('DELETE call in error', response);
+            },
+            () => {
+              console.log('The DELETE observable is now completed.');
+            });
+  }
+
 }
