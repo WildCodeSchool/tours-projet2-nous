@@ -41,4 +41,13 @@ export class BookingService {
     };
     return  obs3.pipe(map(treatment));
   }
+
+  public getListBooking() {
+    const  obs1:Observable<any> = this.service
+    .get('http://open-reza.herokuapp.com/api/bookings');
+    const  treatment  = (response:any) => {
+      return  response as Booking;
+    };
+    return  obs1.pipe(map(treatment));
+  }
 }

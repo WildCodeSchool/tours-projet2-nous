@@ -6,11 +6,13 @@ import { EstablishmentInscriptionComponent }
   from './establishment-inscription/establishment-inscription.component';
 import { CategorieComponent } from './categorie/categorie.component';
 import { ProfilemessageComponent } from './profilemessage/profilemessage.component';
+import { ListeBookingComponent } from './liste-booking/liste-booking.component';
 
 const routes: Routes = [
   { path: 'establishments/:id', component: EstablishmentInscriptionComponent },
   { path: '', component: CategorieComponent },
   { path: 'profiles', component: ProfileComponent },
+  { path:'bookings/list', component: ListeBookingComponent },
   { path:'bookings/create', component: BookingFormsComponent },
   { path: 'bookings/:id', component: BookingFormsComponent },
   { path:'bookings/:id/update', component: BookingFormsComponent },

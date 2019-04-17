@@ -16,6 +16,7 @@ import { EstablishmentInscriptionComponent }
 from './establishment-inscription/establishment-inscription.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
+import { ListeBookingComponent } from './liste-booking/liste-booking.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ProfileComponent } from './profile/profile.component';
     ProfileComponent,
     EstablishmentInscriptionComponent,
     ProfilemessageComponent,
+    ListeBookingComponent,
 
   ],
   imports: [
