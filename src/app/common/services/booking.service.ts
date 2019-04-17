@@ -44,7 +44,7 @@ export class BookingService {
 
   public getListBooking() {
     const  obs1:Observable<any> = this.service
-    .get('http://open-reza.herokuapp.com/api/bookings');
+    .get('http://open-reza.herokuapp.com/api/establishments/5cadde114170bf000fdb83a9/bookings');
     const  treatment  = (response:any) => {
       return  response as Booking;
     };
@@ -65,5 +65,4 @@ export class BookingService {
               console.log('The DELETE observable is now completed.');
             });
   }
-
 }

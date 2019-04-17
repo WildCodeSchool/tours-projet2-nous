@@ -14,7 +14,6 @@ export class ListeBookingComponent implements OnInit {
 
   public listBooking;
   public tableLists = [];
-  book = this.tableLists[0];
 
   constructor(public service:BookingService) {}
 
@@ -23,7 +22,6 @@ export class ListeBookingComponent implements OnInit {
           (booking) => {
             this.listBooking  =  booking;
             this.tableLists = this.listBooking;
-            console.log(this.listBooking[2]._id);
           });
   }
 
