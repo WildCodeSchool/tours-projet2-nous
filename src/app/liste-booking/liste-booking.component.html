@@ -1,7 +1,7 @@
 <div class="container mt-5 mb-5">
   <div class="row">
     <ul class="list-group">
-    <li class="list-group-item list-group-item-dark" *ngFor="let book of tableLists">Name : {{book.owner.name}} | Street : {{book.owner.address.street}}, {{book.owner.address.city}}, {{book.owner.address.number}} | {{book.date.start}} <button>Update</button> <button (click)="del()">Delete</button> </li> 
+    <li class="list-group-item list-group-item-dark" *ngFor="let book of tableLists">Name : {{book.owner.name}} | Street : {{book.owner.address.street}}, {{book.owner.address.city}}, {{book.owner.address.number}} | {{book.date.start}} <button>Update</button> <button (click)="del(book._id)">Delete</button> </li> 
       </ul>
       </div>
     </div>

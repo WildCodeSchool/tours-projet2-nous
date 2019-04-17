@@ -12,8 +12,8 @@ export class BookingService {
 
   public service: HttpClient;
 
-  constructor(public PARAM_SERVICE: HttpClient) {
-    this.service = PARAM_SERVICE;
+  constructor(public http: HttpClient) {
+    this.service = http;
   }
   public getBoockingForm(id:string): Observable<Booking> {
     const  obs1:Observable<any> = this.service
@@ -58,7 +58,7 @@ export class BookingService {
               console.log('DELETE call successful value returned in body',
                           val);
             },
-            response => {
+            (response) => {
               console.log('DELETE call in error', response);
             },
             () => {
