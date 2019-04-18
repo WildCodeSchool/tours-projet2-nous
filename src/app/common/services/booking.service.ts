@@ -51,18 +51,12 @@ export class BookingService {
     return  obs1.pipe(map(treatment));
   }
 
-  del(id) {
-    this.service.delete(`http://open-reza.herokuapp.com/api/bookings/${id}`)
-        .subscribe(
-            (val) => {
-              console.log('DELETE call successful value returned in body',
-                          val);
-            },
-            (response) => {
-              console.log('DELETE call in error', response);
-            },
-            () => {
-              console.log('The DELETE observable is now completed.');
-            });
+  del(id, i) {
+    const  obs1:Observable<any> = this.service
+    .delete(`http://open-reza.herokuapp.com/api/bookings/${id}`);
+    const  treatment  = (response:any) => {
+      return  response as Booking;
+    };
+    return  obs1.pipe(map(treatment));
   }
 }
