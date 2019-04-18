@@ -6,9 +6,7 @@ import { Message } from '../models/message.models';
 import { FormGroup } from '@angular/forms';
 
 @Injectable({
-  providedIn: 'root', 
-  
-
+  providedIn: 'root',
 })
 
 export class MessageService {
@@ -26,26 +24,40 @@ export class MessageService {
     return obs1.pipe(map(treatment));
   }
 
-public postMessage(myForm:any):Observable<Message> {
-  const obs2: Observable<any> = this.httpClient
+  public postMessage(myForm:any):Observable<Message> {
+    const obs2: Observable<any> = this.httpClient
     .post('http://open-reza.herokuapp.com/api/messages', myForm);
 
-  const treatment = (response: any) => {
-    return response as Message;
-  };
+    const treatment = (response: any) => {
+      return response as Message;
+    };
 
-  return obs2.pipe(map(treatment));
-}
+    return obs2.pipe(map(treatment));
+  }
 
   public getListMessage() {
   // tslint:disable-next-line: max-line-length
-  const obs3: Observable<any> = this.http.get('http://open-reza.herokuapp.com/api/messages') ;
+    const obs3: Observable<any> = this.http.get('http://open-reza.herokuapp.com/api/messages') ;
 
-  const treatment = (response: any) => {
-    return response as Message;
-  };
+    const treatment = (response: any) => {
+      return response as Message;
+    };
 
-  return obs3.pipe(map(treatment));
-}
+    return obs3.pipe(map(treatment));
+  }
 
+  del(id) {
+    this.http.delete(`http://open-reza.herokuapp.com/api/messages/${id}`)
+      .subscribe(
+          (val) => {
+            console.log('DELETE call successful value returned in body',
+                        val);
+          },
+          (response) => {
+            console.log('DELETE call in error', response);
+          },
+          () => {
+            console.log('The DELETE observable is now completed.');
+          });
+  }
 }

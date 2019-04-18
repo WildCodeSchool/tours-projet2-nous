@@ -16,7 +16,6 @@ const routes: Routes = [
   { path:'messages/lists', component:ListMessageComponent },
   { path:'messages/:id', component:ProfilemessageComponent },
   { path:'messages', component:ProfilemessageComponent },
-  
 ];
 
 @NgModule({
