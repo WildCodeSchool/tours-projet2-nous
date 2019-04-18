@@ -30,7 +30,7 @@ export class ListeBookingComponent implements OnInit {
       (val) => {
         console.log('DELETE call successful value returned in body',
                     val);
-      this.tableLists.splice(i , 1)
+        this.tableLists.splice(i , 1);
       },
       (response) => {
         console.log('DELETE call in error', response);
