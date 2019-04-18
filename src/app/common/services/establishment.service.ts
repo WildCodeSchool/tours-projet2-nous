@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
+
 })
 export class EstablishmentService {
 
@@ -22,7 +23,7 @@ export class EstablishmentService {
     };
     return obs1.pipe(map(treatment));
   }
-  public update(id: string, myForm: Establishment){
+  public update(id: string, myForm: Establishment) {
     const obs2: Observable<any> = this.http.put(
       `http://open-reza.herokuapp.com/api/establishments/${id}`, myForm);
     const treatment = (response: any) => {
@@ -37,5 +38,22 @@ export class EstablishmentService {
       return response as Establishment;
     };
     return obs3.pipe(map(treatment));
+  }
+  public getListEstablishment() {
+    const obs4: Observable<any> = this.http.get(
+      'http://open-reza.herokuapp.com/api/establishments',
+    );
+    const treatment = (response: any) => {
+      return response as Establishment;
+    };
+    return obs4.pipe(map(treatment));
+  }
+  del(id, i) {
+// tslint:disable-next-line: max-line-length
+    const obs4: Observable<any> = this.http.delete(`http://open-reza.herokuapp.com/api/establishments/${id}`);
+    const treatment = (response: any) => {
+      return response as Establishment;
+    };
+    return obs4.pipe(map(treatment));
   }
 }

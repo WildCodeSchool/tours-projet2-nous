@@ -16,6 +16,9 @@ import { EstablishmentInscriptionComponent }
   from './establishment-inscription/establishment-inscription.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
+import { ListEstablishmentComponent } from './list-establishment/list-establishment.component';
+// tslint:disable-next-line: max-line-length
+import { DetailListEstablischmentComponent } from './detail-list-establischment/detail-list-establischment.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,8 @@ import { ProfileComponent } from './profile/profile.component';
     ProfileComponent,
     EstablishmentInscriptionComponent,
     ProfilemessageComponent,
+    ListEstablishmentComponent,
+    DetailListEstablischmentComponent,
 
   ],
   imports: [
