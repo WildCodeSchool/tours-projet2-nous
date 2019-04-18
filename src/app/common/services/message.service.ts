@@ -46,18 +46,14 @@ export class MessageService {
     return obs3.pipe(map(treatment));
   }
 
-  del(id) {
-    this.http.delete(`http://open-reza.herokuapp.com/api/messages/${id}`)
-      .subscribe(
-          (val) => {
-            console.log('DELETE call successful value returned in body',
-                        val);
-          },
-          (response) => {
-            console.log('DELETE call in error', response);
-          },
-          () => {
-            console.log('The DELETE observable is now completed.');
-          });
+  del(id, i) {
+    const obs3: Observable<any> =this.http
+    .delete(`http://open-reza.herokuapp.com/api/messages/${id}`);
+    const treatment = (response: any) => {
+      return response as Message;
+    };
+
+    return obs3.pipe(map(treatment));
   }
+
 }

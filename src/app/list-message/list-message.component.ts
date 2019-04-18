@@ -23,8 +23,20 @@ export class ListMessageComponent implements OnInit {
       });
 
   }
-  del(id) {
-    this.service.del(id);
+  del(id, i) {
+    this.service.del(id, i).subscribe(
+      (val) => {
+        console.log('DELETE call successful value returned in body',
+                    val);
+                    this.listMessage.splice(i, 1)
+      },
+      (response) => {
+        console.log('DELETE call in error', response);
+      },
+      () => {
+        console.log('The DELETE observable is now completed.');
+      });
+
 
   }
 }
