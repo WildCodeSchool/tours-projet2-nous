@@ -1,0 +1,11 @@
+<div class="col-12">
+<ngb-carousel class="col-12" *ngIf="images" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+  <ng-template ngbSlide *ngFor="let image of images">
+    <img class="col-12" [src]="image" alt="Random slide">
+    <div class="carousel-caption">
+      <h3>No mouse navigation</h3>
+      <p>This carousel hides navigation arrows and indicators.</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
+</div>
