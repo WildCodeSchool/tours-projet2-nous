@@ -48,7 +48,7 @@ export class EstablishmentService {
     };
     return obs4.pipe(map(treatment));
   }
-  del(id, i) {
+  deleteEtablishment(id, index) {
 // tslint:disable-next-line: max-line-length
     const obs4: Observable<any> = this.http.delete(`http://open-reza.herokuapp.com/api/establishments/${id}`);
     const treatment = (response: any) => {

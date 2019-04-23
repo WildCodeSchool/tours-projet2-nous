@@ -23,12 +23,12 @@ export class ListEstablishmentComponent implements OnInit {
       });
   }
 
-  del(id, i) {
-    this.service.del(id, i).subscribe(
+  delete(id, index) {
+    this.service.deleteEtablishment(id, index).subscribe(
             (val) => {
               console.log('DELETE call successful value returned in body',
                           val);
-              this.listEstablishment.splice(i, 1);
+              this.listEstablishment.splice(index, 1);
             },
             (response) => {
               console.log('DELETE call in error', response);

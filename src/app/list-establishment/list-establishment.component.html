@@ -1,7 +1,7 @@
 
 <div class="container mt-5 mb-5">
   <div class="row">
-    <div *ngFor="let user of tableEstablishment; let i = index" class="col-4">
+    <div *ngFor="let user of tableEstablishment; let index = index" class="col-4">
       <div class="card m-4">
         <div class="hovereffect">
           <img
@@ -15,7 +15,7 @@
     
         </div>
         <button class="btn btn-primary" routerLink="/establishments/details">Voir</button>
-        <button class="btn btn-primary" (click)="del(user._id, index)">{{user._id}}</button>
+        <button class="btn btn-primary" (click)="delete(user._id, index)">{{user._id}}</button>
       </div>
     </div>
   </div>
