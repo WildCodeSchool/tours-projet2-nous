@@ -1,5 +1,5 @@
-<!-- 
-<div class="container mt-5 mb-5">
+
+<div class="container mt-5 mb-5" [hidden]="estaDefault">
   <div class="row">
     <div *ngFor="let user of tableEstablishment; let index = index" class="col-4">
       <div class="card m-4">
@@ -10,19 +10,18 @@
 
           <div class="overlay">
             <h2 class="font-weight-bolder">{{ user.name }}</h2>
-            <button class="btn btn-primary" (click)="del(user._id)">{{user._id}}</button>
           </div>
     
         </div>
         <button class="btn btn-primary" routerLink="/establishments/details">Voir</button>
-        <button class="btn btn-primary" (click)="delete(user._id, index)">{{user._id}}</button>
+        <button class="btn btn-primary" (click)="delete(user._id, index)">Delete</button>
       </div>
     </div>
   </div>
-</div> -->
+</div>
 
 
-<div class="container mt-5 mb-5">
+<div class="container mt-5 mb-5" [hidden]="estaCategorie">
   <div class="row">
     <div *ngFor="let user of tableEstablishment; let index = index" class="col-4">
       <div *ngIf='user.type===this.categorie' class="card m-4">

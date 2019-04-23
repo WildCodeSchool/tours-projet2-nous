@@ -58,7 +58,6 @@ export class EstablishmentService {
     return obs.pipe(map(treatment));
   }
   getEstablishmentBySort(categorie) {
-    this.result = categorie
-    // return categorie;
+    this.result = categorie;
   }
 }

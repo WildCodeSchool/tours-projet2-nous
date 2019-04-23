@@ -12,10 +12,10 @@ export class ListEstablishmentComponent implements OnInit {
   public tableEstablishment: [];
   public listEstablishment;
   public categorie = this.service.result;
+  public estaDefault;
+  public estaCategorie;
 
   constructor(private service: EstablishmentService, public activatedRoute: ActivatedRoute) {}
-
-
 
   ngOnInit() {
     this.service.getListEstablishment().subscribe(
@@ -24,7 +24,14 @@ export class ListEstablishmentComponent implements OnInit {
         this.tableEstablishment = this.listEstablishment;
         console.log(this.listEstablishment);
       });
-      console.log(this.categorie)
+    if (this.categorie === undefined) {
+        this.estaDefault = false;
+        this.estaCategorie = true; }
+    else {
+        this.estaDefault = true;
+        this.estaCategorie = false;
+      }
+    console.log(this.categorie);
   }
 
   delete(id, index) {
