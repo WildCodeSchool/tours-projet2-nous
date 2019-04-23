@@ -24,7 +24,7 @@ export class ListEstablishmentComponent implements OnInit {
   }
 
   delete(id, index) {
-    this.service.deleteEtablishment(id, index).subscribe(
+    this.service.deleteEtablishment(id).subscribe(
             (val) => {
               console.log('DELETE call successful value returned in body',
                           val);
