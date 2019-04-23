@@ -1,16 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-
+import { EstablishmentService } from '../common/services/establishment.service';
 @Component({
   selector: 'app-categorie',
   templateUrl: './categorie.component.html',
   styleUrls: ['./categorie.component.css'],
 })
 export class CategorieComponent implements OnInit {
-  categories = ['burger', 'pizza', 'french food', 'chinese food', 'steackhouse', 'ocean food'];
+  categories = ['Burger', 'Pizza', 'French food', 'Chinese food', 'Steackhouse', 'Ocean food'];
   myCat = this.categories[0];
-  constructor() { }
+  constructor(private service: EstablishmentService) { }
 
   ngOnInit() {
+  }
+
+  categorieRest(categorie) {
+    const result = categorie;
+    this.service.getEstablishmentBySort(result);
   }
 
 }

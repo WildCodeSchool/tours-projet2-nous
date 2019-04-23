@@ -11,8 +11,11 @@ import { Establishment } from '../common/models/establishment.model';
 export class ListEstablishmentComponent implements OnInit {
   public tableEstablishment: [];
   public listEstablishment;
+  public categorie = this.service.result;
 
   constructor(private service: EstablishmentService, public activatedRoute: ActivatedRoute) {}
+
+
 
   ngOnInit() {
     this.service.getListEstablishment().subscribe(
@@ -21,6 +24,7 @@ export class ListEstablishmentComponent implements OnInit {
         this.tableEstablishment = this.listEstablishment;
         console.log(this.listEstablishment);
       });
+      console.log(this.categorie)
   }
 
   delete(id, index) {
