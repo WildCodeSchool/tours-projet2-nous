@@ -9,12 +9,17 @@
             type="text"
           />
 
-          <div class="date" ngbDropdown>
-            <button class="btn btn-danger m-2 " ngbDropdownToggle>Date</button>
-            <div ngbDropdownMenu="dropdownBasic1">
-              <ngb-datepicker #d></ngb-datepicker>
+          <form class="form-inline">
+            <div class="form-group">
+              <div class="input-group">
+                <input class="form-control" placeholder="yyyy-mm-dd"
+                       name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                </div>
+              </div>
             </div>
-          </div>
+          </form>
           <div ngbDropdown>
             <button class="btn btn-danger m-2" ngbDropdownToggle>Heure</button>
             <div ngbDropdownMenu="dropdownBasic1">
