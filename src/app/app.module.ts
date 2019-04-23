@@ -20,6 +20,7 @@ import { ListeBookingComponent } from './liste-booking/liste-booking.component';
 import { ListEstablishmentComponent } from './list-establishment/list-establishment.component';
 // tslint:disable-next-line: max-line-length
 import { DetailListEstablischmentComponent } from './detail-list-establischment/detail-list-establischment.component';
+import { ListMessageComponent } from './list-message/list-message.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { DetailListEstablischmentComponent } from './detail-list-establischment/
     ListeBookingComponent,
     ListEstablishmentComponent,
     DetailListEstablischmentComponent,
+    ListMessageComponent,
   ],
   imports: [
     BrowserModule,

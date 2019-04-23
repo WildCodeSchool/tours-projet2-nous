@@ -13,6 +13,7 @@ export class ProfilemessageComponent implements OnInit {
   public messageForm: Message;
   public myForm: FormGroup;
   id: string;
+  messageService: Message;
 
   constructor(private fb: FormBuilder,
               public service: MessageService,
@@ -20,7 +21,6 @@ export class ProfilemessageComponent implements OnInit {
     this.myForm = this.fb.group({
       from: [''],
       to: [''],
-      read: [''],
       reason: [''],
       owner: [''],
     });
@@ -30,16 +30,25 @@ export class ProfilemessageComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
       const id = params.get('id');
-
-      this.service.getMessage(id).subscribe(
-        (message: Message) => {
-          this.messageForm = message;
-          /// this.myForm.patchValue(pa//message)
-          this.myForm.patchValue(message);
-          console.log(message);
-        });
+      if (id) {
+        this.service.getMessage(id).subscribe(
+          (message: Message) => {
+            this.messageForm = message;
+            /// this.myForm.patchValue(pa//message)
+            this.myForm.patchValue(message);
+            console.log(message);
+          });
+      }
     });
   }
-  submit() { }
 
+  onSubmit() {
+    this.service.postMessage(this.myForm.value).subscribe(
+      (message: Message) => {
+        this.messageForm = message;
+        /// this.myForm.patchValue(pa//message)
+        this.myForm.patchValue(message);
+        console.log(message);
+      });
+  }
 }

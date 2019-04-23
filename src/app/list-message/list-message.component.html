@@ -1,0 +1,8 @@
+
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <ul class="list-group">
+    <li class="list-group-item list-group-item-dark form" *ngFor="let message of tableLists; let i = index">From : {{message.from}} To : {{message.to}} Reason : {{message.reason}} Owner : {{message.owner}}<button class="buttonU">Update</button> <button (click)="delMessage(message._id, i)" class="buttonD">Delete</button> </li>
+      </ul>
+      </div>
+    </div>
