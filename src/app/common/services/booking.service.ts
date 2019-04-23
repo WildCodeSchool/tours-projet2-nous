@@ -51,7 +51,7 @@ export class BookingService {
     return  obs1.pipe(map(treatment));
   }
 
-  del(id, i) {
+  public deleteBooking(id, index) {
     const  obs1:Observable<any> = this.service
     .delete(`http://open-reza.herokuapp.com/api/bookings/${id}`);
     const  treatment  = (response:any) => {

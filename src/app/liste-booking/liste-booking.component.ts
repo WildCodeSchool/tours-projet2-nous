@@ -25,12 +25,12 @@ export class ListeBookingComponent implements OnInit {
           });
   }
 
-  del(id, i) {
-    this.service.del(id, i).subscribe(
+  delete(id, index) {
+    this.service.deleteBooking(id, index).subscribe(
       (val) => {
         console.log('DELETE call successful value returned in body',
                     val);
-        this.tableLists.splice(i , 1);
+        this.tableLists.splice(index , 1);
       },
       (response) => {
         console.log('DELETE call in error', response);
