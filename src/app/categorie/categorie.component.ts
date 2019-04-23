@@ -6,7 +6,7 @@ import { EstablishmentService } from '../common/services/establishment.service';
   styleUrls: ['./categorie.component.css'],
 })
 export class CategorieComponent implements OnInit {
-  categories = ['Burger', 'Pizza', 'French food', 'Chinese food', 'Steackhouse', 'Ocean food'];
+  categories = ['Burger', 'Pizza', 'French food', 'Chinese food', 'Vegan', 'Ocean food'];
   myCat = this.categories[0];
   constructor(private service: EstablishmentService) { }
 

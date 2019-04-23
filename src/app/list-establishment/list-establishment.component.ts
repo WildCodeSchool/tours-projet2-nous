@@ -48,4 +48,8 @@ export class ListEstablishmentComponent implements OnInit {
               console.log('The DELETE observable is now completed.');
             });
   }
+
+  etaDetail(id){
+    
+  }
 }
