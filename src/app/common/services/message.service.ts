@@ -15,45 +15,45 @@ export class MessageService {
 
   public getMessage(id: string): Observable<Message> {
     // tslint:disable-next-line: max-line-length
-    const obs1: Observable<any> = this.http.get(`http://open-reza.herokuapp.com/api/messages/${id}`) ;
+    const obs: Observable<any> = this.http.get(`http://open-reza.herokuapp.com/api/messages/${id}`) ;
 
     const treatment = (response: any) => {
       return response as Message;
     };
 
-    return obs1.pipe(map(treatment));
+    return obs.pipe(map(treatment));
   }
 
   public postMessage(myForm:any):Observable<Message> {
-    const obs2: Observable<any> = this.httpClient
+    const obs: Observable<any> = this.httpClient
     .post('http://open-reza.herokuapp.com/api/messages', myForm);
 
     const treatment = (response: any) => {
       return response as Message;
     };
 
-    return obs2.pipe(map(treatment));
+    return obs.pipe(map(treatment));
   }
 
   public getListMessage() {
   // tslint:disable-next-line: max-line-length
-    const obs3: Observable<any> = this.http.get('http://open-reza.herokuapp.com/api/messages') ;
+    const obs: Observable<any> = this.http.get('http://open-reza.herokuapp.com/api/messages') ;
 
     const treatment = (response: any) => {
       return response as Message;
     };
 
-    return obs3.pipe(map(treatment));
+    return obs.pipe(map(treatment));
   }
 
-  del(id, i) {
-    const obs3: Observable<any> =this.http
+  public delMessage(id, i) {
+    const obs: Observable<any> = this.http
     .delete(`http://open-reza.herokuapp.com/api/messages/${id}`);
     const treatment = (response: any) => {
       return response as Message;
     };
 
-    return obs3.pipe(map(treatment));
+    return obs.pipe(map(treatment));
   }
 
 }
