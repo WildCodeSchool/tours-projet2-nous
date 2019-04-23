@@ -43,20 +43,20 @@ export class BookingService {
   }
 
   public getListBooking() {
-    const  obs1:Observable<any> = this.service
+    const  obs4:Observable<any> = this.service
     .get('http://open-reza.herokuapp.com/api/establishments/5cadde114170bf000fdb83a9/bookings');
     const  treatment  = (response:any) => {
       return  response as Booking;
     };
-    return  obs1.pipe(map(treatment));
+    return  obs4.pipe(map(treatment));
   }
 
   public deleteBooking(id, index) {
-    const  obs1:Observable<any> = this.service
+    const  obs5:Observable<any> = this.service
     .delete(`http://open-reza.herokuapp.com/api/bookings/${id}`);
     const  treatment  = (response:any) => {
       return  response as Booking;
     };
-    return  obs1.pipe(map(treatment));
+    return  obs5.pipe(map(treatment));
   }
 }
