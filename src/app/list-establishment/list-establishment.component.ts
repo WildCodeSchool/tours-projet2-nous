@@ -25,12 +25,12 @@ export class ListEstablishmentComponent implements OnInit {
         console.log(this.listEstablishment);
       });
     if (this.categorie === undefined) {
-        this.estaDefault = false;
-        this.estaCategorie = true; }
+      this.estaDefault = false;
+      this.estaCategorie = true; }
     else {
-        this.estaDefault = true;
-        this.estaCategorie = false;
-      }
+      this.estaDefault = true;
+      this.estaCategorie = false;
+    }
     console.log(this.categorie);
   }
 

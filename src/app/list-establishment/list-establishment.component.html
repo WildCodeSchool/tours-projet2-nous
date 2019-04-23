@@ -5,13 +5,13 @@
       <div class="card m-4">
         <div class="hovereffect">
           <img
-            class="img-responsive border border-dark col"
-            src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
-
+          class="img-responsive border border-dark col"
+          src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
+          
           <div class="overlay">
             <h2 class="font-weight-bolder">{{ user.name }}</h2>
           </div>
-    
+          
         </div>
         <button class="btn btn-primary" routerLink="/establishments/details">Voir</button>
         <button class="btn btn-primary" (click)="delete(user._id, index)">Delete</button>
@@ -23,20 +23,22 @@
 
 <div class="container mt-5 mb-5" [hidden]="estaCategorie">
   <div class="row">
-    <div *ngFor="let user of tableEstablishment; let index = index" class="col-4">
-      <div *ngIf='user.type===this.categorie' class="card m-4">
-        <div class="hovereffect">
-          <img
+    <div *ngFor="let user of tableEstablishment; let index = index">
+      <div *ngIf='user.type===this.categorie' class="col-4">
+        <div  class="card">
+          <div class="hovereffect">
+            <img
             class="img-responsive border border-dark col"
             src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
-
-          <div class="overlay">
-            <h2 class="font-weight-bolder">{{ user.name }}</h2>
+            
+            <div class="overlay">
+              <h2 class="font-weight-bolder">{{ user.name }}</h2>
+            </div>
+            
           </div>
-    
+          <button class="btn btn-primary" routerLink="/establishments/details">Voir</button>
+          <button class="btn btn-primary" (click)="delete(user._id, index)">Delete</button>
         </div>
-        <button class="btn btn-primary" routerLink="/establishments/details">Voir</button>
-        <button class="btn btn-primary" (click)="delete(user._id, index)">Delete</button>
       </div>
     </div>
   </div>
