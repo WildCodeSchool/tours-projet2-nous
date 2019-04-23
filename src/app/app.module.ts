@@ -13,9 +13,10 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ProfilemessageComponent } from './profilemessage/profilemessage.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { EstablishmentInscriptionComponent }
-  from './establishment-inscription/establishment-inscription.component';
+from './establishment-inscription/establishment-inscription.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
+import { ListeBookingComponent } from './liste-booking/liste-booking.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ProfileComponent } from './profile/profile.component';
     ProfileComponent,
     EstablishmentInscriptionComponent,
     ProfilemessageComponent,
+    ListeBookingComponent,
 
   ],
   imports: [
