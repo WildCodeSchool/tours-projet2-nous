@@ -16,47 +16,47 @@ export class BookingService {
     this.service = http;
   }
   public getBoockingForm(id:string): Observable<Booking> {
-    const  obs1:Observable<any> = this.service
+    const  obs:Observable<any> = this.service
     .get(`http://open-reza.herokuapp.com/api/bookings/${id}`);
     const  treatment  = (response:any) => {
       return  response as Booking;
     };
-    return  obs1.pipe(map(treatment));
+    return  obs.pipe(map(treatment));
   }
 
   public create (form:Booking) {
-    const  obs2:Observable<any> = this.service
+    const  obs:Observable<any> = this.service
     .post('http://open-reza.herokuapp.com/api/bookings', form);
     const  treatment  = (response:any) => {
       return  response as Booking;
     };
-    return  obs2.pipe(map(treatment));
+    return  obs.pipe(map(treatment));
   }
 
   public update (form:Booking, id:string) {
-    const  obs3:Observable<any> = this.service
+    const  obs:Observable<any> = this.service
     .put(`http://open-reza.herokuapp.com/api/bookings/${id}`, form);
     const  treatment  = (response:any) => {
       return  response as Booking;
     };
-    return  obs3.pipe(map(treatment));
+    return  obs.pipe(map(treatment));
   }
 
   public getListBooking() {
-    const  obs4:Observable<any> = this.service
+    const  obs:Observable<any> = this.service
     .get('http://open-reza.herokuapp.com/api/establishments/5cadde114170bf000fdb83a9/bookings');
     const  treatment  = (response:any) => {
       return  response as Booking;
     };
-    return  obs4.pipe(map(treatment));
+    return  obs.pipe(map(treatment));
   }
 
-  public deleteBooking(id, index) {
-    const  obs5:Observable<any> = this.service
+  public deleteBooking(id) {
+    const  obs:Observable<any> = this.service
     .delete(`http://open-reza.herokuapp.com/api/bookings/${id}`);
     const  treatment  = (response:any) => {
       return  response as Booking;
     };
-    return  obs5.pipe(map(treatment));
+    return  obs.pipe(map(treatment));
   }
 }

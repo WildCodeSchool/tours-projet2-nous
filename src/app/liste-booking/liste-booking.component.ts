@@ -26,7 +26,7 @@ export class ListeBookingComponent implements OnInit {
   }
 
   delete(id, index) {
-    this.service.deleteBooking(id, index).subscribe(
+    this.service.deleteBooking(id).subscribe(
       (val) => {
         console.log('DELETE call successful value returned in body',
                     val);
