@@ -1,0 +1,32 @@
+<div class="text-center">
+  <h1>Welcome</h1>
+</div>
+<h1>Mes restaurant</h1>
+<hr>
+<div class="row">
+  <div class="card middle col-3 m-3 " *ngFor="let establishment of tableEstablishment; let index = index">
+    <div class="front">
+      <img src={{establishment.medias[0]?.url}}>
+    </div>
+    <div class="back ">
+      <div class="back-content middle">
+        <h2>{{establishment.name}}</h2>
+        <div class="sm">
+          <button>
+            Voir reservation
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="message">
+    <h1>Message</h1>
+    <hr>
+    <div class="media mt-3" *ngFor="let message of tableMessage">
+    <div class="media-body">
+      <h5 class="mt-2 mb-2 text-center">{{message.from}}</h5>
+      <div class="trait"></div>
+      <p class="mt-2 mb-2 ml-4">{{message.message}}</p>
+    </div>
+</div>

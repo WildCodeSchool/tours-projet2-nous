@@ -1,22 +1,46 @@
 
-<div class="container mt-5 mb-5">
+<div class="container mt-5 mb-5" [hidden]="estaDefault">
   <div class="row">
-    <div *ngFor="let user of tableEstablishment; let index = index" class="col-4">
+    <div *ngFor="let establishment of tableEstablishment; let index = index" class="col-4">
       <div class="card m-4">
         <div class="hovereffect">
           <img
-            class="img-responsive border border-dark col"
-            src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
+          class="img-responsive border border-dark col"
+          src="{{establishment.medias[0]?.url}}">
 
           <div class="overlay">
-            <h2 class="font-weight-bolder">{{ user.name }}</h2>
-            <button class="btn btn-primary" (click)="del(user._id)">{{user._id}}</button>
+            <h2 class="font-weight-bolder">{{ establishment.name }}</h2>
           </div>
-    
+
         </div>
-        <button class="btn btn-primary" (click)="etaDetail(user._id)" routerLink="/establishments/details">Voir</button>
-        <button class="btn btn-primary" (click)="delete(user._id, index)">{{user._id}}</button>
+        <button class="btn btn-primary" (click)="etaDetail(establishment._id)" routerLink="/establishments/details">Voir</button>
+        <button class="btn btn-primary" (click)="delete(establishment._id, index)">Delete</button>
       </div>
     </div>
+  </div>
+</div>
+
+
+<div class="container mt-5 mb-5" [hidden]="estaCategorie">
+  <div class="row">
+    <ng-container *ngFor="let establishment of tableEstablishment; let index = index" >
+        <div *ngIf='establishment.type===this.categorie' class="col-4">
+          <div  class="card m-4">
+            <div class="hovereffect">
+              <img
+              class="img-responsive border border-dark col"
+              src="{{establishment.medias[0]?.url}}">
+
+              <div class="overlay">
+                <h2 class="font-weight-bolder">{{ establishment.name }}</h2>
+              </div>
+
+            </div>
+            <button class="btn btn-primary" routerLink="/establishments/details">Voir</button>
+            <button class="btn btn-primary" (click)="delete(establishment._id, index)">Delete</button>
+          </div>
+        </div>
+    </ng-container>
+
   </div>
 </div>
