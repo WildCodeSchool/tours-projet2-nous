@@ -17,8 +17,7 @@ import { EstablishmentInscriptionComponent }
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
 import { ListMessageComponent } from './list-message/list-message.component';
-import { TimePickerModule } from '@syncfusion/ej2-angular-calendars'
-
+import { TimePickerModule } from '@syncfusion/ej2-angular-calendars';
 
 @NgModule({
   declarations: [
