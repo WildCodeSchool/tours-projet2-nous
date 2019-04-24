@@ -17,6 +17,8 @@ import { EstablishmentInscriptionComponent }
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
 import { ListMessageComponent } from './list-message/list-message.component';
+import { TimePickerModule } from '@syncfusion/ej2-angular-calendars'
+
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { ListMessageComponent } from './list-message/list-message.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    TimePickerModule,
     JwtModule.forRoot({
       config: {
         whitelistedDomains: ['open-reza.herokuapp.com'],
