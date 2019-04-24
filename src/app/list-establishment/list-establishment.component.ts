@@ -26,8 +26,8 @@ export class ListEstablishmentComponent implements OnInit {
       });
     if (this.categorie === undefined) {
       this.estaDefault = false;
-      this.estaCategorie = true; }
-    else {
+      this.estaCategorie = true;
+    } else {
       this.estaDefault = true;
       this.estaCategorie = false;
     }
@@ -49,7 +49,7 @@ export class ListEstablishmentComponent implements OnInit {
             });
   }
 
-  etaDetail(id){
-    
+  etaDetail(id) {
+
   }
 }
