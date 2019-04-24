@@ -14,7 +14,7 @@
           </div>
     
         </div>
-        <button class="btn btn-primary" routerLink="/establishments/details">Voir</button>
+        <button class="btn btn-primary" (click)="etaDetail(user._id)" routerLink="/establishments/details">Voir</button>
         <button class="btn btn-primary" (click)="delete(user._id, index)">{{user._id}}</button>
       </div>
     </div>

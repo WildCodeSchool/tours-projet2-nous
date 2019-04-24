@@ -6,7 +6,7 @@
     (ngSubmit)="onSubmit()"
   >
     <div class="row">
-      <div class="col-6 text-left">
+      <div class="col-6">
         <label for="name" class="control-label text-center required"
           >Nom de l'établissement :
           <input
@@ -15,10 +15,11 @@
             name="name"
             type="text"
             value=""
+            size="50"
           />
         </label>
       </div>
-      <div class="col-6 text-right">
+      <div class="col-6">
         <label for="type" class="text-center"
           >Catégorie :
           <input
@@ -27,6 +28,7 @@
             name="type"
             type="text"
             value=""
+            size="50"
           />
         </label>
       </div>
@@ -91,6 +93,7 @@
           formControlName="description"
           class="form-control"
           name="description"
+          row="3"
         />
       </div>
     </div>
@@ -106,6 +109,7 @@
               name="phone"
               type="tel"
               value=""
+              size="32"
             />
           </label>
         </div>
@@ -118,18 +122,20 @@
               name="email"
               type="email"
               value=""
+              size="32"
             />
           </label>
         </div>
         <div class="col-4">
           <label for="site"
-            >Vous contacter :
+            >Votre site :
             <input
               formControlName="site"
               class="form-control"
               name="site"
               type="url"
               value=""
+              size="32"
             />
           </label>
         </div>
@@ -138,7 +144,7 @@
     <div class="pt-2 pb-2" formGroupName="networks">
       <h2>Networks</h2>
       <div class="row">
-        <div class="col-6 text-left">
+        <div class="col-6">
           <label for="name" class="text-center"
             >Réseau social :
             <input
@@ -147,10 +153,11 @@
               name="name"
               type="text"
               value=""
+              size="50"
             />
           </label>
         </div>
-        <div class="col-6 text-right">
+        <div class="col-6">
           <label for="link" class="text-center"
             >Lien :
             <input
@@ -159,6 +166,7 @@
               name="link"
               type="url"
               value=""
+              size="50"
             />
           </label>
         </div>
@@ -167,33 +175,35 @@
     <div class="pt-2 pb-2" formGroupName="medias">
       <h2>Médias</h2>
       <div class="row">
-        <div class="col-6 text-left">
+        <div class="col-6">
           <label for="url" class="text-center"
             >Photo de votre établissement :
             <input
               formControlName="url"
               name="url"
-              class="form-control"
-              type="string"
+              class="form-control-file"
+              type="file"
               value=""
+              size="50"
             />
           </label>
         </div>
-        <div class="col-6 text-right">
+        <div class="col-6">
           <label for="order" class="text-center"
             >Photo du menu :
             <input
               formControlName="order"
               name="order"
-              class="form-control"
-              type="number"
+              class="form-control-file"
+              type="file"
               value=""
+              size="50"
             />
           </label>
         </div>
       </div>
     </div>
-    <div class="pt-2 pb-2">
+    <div>
       <label for="profile"
         >Profile :
         <input
@@ -202,6 +212,7 @@
           name="profile"
           type="text"
           value=""
+          size="50"
         />
       </label>
     </div>
