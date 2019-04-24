@@ -21,6 +21,7 @@ import { ListEstablishmentComponent } from './list-establishment/list-establishm
 // tslint:disable-next-line: max-line-length
 import { DetailListEstablischmentComponent } from './detail-list-establischment/detail-list-establischment.component';
 import { ListMessageComponent } from './list-message/list-message.component';
+import { DetailsProfileComponent } from './details-profile/details-profile.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ListMessageComponent } from './list-message/list-message.component';
     ListEstablishmentComponent,
     DetailListEstablischmentComponent,
     ListMessageComponent,
+    DetailsProfileComponent,
   ],
   imports: [
     BrowserModule,
