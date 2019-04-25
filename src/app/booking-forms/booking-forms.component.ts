@@ -14,6 +14,8 @@ export class BookingFormsComponent implements OnInit {
   public bookingForm: Booking;
   title = 'BookingService';
   public id: string;
+  public profile;
+
   constructor(public service: BookingService, public formBuilder: FormBuilder,
               public activetedroute: ActivatedRoute) {
 
@@ -51,6 +53,7 @@ export class BookingFormsComponent implements OnInit {
             console.log(booking);
           });
       }
+      this.profile = this.service.profile;
     });
   }
 

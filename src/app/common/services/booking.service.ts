@@ -11,10 +11,12 @@ import { Booking } from '../models/booking-model';
 export class BookingService {
 
   public service: HttpClient;
+  public profile;
 
   constructor(public http: HttpClient) {
     this.service = http;
   }
+
   public getBoockingForm(id:string): Observable<Booking> {
     const  obs:Observable<any> = this.service
     .get(`http://open-reza.herokuapp.com/api/bookings/${id}`);

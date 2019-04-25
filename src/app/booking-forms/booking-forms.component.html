@@ -1,5 +1,5 @@
 <div class="mt-4 mb-4 pt-2 pb-2 bg-opacity-20 container rounded text-center form-horizontal">
-  
+
   <form [formGroup]="userForm" (submit)="submit()">
     <div formGroupName="date">
       <h4 class="pt-2 pb-2">Date</h4>
@@ -14,7 +14,7 @@
         <input type="date" formControlName="end">
       </label>
     </div>
-    
+
     <div formGroupName="owner">
       <h4 class="pt-2 pb-2">Owner info</h4>
       <label>
@@ -43,7 +43,7 @@
           <input type="text" formControlName="number">
         </label>
       </div>
-      
+
       <div formGroupName="contact">
         <h4 class="pt-2 pb-2">Contact</h4>
         <label>
@@ -69,13 +69,13 @@
         establishment :
       </div>
       <div>
-        <input type="text" class="pt-2 pb-2" formControlName="establishment">
+        <input type="text" class="pt-2 pb-2" formControlName="establishment" value={{this.profile}}>
       </div>
     </label>
     <div class="pt-2 pb-2">
       <input class="btn btn-primary" type="submit" value="submit">
     </div>
-    
+
   </form>
-  
+
 </div>

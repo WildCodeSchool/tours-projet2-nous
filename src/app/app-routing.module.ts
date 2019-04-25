@@ -14,14 +14,15 @@ import { ListMessageComponent } from './list-message/list-message.component';
 import { DetailsProfileComponent } from './details-profile/details-profile.component';
 
 const routes: Routes = [
+  { path: 'establishments/details/:id', component: DetailListEstablischmentComponent},
+  { path: 'bookings', component: BookingFormsComponent },
   { path: 'establishments/create', component: EstablishmentInscriptionComponent },
-  { path: 'establishments/details', component: DetailListEstablischmentComponent },
   { path: 'profiles/establishments', component: ListEstablishmentComponent },
-  { path: 'establishments/:id', component: EstablishmentInscriptionComponent },
+  // { path: 'establishments/:id', component: EstablishmentInscriptionComponent },
   { path: '', component: CategorieComponent },
   { path: 'profiles', component: ProfileComponent },
   { path: 'bookings/list', component: ListeBookingComponent },
-  { path: 'bookings/create', component: BookingFormsComponent },
+  // { path: 'bookings/create', component: BookingFormsComponent },
   { path: 'bookings/:id', component: BookingFormsComponent },
   { path: 'bookings/:id/update', component: BookingFormsComponent },
   { path: 'messages/:id', component: ProfilemessageComponent },
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'messages/:id', component: ProfilemessageComponent },
   { path: 'messages', component: ProfilemessageComponent },
   { path: 'details/profile', component: DetailsProfileComponent },
+
 ];
 
 @NgModule({
