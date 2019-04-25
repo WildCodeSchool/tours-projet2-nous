@@ -43,7 +43,6 @@ export class DetailListEstablischmentComponent implements OnInit {
         this.comments = establishment.comments;
         this.menus = establishment.menus;
       });
-    }
-    )
+    });
   }
 }

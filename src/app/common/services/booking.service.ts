@@ -11,7 +11,6 @@ import { Booking } from '../models/booking-model';
 export class BookingService {
 
   public service: HttpClient;
-  public profile;
 
   constructor(public http: HttpClient) {
     this.service = http;

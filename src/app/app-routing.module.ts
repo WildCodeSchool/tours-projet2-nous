@@ -14,7 +14,7 @@ import { ListMessageComponent } from './list-message/list-message.component';
 import { DetailsProfileComponent } from './details-profile/details-profile.component';
 
 const routes: Routes = [
-  { path: 'establishments/details/:id', component: DetailListEstablischmentComponent},
+  { path: 'establishments/details/:id', component: DetailListEstablischmentComponent },
   { path: 'bookings/:establishment', component: BookingFormsComponent },
   { path: 'establishments/create', component: EstablishmentInscriptionComponent },
   { path: 'profiles/establishments', component: ListEstablishmentComponent },
