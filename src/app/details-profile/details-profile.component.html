@@ -1,14 +1,12 @@
 <div class="text-center mt-5">
   <h1>Welcome</h1>
 </div>
-<div class="ml-4">
-<h1 >My restaurant</h1>
-</div>
-
-<div class="row d-flex justify-content-around">
-  <div class="card middle lg-4 sm-12 xs- m-3 " *ngFor="let establishment of tableEstablishment; let index = index">
+<h1>My restaurant</h1>
+<hr />
+<div class="row">
+  <div class="card middle col-3 m-3 " *ngFor="let establishment of tableEstablishment; let index = index">
     <div class="front">
-      <img src={{establishment.medias[0]?.url}}>
+      <img src="{{ establishment.medias[0]?.url }}" />
     </div>
     <div class="back ">
       <div class="back-content middle text-center mt-4 mb-4">
@@ -19,10 +17,10 @@
           </button>
         </div>
         <div class="sm mt-4">
-            <button class="btn btn-danger">
-              Update
-            </button>
-          </div>
+          <button class="btn btn-danger">
+            Update
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -33,14 +31,14 @@
 <div class="message mt-5">
   <div>
     <div class="ml-4">
-    <h1 >Message</h1>
+      <h1>Message</h1>
     </div>
-    
-    <div class="media mt-5 mb-4" *ngFor="let message of tableMessage">
-    <div class="media-body">
-      <h5 class="mt-2 mb-2 text-center">{{message.from}}</h5>
-      <div class="trait"></div>
-      <p class="mt-4 mb-4 ml-4">{{message.message}}</p>
-    </div>
-</div>
 
+    <div class="media mt-5 mb-4" *ngFor="let message of tableMessage">
+      <div class="media-body">
+        <h5 class="mt-2 mb-2 text-center">{{message.from}}</h5>
+        <div class="trait"></div>
+        <p class="mt-4 mb-4 ml-4">{{message.message}}</p>
+      </div>
+    </div>
+  </div>

@@ -1,5 +1,7 @@
-<div class="mt-4 mb-4 pt-2 pb-2 bg-opacity-20 container rounded text-center form-horizontal">
-  <h1>Inscription d'établissement</h1>
+<div
+  class="mt-4 mb-4 pt-2 pb-2 bg-opacity-20 container rounded text-center form-horizontal"
+>
+  <h1>Establishment registration</h1>
   <form
     class="form-group"
     [formGroup]="establishmentForm"
@@ -7,137 +9,110 @@
   >
     <div class="row">
       <div class="col-6">
-        <label for="name" class="control-label text-center required"
-          >Nom de l'établissement :
-          <input
-            formControlName="name"
-            class="form-control"
-            name="name"
-            type="text"
-            value=""
-            size="50"
-          />
-        </label>
+        <input
+          formControlName="name"
+          class="form-control"
+          name="name"
+          type="text"
+          placeholder="Establishment name"
+          size="50"
+        />
       </div>
       <div class="col-6">
-        <label for="type" class="text-center"
-          >Catégorie :
-          <input
-            formControlName="type"
-            class="form-control"
-            name="type"
-            type="text"
-            value=""
-            size="50"
-          />
-        </label>
+        <input
+          formControlName="type"
+          class="form-control"
+          name="type"
+          type="text"
+          placeholder="Category"
+          size="50"
+        />
       </div>
     </div>
     <div class="pt-2 pb-2" formGroupName="address">
-      <h2>Adresse</h2>
+      <h2>Address</h2>
       <div class="row">
         <div class="col-3">
-          <label for="number"
-            >Numéro :
-            <input
-              formControlName="number"
-              class="form-control"
-              name="number"
-              type="text"
-              value=""
-            />
-          </label>
+          <input
+            formControlName="number"
+            class="form-control"
+            name="number"
+            type="text"
+            placeholder="Street number"
+          />
         </div>
         <div class="col-3">
-          <label for="street"
-            >Rue :
-            <input
-              formControlName="street"
-              class="form-control"
-              name="street"
-              type="text"
-              value=""
-            />
-          </label>
+          <input
+            formControlName="street"
+            class="form-control"
+            name="street"
+            type="text"
+            placeholder="Street name"
+          />
         </div>
         <div class="col-3">
-          <label for="zipCode"
-            >Code postal :
-            <input
-              formControlName="zipCode"
-              class="form-control"
-              name="zipCode"
-              type="text"
-              value=""
-            />
-          </label>
+          <input
+            formControlName="zipCode"
+            class="form-control"
+            name="zipCode"
+            type="text"
+            placeholder="Zip code"
+          />
         </div>
         <div class="col-3">
-          <label for="city"
-            >Ville :
-            <input
-              formControlName="city"
-              class="form-control"
-              name="city"
-              type="text"
-              value=""
-            />
-          </label>
+          <input
+            formControlName="city"
+            class="form-control"
+            name="city"
+            type="text"
+            placeholder="City"
+          />
         </div>
       </div>
     </div>
     <h2>Description</h2>
     <div class="row">
-      <div class="col-12">
-        <input
-          formControlName="description"
+      <div class="col-1"></div>
+      <div class="col-10 text-center">
+        <textarea
           class="form-control"
-          name="description"
-          row="3"
-        />
+          formControlName="message"
+          placeholder="Describe your establishment"
+        ></textarea>
       </div>
     </div>
     <div class="pt-2 pb-2" formGroupName="contact">
       <h2>Contact</h2>
       <div class="row">
         <div class="col-4">
-          <label for="phone"
-            >Numéro de téléphone :
-            <input
-              formControlName="phone"
-              class="form-control"
-              name="phone"
-              type="tel"
-              value=""
-              size="32"
-            />
-          </label>
+          <input
+            formControlName="phone"
+            class="form-control"
+            name="phone"
+            type="tel"
+            placeholder="Phone number"
+            size="32"
+          />
         </div>
         <div class="col-4">
-          <label for="email"
-            >E-mail :
-            <input
-              formControlName="email"
-              class="form-control"
-              name="email"
-              type="email"
-              value=""
-              size="32"
-            />
-          </label>
+          <input
+            formControlName="email"
+            class="form-control"
+            name="email"
+            type="email"
+            placeholder="E-mail"
+            size="32"
+          />
         </div>
         <div class="col-4">
-          <label for="site"
-            >Votre site :
-            <input
-              formControlName="site"
-              class="form-control"
-              name="site"
-              type="url"
-              value=""
-              size="32"
-            />
-          </label>
+          <input
+            formControlName="site"
+            class="form-control"
+            name="site"
+            type="url"
+            placeholder="Website"
+            size="32"
+          />
         </div>
       </div>
     </div>
@@ -145,77 +120,70 @@
       <h2>Networks</h2>
       <div class="row">
         <div class="col-6">
-          <label for="name" class="text-center"
-            >Réseau social :
-            <input
-              formControlName="name"
-              class="form-control"
-              name="name"
-              type="text"
-              value=""
-              size="50"
-            />
-          </label>
+          <input
+            formControlName="name"
+            class="form-control"
+            name="name"
+            type="text"
+            placeholder="Social networks"
+            size="50"
+          />
         </div>
         <div class="col-6">
-          <label for="link" class="text-center"
-            >Lien :
-            <input
-              formControlName="link"
-              class="form-control"
-              name="link"
-              type="url"
-              value=""
-              size="50"
-            />
-          </label>
+          <input
+            formControlName="link"
+            class="form-control"
+            name="link"
+            type="url"
+            placeholder="Link"
+            size="50"
+          />
         </div>
       </div>
     </div>
     <div class="pt-2 pb-2" formGroupName="medias">
-      <h2>Médias</h2>
+      <h2>Medias</h2>
       <div class="row">
         <div class="col-6">
           <label for="url" class="text-center"
-            >Photo de votre établissement :
+            >Picture :
             <input
               formControlName="url"
               name="url"
               class="form-control-file"
               type="file"
-              value=""
+              placeholder=""
               size="50"
             />
           </label>
         </div>
         <div class="col-6">
           <label for="order" class="text-center"
-            >Photo du menu :
+            >Menu :
             <input
               formControlName="order"
               name="order"
               class="form-control-file"
               type="file"
-              value=""
+              placeholder=""
               size="50"
             />
           </label>
         </div>
       </div>
     </div>
-    <div>
-      <label for="profile"
-        >Profile :
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
         <input
           formControlName="profile"
           class="form-control"
           name="profile"
           type="text"
-          value=""
-          size="50"
+          placeholder="Profile ID"
         />
-      </label>
+      </div>
     </div>
-    <input class="btn btn-danger" type="submit" />
+    <input class="btn btn-danger" type="submit" value="Submit" />
   </form>
 </div>
