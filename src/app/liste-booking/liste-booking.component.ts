@@ -4,7 +4,8 @@ import { BookingService } from '../common/services/booking.service';
 import { JsonPipe } from '@angular/common';
 import { CurrencyIndex } from '@angular/common/src/i18n/locale_data';
 import { findIndex } from 'rxjs/operators';
-
+import { EstablishmentService } from '../common/services/establishment.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 @Component({
   selector: 'app-liste-booking',
   templateUrl: './liste-booking.component.html',
@@ -15,14 +16,18 @@ export class ListeBookingComponent implements OnInit {
   public listBooking;
   public tableLists = [];
 
-  constructor(public service:BookingService) {}
+  constructor(public service:BookingService, public serv:EstablishmentService,
+              public activatedRoute:ActivatedRoute) {}
 
   ngOnInit() {
-    this.service.getListBooking().subscribe(
+    this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
+      const etablissement = params.get('etablissement');
+      this.service.getListBooking(etablissement).subscribe(
           (booking) => {
             this.listBooking  =  booking;
             this.tableLists = this.listBooking;
           });
+    });
   }
 
   delete(id, index) {

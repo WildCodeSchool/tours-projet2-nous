@@ -52,7 +52,14 @@ export class EstablishmentInscriptionComponent implements OnInit {
         this.establishment = establishment;
         this.establishmentForm.patchValue(establishment);
 // tslint:disable-next-line: brace-style
-      }); }
+      }); } else {
+        const etablissementId = params.get('etablissementId');
+        this.service.getEstablishment(etablissementId).subscribe(
+        (establishment: Establishment) => {
+          this.establishment = establishment;
+          this.establishmentForm.patchValue(establishment);
+        });
+      }
     },
     );
   }

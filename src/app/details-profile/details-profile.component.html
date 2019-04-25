@@ -11,26 +11,24 @@
     <div class="back ">
       <div class="back-content middle text-center mt-4 mb-4">
         <h2>{{establishment.name}}</h2>
-        <div class="sm mt-3">
-          <button class="btn btn-danger">
+        <div class="sm mt-4">
+          <button class="btn btn-danger" [routerLink]="['/bookings/list', establishment._id]">
             Reservation
           </button>
         </div>
-        <div class="sm mt-3">
-            <button class="btn btn-danger">
-              Update
-            </button>
-          </div>
-      <div class="sm mt-3">
-        <button (click)="delete(establishment._id, index)" class="btn btn-danger">
-          Delete
-        </button>
+        <div class="sm mt-4">
+          <button class="btn btn-danger" [routerLink]="['/establishments/update', establishment._id]">
+            Update
+          </button>
+        </div>
       </div>
     </div>
   </div>
 </div>
+<div class="row">
 <div class="d-flex justify-content-around">
-  <button class="btn btn-danger mt-4 mb-4">Create establishment</button>
+  <button class="btn btn-danger mt-4 mb-4" routerLink="/establishments/create">Create establishment</button>
+</div>
 </div>
 <div class="message mt-4">
   <div>

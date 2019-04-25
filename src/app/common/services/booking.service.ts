@@ -43,9 +43,9 @@ export class BookingService {
     return  obs.pipe(map(treatment));
   }
 
-  public getListBooking() {
+  public getListBooking(id) {
     const  obs:Observable<any> = this.service
-    .get('http://open-reza.herokuapp.com/api/establishments/5cadde114170bf000fdb83a9/bookings');
+    .get(`http://open-reza.herokuapp.com/api/establishments/${id}/bookings`);
     const  treatment  = (response:any) => {
       return  response as Booking;
     };
