@@ -14,6 +14,8 @@ export class BookingFormsComponent implements OnInit {
   public bookingForm: Booking;
   title = 'BookingService';
   public id: string;
+  public cacheId = true;
+
   constructor(public service: BookingService, public formBuilder: FormBuilder,
               public activetedroute: ActivatedRoute) {
 
@@ -43,6 +45,9 @@ export class BookingFormsComponent implements OnInit {
   ngOnInit() {
     this.activetedroute.paramMap.subscribe((params: ParamMap) => {
       const id = params.get('id');
+      // this.bookingForm.establishment= id;
+      const establishment = params.get('establishment');
+      this.userForm.get('establishment').patchValue(establishment);
       if (id) {
         this.service.getBoockingForm(id).subscribe(
           (booking: Booking) => {

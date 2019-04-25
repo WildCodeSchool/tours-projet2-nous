@@ -4,6 +4,8 @@ import { EstablishmentService } from '../common/services/establishment.service';
 import { Establishment } from '../common/models/establishment.model';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { BookingService } from '../common/services/booking.service';
+
 @Component({
   selector: 'app-detail-list-establischment',
   templateUrl: './detail-list-establischment.component.html',
@@ -18,6 +20,7 @@ export class DetailListEstablischmentComponent implements OnInit {
   public time;
   public commentForm: FormGroup;
 
+  public id;
   showNavigationArrows = true;
   showNavigationIndicators = true;
   establishment: Establishment;
@@ -25,25 +28,23 @@ export class DetailListEstablischmentComponent implements OnInit {
     () => `https://picsum.photos/900/500?random&t=${Math.random()}`,
   );
 
-  // tslint:disable-next-line: max-line-length
-  constructor(
-    config: NgbCarouselConfig,
-    private fb: FormBuilder,
-    public service: EstablishmentService,
-    public activatedRoute: ActivatedRoute,
-  ) {
+// tslint:disable-next-line: max-line-length
+  constructor(private fb: FormBuilder, config: NgbCarouselConfig, public serv: BookingService, public service: EstablishmentService, public activatedRoute: ActivatedRoute) {
+    // customize default values of carousels used by this component tree
+    config.showNavigationArrows = true;
+    config.showNavigationIndicators = true;
     this.commentForm = this.fb.group({
       name:[''],
       comment:[''],
     });
-    // customize default values of carousels used by this component tree
-    config.showNavigationArrows = true;
-    config.showNavigationIndicators = true;
   }
   ngOnInit() {
-    this.service
-      .getEstablishment(this.service.id)
-      .subscribe((establishment: Establishment) => {
+    this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
+      const id = params.get('id');
+      this.id = id;
+      console.log(id);
+      this.service.getEstablishment(this.service.id).subscribe(
+      (establishment: Establishment) => {
         this.establishment = establishment;
         this.description = establishment.description;
         this.name = establishment.name;
@@ -51,6 +52,6 @@ export class DetailListEstablischmentComponent implements OnInit {
         this.comments = establishment.comments;
         this.menus = establishment.menus;
       });
+    });
   }
-
 }
