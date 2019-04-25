@@ -66,11 +66,9 @@
         <input class="pt-2 pb-2" type="text" formControlName="numbers">
       </div>
       <div class="pt-2 pb-2">
-        establishment :
       </div>
       <div>
-        <input type="text" class="pt-2 pb-2" formControlName="establishment" >
-        <!-- value={{this.profile}} -->
+        <input type="text" class="pt-2 pb-2" formControlName="establishment" [hidden]="cacheId">
       </div>
     </label>
     <div class="pt-2 pb-2">
