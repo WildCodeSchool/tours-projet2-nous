@@ -15,7 +15,7 @@ import { DetailsProfileComponent } from './details-profile/details-profile.compo
 
 const routes: Routes = [
   { path: 'establishments/details/:id', component: DetailListEstablischmentComponent},
-  { path: 'bookings', component: BookingFormsComponent },
+  { path: 'bookings/:establishment', component: BookingFormsComponent },
   { path: 'establishments/create', component: EstablishmentInscriptionComponent },
   { path: 'profiles/establishments', component: ListEstablishmentComponent },
   // { path: 'establishments/:id', component: EstablishmentInscriptionComponent },

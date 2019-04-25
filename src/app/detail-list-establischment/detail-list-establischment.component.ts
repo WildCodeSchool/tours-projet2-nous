@@ -32,7 +32,7 @@ export class DetailListEstablischmentComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
       const id = params.get('id');
-      this.serv.profile = id;
+      this.id = id;
       console.log(id);
       this.service.getEstablishment(this.service.id).subscribe(
       (establishment: Establishment) => {

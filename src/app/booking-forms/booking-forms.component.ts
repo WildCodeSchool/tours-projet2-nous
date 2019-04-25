@@ -45,6 +45,10 @@ export class BookingFormsComponent implements OnInit {
   ngOnInit() {
     this.activetedroute.paramMap.subscribe((params: ParamMap) => {
       const id = params.get('id');
+      // this.bookingForm.establishment= id;
+        const establishment = params.get('establishment');
+        this.profile = establishment;
+        this.userForm.get('establishment').patchValue(establishment);
       if (id) {
         this.service.getBoockingForm(id).subscribe(
           (booking: Booking) => {
@@ -53,7 +57,6 @@ export class BookingFormsComponent implements OnInit {
             console.log(booking);
           });
       }
-      this.profile = this.service.profile;
     });
   }
 
