@@ -14,6 +14,7 @@ import { ListMessageComponent } from './list-message/list-message.component';
 import { DetailsProfileComponent } from './details-profile/details-profile.component';
 
 const routes: Routes = [
+  { path: 'bookings/list/:etablissement', component: ListeBookingComponent },
   { path: 'establishments/details/:id', component: DetailListEstablischmentComponent },
   { path: 'bookings/:establishment', component: BookingFormsComponent },
   { path: 'establishments/create', component: EstablishmentInscriptionComponent },
@@ -21,7 +22,6 @@ const routes: Routes = [
   { path: 'establishments/:id', component: EstablishmentInscriptionComponent },
   { path: '', component: CategorieComponent },
   { path: 'profiles', component: ProfileComponent },
-  { path: 'bookings/list', component: ListeBookingComponent },
   // { path: 'bookings/create', component: BookingFormsComponent },
   { path: 'bookings/:id', component: BookingFormsComponent },
   { path: 'bookings/:id/update', component: BookingFormsComponent },
