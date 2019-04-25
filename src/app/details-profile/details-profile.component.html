@@ -1,26 +1,30 @@
 <div class="text-center mt-5">
   <h1>Welcome</h1>
 </div>
-<h1>My restaurant</h1>
+<h1 class="message mt-4">My restaurant</h1>
 <hr />
-<div class="row">
-  <div class="card middle col-3 m-3 " *ngFor="let establishment of tableEstablishment; let index = index">
+<div class="row d-flex justify-content-around">
+  <div class="card middle lg-4 sm-12 xs- m-3 " *ngFor="let establishment of tableEstablishment; let index = index">
     <div class="front">
-      <img src="{{ establishment.medias[0]?.url }}" />
+      <img src={{establishment.medias[0]?.url}}>
     </div>
     <div class="back ">
       <div class="back-content middle text-center mt-4 mb-4">
         <h2>{{establishment.name}}</h2>
-        <div class="sm mt-4">
+        <div class="sm mt-3">
           <button class="btn btn-danger">
             Reservation
           </button>
         </div>
-        <div class="sm mt-4">
-          <button class="btn btn-danger">
-            Update
-          </button>
-        </div>
+        <div class="sm mt-3">
+            <button class="btn btn-danger">
+              Update
+            </button>
+          </div>
+      <div class="sm mt-3">
+        <button (click)="delete(establishment._id, index)" class="btn btn-danger">
+          Delete
+        </button>
       </div>
     </div>
   </div>
@@ -28,7 +32,7 @@
 <div class="d-flex justify-content-around">
   <button class="btn btn-danger mt-4 mb-4">Create establishment</button>
 </div>
-<div class="message mt-5">
+<div class="message mt-4">
   <div>
     <div class="ml-4">
       <h1>Message</h1>
