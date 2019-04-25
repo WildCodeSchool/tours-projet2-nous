@@ -37,6 +37,7 @@ const routes: Routes = [
   { path: 'details/profile', component: DetailsProfileComponent },
   { path: '', component: CategorieComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
+  
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

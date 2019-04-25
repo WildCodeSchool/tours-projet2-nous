@@ -24,12 +24,12 @@ export class SearchbarComponent implements OnInit {
 
   // defined the array of data
   public data: { [key: string]: Object }[] = [
-    { Id: 's3', Country: 'Alaska' },
-    { Id: 's1', Country: 'California' },
-    { Id: 's2', Country: 'Florida' },
-    { Id: 's4', Country: 'Georgia' }];
+    { Id: 's3', Restaurant: 'Alaska' },
+    { Id: 's1', Restaurant: 'California' },
+    { Id: 's2', Restaurant: 'Florida' },
+    { Id: 's4', Restaurant: 'Georgia' }];
   // maps the appropriate column to fields property
-  public fields: Object = { text: 'Country', value: 'Id' };
+  public fields: Object = { text: 'Restaurant', value: 'Id' };
   // set the placeholder to the DropDownList input
   public text: string = 'Restaurant...';
   // Bind the filter event
