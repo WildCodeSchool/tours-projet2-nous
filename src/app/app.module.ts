@@ -18,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
 import { ListMessageComponent } from './list-message/list-message.component';
 import { TimePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { DropDownListModule, DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { TimePickerModule } from '@syncfusion/ej2-angular-calendars';
     EstablishmentInscriptionComponent,
     ProfilemessageComponent,
     ListMessageComponent,
-
+    AppComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +45,9 @@ import { TimePickerModule } from '@syncfusion/ej2-angular-calendars';
     ReactiveFormsModule,
     HttpClientModule,
     TimePickerModule,
+    DropDownListModule,
+   
+    
     JwtModule.forRoot({
       config: {
         whitelistedDomains: ['open-reza.herokuapp.com'],
@@ -51,7 +57,11 @@ import { TimePickerModule } from '@syncfusion/ej2-angular-calendars';
       },
     }),
   ],
+ 
   providers: [],
   bootstrap: [AppComponent],
+  exports:[
+    DropDownListComponent,
+  ]
 })
 export class AppModule { }

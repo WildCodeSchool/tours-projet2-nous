@@ -17,3 +17,12 @@
   .e-input-group.e-control-wrapper:not(.e-disabled) .e-input-group-icon:active {
     background: rgb(0, 120, 214);
   }
+  
+  .form-control{
+      background: transparent;
+      border-color:black;
+  }
+  .color{
+      color:black;
+  }
+  

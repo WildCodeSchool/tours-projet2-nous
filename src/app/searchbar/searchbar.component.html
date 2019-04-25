@@ -5,16 +5,16 @@
         <div class="row w-100">
 
           <div class="col-lg-3 col-md-4 col-sm-12">
-            <input class="btn btn-secondary m-2 bg-light" placeholder="Nom du restaurant ..." type="text" />
-          </div>
+              <ejs-dropdownlist id='ddlelement' #samples [dataSource]='data' [fields]='fields' [placeholder]='text' [allowFiltering]='true' (filtering)='onFiltering($event)'></ejs-dropdownlist>
+              </div>
 
           <form class="form-inline col-lg-3 col-md-4 col-sm-12 ">
-            <div class="form-group  ">
-              <div class="input-group  ">
-                <input class="form-control " placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker
+            <div class="form-group">
+              <div class="input-group">
+                <input class="form-control color " placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker
                   #d="ngbDatepicker">
                 <div class="input-group-append ">
-                  <button class="btn btn-danger calendar " (click)="d.toggle()" type="button"></button>
+                  <button class="btn btn-dark calendar " (click)="d.toggle()" type="button"></button>
                 </div>
               </div>
             </div>
@@ -22,22 +22,11 @@
 
          
           <div ngbDropdown class="col-lg-2 col-md-6 col-sm-4">
-            <button class="btn btn-danger m-2 " ngbDropdownToggle>
-              Nombre de personnes
-            </button>
-
-            <div ngbDropdownMenu="dropdownBasic1">
-              <button ngbDropdownItem>1</button>
-              <button ngbDropdownItem>2</button>
-              <button ngbDropdownItem>3</button>
-              <button ngbDropdownItem>4</button>
-              <button ngbDropdownItem>5</button>
-              <button ngbDropdownItem>5+</button>
-            </div>
+              <ejs-dropdownlist id='ddlelement' #samples [dataSource]='data1' [placeholder]='placeholder'></ejs-dropdownlist>
           </div>
           <div id="container" placeholder="Choose your ... "type="text">
               <!-- <input type="text" id="element"> -->
-              <ejs-timepicker></ejs-timepicker>
+              <ejs-timepicker [value]='dateValue' [min]='minValue' [max]='maxValue'></ejs-timepicker>
             </div>
 
           <div class="col-lg-2 col-md-6 col-sm-12 ">
