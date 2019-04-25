@@ -12,6 +12,8 @@ import { DetailListEstablischmentComponent } from
   './detail-list-establischment/detail-list-establischment.component';
 import { ListMessageComponent } from './list-message/list-message.component';
 import { DetailsProfileComponent } from './details-profile/details-profile.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './guards';
 
 const routes: Routes = [
   { path: 'establishments/create', component: EstablishmentInscriptionComponent },
@@ -31,6 +33,11 @@ const routes: Routes = [
   { path: 'messages/:id', component: ProfilemessageComponent },
   { path: 'messages', component: ProfilemessageComponent },
   { path: 'details/profile', component: DetailsProfileComponent },
+  { path: '', component: CategorieComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent },
+
+    // otherwise redirect to home
+    { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
