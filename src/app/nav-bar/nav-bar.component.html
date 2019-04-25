@@ -1,10 +1,14 @@
-<div class="custom-padding">
-    <nav>
-        <div class="logo">Logo</div>
-        <ul class="menu-area">
-            <li><a href="#">Categorie</a></li>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#" >
+            <img src="assets/img/logoBDG.png" width="30%">
+        </a>
+        <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
+          <ul class="navbar-nav mr-auto">
             <li><a href="#">Contact Us</a></li>
-            <li><a routerLink="profiles/establishments">List</a></li>
             <li><a routerLink="profiles">Login</a></li>
             <li><a routerLink="establishments/5cadde114170bf000fdb83a9/update">eta put</a></li>
             <li><a routerLink="establishments/create">create etablissement</a></li>
