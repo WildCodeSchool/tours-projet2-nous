@@ -13,7 +13,8 @@
           </div>
 
         </div>
-        <button class="btn btn-primary" (click)="etaDetail(establishment._id)" routerLink="/establishments/details">Voir</button>
+        <!-- <button class="btn btn-primary" (click)="etaDetail(establishment._id)" routerLink="/establishments/details">Voir</button> -->
+        <button class="btn btn-primary" [routerLink]="['/establishments/details', establishment._id]">Voir</button>
         <button class="btn btn-primary" (click)="delete(establishment._id, index)">Delete</button>
       </div>
     </div>
@@ -36,7 +37,7 @@
               </div>
 
             </div>
-            <button class="btn btn-primary" routerLink="/establishments/details">Voir</button>
+            <button class="btn btn-primary" [routerLink]="['/establishments/details', establishment._id]">Voir</button>
             <button class="btn btn-primary" (click)="delete(establishment._id, index)">Delete</button>
           </div>
         </div>

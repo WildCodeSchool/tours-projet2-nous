@@ -1,27 +1,18 @@
-
 <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="#" >
-            <img src="assets/img/logoBDG.png" width="30%">
-        </a>
-        <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
-          <ul class="navbar-nav mr-auto">
-            <li><a href="#">Contact Us</a></li>
-            <li><a routerLink="profiles">Login</a></li>
-            <li><a routerLink="establishments/5cadde114170bf000fdb83a9/update">eta put</a></li>
-            <li><a routerLink="establishments/create">create etablissement</a></li>
-            <li><a routerLink="bookings/5cadddfd4170bf000fdb8354">booking link</a></li>
-            <li><a routerLink="establishments/5cadde064170bf000fdb835c">Establishment inscription</a></li>
-            <li><a routerLink="messages/5cadde134170bf000fdb83d8">message link</a></li>
-            <li><a routerLink="bookings/create">booking create</a></li>
-            <li><a routerLink="bookings/5cadde124170bf000fdb83d2/update">booking update</a></li>
-            <li><a routerLink="establishments/details">detail</a></li>
-            <li><a routerLink="details/profile">Details Profile</a></li>
-        </ul>
-      </div>
-    </nav>
-
-
-
+  <a class="navbar-brand" href="#">
+    <img src="assets/img/logoBDG.png" width="40%" />
+  </a>
+  <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" [ngClass]="{ show: navbarOpen }">
+    <ul class="navbar-nav mr-auto">
+      <li>
+        <a routerLink="#">Categories</a>
+      </li>
+      <li><a routerLink="details/profile">Details Profile</a></li>
+      <li><a href="profiles/establishments">All restaurants</a></li>
+      <li><a routerLink="profiles">Login</a></li>
+    </ul>
+  </div>
+</nav>

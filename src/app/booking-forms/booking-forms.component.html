@@ -1,52 +1,46 @@
 <div class="mt-4 mb-4 pt-2 pb-2 bg-opacity-20 container rounded text-center form-horizontal">
-  
+  <h1>Booking registration</h1>
   <form [formGroup]="userForm" (submit)="submit()">
     <div formGroupName="date">
-      <h4 class="pt-2 pb-2">Date</h4>
-      <label>
-        <div class="pt-2 pb-2">
-          start :
+      <h2 class="pt-2 pb-2">Date</h2>
+      <div class="row">
+        <div class="pt-2 pb-2 col-6">
+          <input type="date" placeholder="start" formControlName="start" class="form-control" />
         </div>
-        <input type="date" formControlName="start">
-        <div class="pt-2 pb-2">
-          end :
+        <div class="pt-2 pb-2 col-6">
+          <input type="date" placeholder="End" formControlName="end" class="form-control" />
         </div>
-        <input type="date" formControlName="end">
-      </label>
-    </div>
-    
-    <div formGroupName="owner">
-      <h4 class="pt-2 pb-2">Owner info</h4>
-      <label>
-        <div class="pt-2 pb-2">
-          name :
-        </div>
-        <input type="text" formControlName="name">
-      </label>
-      <div formGroupName="address">
-        <label>
-          <div class="pt-2 pb-2">
-            street :
-          </div>
-          <input type="text" formControlName="street">
-          <div class="pt-2 pb-2">
-            zip :
-          </div>
-          <input type="text" formControlName="zipCode">
-          <div class="pt-2 pb-2">
-            city :
-          </div>
-          <input type="text" formControlName="city">
-          <div class="pt-2 pb-2">
-            number :
-          </div>
-          <input type="text" formControlName="number">
-        </label>
       </div>
-      
-      <div formGroupName="contact">
-        <h4 class="pt-2 pb-2">Contact</h4>
-        <label>
+    </div>
+
+    <div formGroupName="owner">
+      <h2 class="pt-2 pb-2">Booker info</h2>
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="pt-2 pb-2 col-6">
+          <input type="text" placeholder="Name" formControlName="name" class="form-control" />
+        </div>
+      </div>
+    </div>
+
+    <div formGroupName="address">
+      <div class="row">
+        <div class="col-3">
+          <input type="text" formControlName="number" placeholder="Street number" class="form-control" />
+        </div>
+        <div class="col-3">
+          <input type="text" placeholder="Street name" formControlName="street" class="form-control" />
+        </div>
+        <div class="col-3">
+          <input type="text" placeholder="Zip code" formControlName="zipCode" class="form-control" />
+        </div>
+        <div class="col-3">
+          <input type="text" placeholder="City" formControlName="city" class="form-control" />
+          <input type="text" formControlName="number">
+        </div>
+
+        <div formGroupName="contact">
+          <h4 class="pt-2 pb-2">Contact</h4>
           <div class="pt-2 pb-2">
             phone :
           </div>
@@ -54,28 +48,40 @@
           <div class="pt-2 pb-2">
             email :
           </div>
-          <input type="text" formControlName="email">
-        </label>
+        </div>
       </div>
     </div>
-    <label>
-      <div class="pt-2 pb-2">
-        number :
+
+    <div formGroupName="contact">
+      <h2 class="pt-2 pb-2">Contact</h2>
+      <div class="row">
+        <div class="col-6">
+          <input type="text" placeholder="Phone number" formControlName="phone" class="form-control" />
+        </div>
+        <div class="col-6">
+          <input type="text" placeholder="E-mail" formControlName="email" class="form-control" />
+        </div>
       </div>
-      <div>
-        <input class="pt-2 pb-2" type="text" formControlName="numbers">
-      </div>
-      <div class="pt-2 pb-2">
-        establishment :
-      </div>
-      <div>
-        <input type="text" class="pt-2 pb-2" formControlName="establishment">
-      </div>
-    </label>
-    <div class="pt-2 pb-2">
-      <input class="btn btn-primary" type="submit" value="submit">
     </div>
-    
+    <h2>Booking details</h2>
+    <div class="row">
+      <div class="col-6">
+        <input class="pt-2 pb-2" placeholder="Number of people" type="number" formControlName="numbers"
+          class="form-control" />
+      </div>
+      <div class="col-6">
+        <input type="text" placeholder="Establishment" class="pt-2 pb-2" formControlName="establishment"
+          class="form-control" />
+        <div class="pt-2 pb-2">
+        </div>
+        <div>
+          <input type="text" class="pt-2 pb-2" formControlName="establishment" [hidden]="cacheId">
+        </div>
+      </div>
+
+      <div class="pt-2 pb-2">
+        <input class="btn btn-danger" type="submit" value="Submit" />
+      </div>
+    </div>
   </form>
-  
 </div>
