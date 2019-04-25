@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'bookings/:establishment', component: BookingFormsComponent },
   { path: 'establishments/create', component: EstablishmentInscriptionComponent },
   { path: 'profiles/establishments', component: ListEstablishmentComponent },
-  // { path: 'establishments/:id', component: EstablishmentInscriptionComponent },
+  { path: 'establishments/:id', component: EstablishmentInscriptionComponent },
   { path: '', component: CategorieComponent },
   { path: 'profiles', component: ProfileComponent },
   { path: 'bookings/list', component: ListeBookingComponent },
