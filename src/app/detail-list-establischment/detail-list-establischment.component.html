@@ -1,0 +1,159 @@
+<div class="container mt-4 mb-4 pb-2 rounded">
+  <div class="row">
+    <div class="col-12 pb-6 caroussel">
+      <ngb-carousel
+        class="col-12"
+        *ngIf="images"
+        [showNavigationArrows]="showNavigationArrows"
+        [showNavigationIndicators]="showNavigationIndicators"
+      >
+        <ng-template ngbSlide *ngFor="let image of images">
+          <img class="col-12 img" [src]="image" alt="Random slide" />
+          <div class="carousel-caption">
+            <h1>{{ this.name }}</h1>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+  </div>
+  <div class="row mt-6">
+    <div class="description col-8">
+      <h2>Description :</h2>
+      <p>
+        {{ this.description }}
+      </p>
+    </div>
+    <div class="col-4 text-center">
+      <div class="container demo-bg">
+        <div class="row">
+          <div class="col-sm-12">
+            <h2 class="title">Opening Hours</h2>
+            <ul class="list-unstyled opening-hours">
+              <li>Sunday : <span class="pull-right">Closed</span></li>
+              <li>
+                Monday :
+                <span class="pull-right"
+                  >{{ this.time.open.monday.am.start | date: "hh:mm" }} -
+                  {{ this.time.open.monday.am.end | date: "hh:mm" }} /
+                  {{ this.time.open.monday.pm.start | date: "hh:mm" }} -
+                  {{ this.time.open.monday.pm.end | date: "hh:mm" }}</span
+                >
+              </li>
+              <li>
+                Tuesday :
+                <span class="pull-right"
+                  >{{ this.time.open.tuesday.am.start | date: "hh:mm" }} -
+                  {{ this.time.open.tuesday.am.end | date: "hh:mm" }} /
+                  {{ this.time.open.tuesday.pm.start | date: "hh:mm" }} -
+                  {{ this.time.open.tuesday.pm.end | date: "hh:mm" }}</span
+                >
+              </li>
+              <li>
+                Wednesday :
+                <span class="pull-right"
+                  >{{ this.time.open.wednesday.am.start | date: "hh:mm" }} -
+                  {{ this.time.open.wednesday.am.end | date: "hh:mm" }} /
+                  {{ this.time.open.wednesday.pm.start | date: "hh:mm" }} -
+                  {{ this.time.open.wednesday.pm.end | date: "hh:mm" }}</span
+                >
+              </li>
+              <li>
+                Thursday :
+                <span class="pull-right"
+                  >{{ this.time.open.thursday.am.start | date: "hh:mm" }} -
+                  {{ this.time.open.thursday.am.end | date: "hh:mm" }} /
+                  {{ this.time.open.thursday.pm.start | date: "hh:mm" }} -
+                  {{ this.time.open.thursday.pm.end | date: "hh:mm" }}</span
+                >
+              </li>
+              <li>
+                Friday :
+                <span class="pull-right"
+                  >{{ this.time.open.friday.am.start | date: "hh:mm" }} -
+                  {{ this.time.open.friday.am.end | date: "hh:mm" }} /
+                  {{ this.time.open.friday.pm.start | date: "hh:mm" }} -
+                  {{ this.time.open.friday.pm.end | date: "hh:mm" }}</span
+                >
+              </li>
+              <li>
+                Saturday :
+                <span class="pull-right"
+                  >{{ this.time.open.sunday.am.start | date: "hh:mm" }} -
+                  {{ this.time.open.sunday.am.end | date: "hh:mm" }} /
+                  {{ this.time.open.sunday.pm.start | date: "hh:mm" }} -
+                  {{ this.time.open.sunday.pm.end | date: "hh:mm" }}</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row text-white">
+    <div class="offres col-9">
+      <h2>Menus :</h2>
+      <table class="table text-white">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Menus</th>
+            <th>Prix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let menu of menus; let i = index">
+            <th scope="row">{{i + 1}}</th>
+            <td>{{ this.menu.name }}</td>
+            <td>{{ this.menu.price }}€</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-3 pl-3">
+      <button type="button" class="btn btn-res ml-4 btn-danger">
+        Réservez !
+      </button>
+    </div>
+  </div>
+  <div class="row bootstrap snippets">
+    <div class="col-12">
+      <div class="comment-wrapper">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h2>Commentaires et avis :</h2>
+          </div>
+          <div class="panel-body col-12">
+            <div class="clearfix"></div>
+            <hr />
+            <ul class="media-list">
+              <li *ngFor="let comment of comments" class="media">
+                <div class="media-body">
+                  <strong class="text-success ml-2">{{
+                    this.comment.author
+                  }}</strong>
+                  <span class="text-light pull-right">
+                    <small class="text-light ml-2">{{
+                      this.comment.date | date: "medium"
+                    }}</small>
+                  </span>
+                  <p class="ml-2">{{ this.comment.comment }}</p>
+                </div>
+              </li>
+            </ul>
+            <div class="row">
+              <textarea
+                class="form-control ml-5 col-10"
+                placeholder="Write a comment..."
+                rows="3"
+              ></textarea>
+              <button type="button" class="btn btn-post btn-danger pull-right">
+                Post
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

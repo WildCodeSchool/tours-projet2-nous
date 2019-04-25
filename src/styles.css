@@ -13,5 +13,7 @@
 @import '../node_modules/@syncfusion/ej2-angular-dropdowns/styles/material.css';
 body {
   background-image: url("/assets/img/homepage-background.jpeg");
-  background-size: 100%;
+  font-family: 'Merienda', cursive;
+  background-size: cover;
+  background-position: center;
 }

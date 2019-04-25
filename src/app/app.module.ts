@@ -4,7 +4,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BookingFormsComponent } from './booking-forms/booking-forms.component';
-import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
@@ -13,19 +12,23 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ProfilemessageComponent } from './profilemessage/profilemessage.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { EstablishmentInscriptionComponent }
-  from './establishment-inscription/establishment-inscription.component';
+from './establishment-inscription/establishment-inscription.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
+import { ListeBookingComponent } from './liste-booking/liste-booking.component';
+import { ListEstablishmentComponent } from './list-establishment/list-establishment.component';
+// tslint:disable-next-line: max-line-length
+import { DetailListEstablischmentComponent } from './detail-list-establischment/detail-list-establischment.component';
 import { ListMessageComponent } from './list-message/list-message.component';
 import { TimePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { DropDownListModule, DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
 import { LoginComponent } from './login/login.component';
+import { DetailsProfileComponent } from './details-profile/details-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookingFormsComponent,
-    HomeComponent,
     NavBarComponent,
     FooterComponent,
     SearchbarComponent,
@@ -33,9 +36,13 @@ import { LoginComponent } from './login/login.component';
     ProfileComponent,
     EstablishmentInscriptionComponent,
     ProfilemessageComponent,
+    ListeBookingComponent,
+    ListEstablishmentComponent,
+    DetailListEstablischmentComponent,
     ListMessageComponent,
     AppComponent,
     LoginComponent,
+    DetailsProfileComponent,
   ],
   imports: [
     BrowserModule,

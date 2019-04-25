@@ -1,31 +1,26 @@
-
-  <h3>Information</h3>
-  <div class="container">
+<div class="mt-4 mb-4 pt-2 pb-2 bg-opacity-25
+++ container rounded text-center form-horizontal">
+<div class="contact-title">
+  <h3 class="text-center">Information</h3>
+  </div>
     <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="col-6 mx-auto">
       <div class="form-group">
         <label>
-          From:
-          <input type="text" class="form-control" formControlName="from">
+          <input type="text" class="form-control" formControlName="from" placeholder="Your name">
         </label>
       </div>
       <div class="form-group">
         <label>
-          To:
-          <input type="text" class="form-control" formControlName="to">
+
+          <input type="text" class="form-control" formControlName="to" placeholder="Establishment">
         </label>
       </div>
       <div class="form-group">
         <label>
-          Object:
-          <input type="text" class="form-control" formControlName="reason">
+          <textarea  class="form-control" formControlName="message" placeholder="Message"></textarea>
         </label>
       </div>
-      <div class="form-group">
-        <label>
-          Profile:
-          <input type="text" class="form-control" formControlName="owner">
-        </label>
-      </div>
-      <input type="submit" class="btn btn-primary">
+      <input type="submit" class="btn btn-dark">
+ 
     </form>
-  </div>
+</div>

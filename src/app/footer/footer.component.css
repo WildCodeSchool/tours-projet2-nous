@@ -1,3 +1,14 @@
 .colorFooter{
     background-color: #333;
 }
+
+img{
+  width: 12%;
+  margin-right: 8%;
+}
+
+button{
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 2%;
+}

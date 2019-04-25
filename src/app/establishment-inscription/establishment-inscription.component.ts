@@ -46,17 +46,36 @@ export class EstablishmentInscriptionComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
       const id = params.get('id');
-
-      this.service.getEstablishment(id).subscribe(
+      if (id) {
+        this.service.getEstablishment(id).subscribe(
       (establishment: Establishment) => {
         this.establishment = establishment;
         this.establishmentForm.patchValue(establishment);
-      });
+// tslint:disable-next-line: brace-style
+      }); }
     },
     );
   }
 
   onSubmit() {
-    console.log(this.establishmentForm.value);
+    this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
+      const id = params.get('id');
+      if (id) {
+        console.log(this.establishmentForm.value);
+        this.service.update(id, this.establishmentForm.value).subscribe(
+    (establishment: Establishment) => {
+      this.establishment = establishment;
+      this.establishmentForm.patchValue(establishment);
+// tslint:disable-next-line: brace-style
+    }); }else {
+        console.log(this.establishmentForm.value);
+        this.service.create(this.establishmentForm.value).subscribe(
+      (establishment: Establishment) => {
+        this.establishment = establishment;
+        this.establishmentForm.patchValue(establishment);
+// tslint:disable-next-line: brace-style
+      }); }
+    });
+
   }
 }

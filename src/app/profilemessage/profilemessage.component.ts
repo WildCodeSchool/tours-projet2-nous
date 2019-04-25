@@ -21,8 +21,7 @@ export class ProfilemessageComponent implements OnInit {
     this.myForm = this.fb.group({
       from: [''],
       to: [''],
-      reason: [''],
-      owner: [''],
+      message: [''],
     });
 
   }
