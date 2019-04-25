@@ -37,7 +37,7 @@
     border-radius: 15px;
 }
 .back{
-    background: grey;
+    background: transparent;
     transform: perspective(600px) rotateY(180deg);
     border: 2px solid black;
     border-radius: 15px;

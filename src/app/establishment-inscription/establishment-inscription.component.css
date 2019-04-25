@@ -1,8 +1,49 @@
-#h2 {
+h1 {
     position: center;
+    color: white;
 }
 
 .container {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.contact-title {
+    margin-top: 105px;
+    margin-bottom: 25px;
     color: white;
+    text-transform: uppercase;
+    transition: all 4s ease-in-out;
+}
+
+form {
+    transition: all 4s ease-in-out;
+    color: white;
+}
+
+.form-control {
+    color: white;
+    background: transparent;
+    outline: none;
+    border-bottom: 2px solid white;
+    font-size: 18px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+textarea {
+    border: 2px solid white;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+}
+
+input {
+    border: none;
+    height: 45px;
+    color: white;
+    margin-bottom: 50px;
 }
