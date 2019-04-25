@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'bookings/:id/update', component: BookingFormsComponent },
   { path: 'messages/:id', component: ProfilemessageComponent },
   {
-    path: 'establishments/:id/update',
+    path: 'establishments/update/:etablissementId',
     component: EstablishmentInscriptionComponent,
   },
   { path: 'messages/lists', component: ListMessageComponent },

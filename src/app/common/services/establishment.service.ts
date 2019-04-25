@@ -45,7 +45,7 @@ export class EstablishmentService {
 
   public getListEstablishment() {
     const obs: Observable<any> = this.http.get(
-      'http://open-reza.herokuapp.com/api/establishments',
+      'http://open-reza.herokuapp.com/api/profiles/establishments/',
     );
     const treatment = (response: any) => {
       return response as Establishment;
