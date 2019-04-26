@@ -1,27 +1,50 @@
-*{
+* {
     text-decoration: none;
-    
+    color: white;
 }
 
-.middle{
-
+h2 {
+    margin: 0px;
+}
+.middle {
     transition: translate(-50%, -50%);
 }
-.card{
+
+.container {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card {
+    border: none;
     cursor: pointer;
-    width: 400px;
-    height: 425px;
+    width: 160px;
+    height: 225px;
     border-radius: 10px;
     background: transparent;
-
 }
-.message{
 
+.booking {
+    position: absolute;
+}
+
+.update {
+    margin-right: 137px;
+}
+
+.delete {
+    margin-left: 28%;
+    margin-top: -10%;
+}
+
+.message {
     width: 80%;
     margin-left: 10%;
-    
 }
-.front,.back{
+
+.front, .back {
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -29,48 +52,53 @@
     position: absolute;
     transition: transform .6s linear
 }
-.front img{
+
+.front img {
     height: 100%;
+}
+
+.create {
+    margin-left: 135%;
+    width: 360px;
 
 }
-button{
-    margin-top:5px;
-    height: 80px;
-    width: 45vh;
+
+button {
+    margin-bottom: 5px;
+    width: 125px;
 }
-.front{
+
+.front {
     transform: perspective(600px) rotateY(0deg);
-    border: 2px solid black;
+    border: 1.5px solid black;
     border-radius: 15px;
 }
-.back{
-    background: transparent;
+
+.back {
+    background-color: rgba(0, 0, 0, 0.4);
     transform: perspective(600px) rotateY(180deg);
-    border: 2px solid black;
+    border: 1.5px solid black;
     border-radius: 15px;
 }
-.card:hover > .front{
+
+.card:hover>.front {
     transform: perspective(600px) rotateY(-180deg);
 }
-.card:hover > .back{
+
+.card:hover>.back {
     transform: perspective(600px) rotateY(0deg);
 }
-.media{
 
-
-
+.media {
     background-color: rgba(0, 0, 0, 0.5);
     border: 1px solid black;
-    border-radius: 20px; 
-
-
+    border-radius: 20px;
     color: white;
-
 }
 
-.trait{
-    border: 1px solid grey;
+.trait {
+    background-color: white;
+    height: 1px;
     width: 75%;
-    margin-left:10%
+    margin-left: 10%
 }
-
