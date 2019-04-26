@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
+    public user :boolean;
     constructor(private http: HttpClient) { }
 
     login(email: string, password: string) {
@@ -12,6 +13,7 @@ export class AuthenticationService {
                 // login successful if there's a jwt token in the response
                 if (user && user.token) {
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
+                    this.user=true;
                     localStorage.setItem('token', user.token);
                 }
 
@@ -21,6 +23,9 @@ export class AuthenticationService {
 
     logout() {
         // remove user from local storage to log user out
+        this.user=false;
         localStorage.removeItem('token');
     }
+
+    
 }

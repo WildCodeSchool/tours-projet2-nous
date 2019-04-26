@@ -47,10 +47,10 @@ export class LoginComponent implements OnInit {
 
     this.loading = true;
     this.authenticationService.login(this.f.email.value, this.f.password.value)
-      .pipe(first())
+      
       .subscribe(
         data => {
-          this.router.navigate(['establishments']);
+          this.router.navigate(['#']);
         },
         error => {
           this.error = error;

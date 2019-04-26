@@ -52,7 +52,15 @@ export class EstablishmentService {
     };
     return obs.pipe(map(treatment));
   }
-
+  public getAllEstablishment() {
+    const obs: Observable<any> = this.http.get(
+      'http://open-reza.herokuapp.com/api/establishments',
+    );
+    const treatment = (response: any) => {
+      return response as Establishment;
+    };
+    return obs.pipe(map(treatment));
+  }
   deleteEtablishment(id) {
 // tslint:disable-next-line: max-line-length
     const obs: Observable<any> = this.http.delete(`http://open-reza.herokuapp.com/api/establishments/${id}`);

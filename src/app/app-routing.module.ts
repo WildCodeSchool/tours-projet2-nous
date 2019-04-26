@@ -16,25 +16,25 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards';
 
 const routes: Routes = [
-  { path: 'establishments/details/:id', component: DetailListEstablischmentComponent },
+  { path: 'establishments/details/:id', component: DetailListEstablischmentComponent, canActivate: [AuthGuard] },
   { path: 'bookings/:establishment', component: BookingFormsComponent },
-  { path: 'establishments/create', component: EstablishmentInscriptionComponent },
+  { path: 'establishments/create', component: EstablishmentInscriptionComponent, canActivate: [AuthGuard] },
   { path: 'profiles/establishments', component: ListEstablishmentComponent },
   { path: 'establishments/:id', component: EstablishmentInscriptionComponent },
   { path: '', component: CategorieComponent },
   { path: 'profiles', component: ProfileComponent },
-  { path: 'bookings/list', component: ListeBookingComponent },
+  { path: 'bookings/list', component: ListeBookingComponent, canActivate: [AuthGuard] },
   // { path: 'bookings/create', component: BookingFormsComponent },
   { path: 'bookings/:id', component: BookingFormsComponent },
-  { path: 'bookings/:id/update', component: BookingFormsComponent },
+  { path: 'bookings/:id/update', component: BookingFormsComponent, canActivate: [AuthGuard]},
   { path: 'messages/:id', component: ProfilemessageComponent },
   {
     path: 'establishments/:id/update',
     component: EstablishmentInscriptionComponent,
   },
-  { path: 'messages/lists', component: ListMessageComponent },
+  { path: 'messages/lists', component: ListMessageComponent, canActivate: [AuthGuard] },
   { path: 'messages', component: ProfilemessageComponent },
-  { path: 'details/profile', component: DetailsProfileComponent },
+  { path: 'details/profile', component: DetailsProfileComponent ,canActivate: [AuthGuard]},
   { path: '', component: CategorieComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   
