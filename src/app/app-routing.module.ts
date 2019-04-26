@@ -16,7 +16,8 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards';
 
 const routes: Routes = [
-  { path: 'establishments/details/:id', component: DetailListEstablischmentComponent, canActivate: [AuthGuard] },
+  { path: 'bookings/list/:etablissement', component: ListeBookingComponent },
+  { path: 'establishments/details/:id', component: DetailListEstablischmentComponent },
   { path: 'bookings/:establishment', component: BookingFormsComponent },
   { path: 'establishments/create', component: EstablishmentInscriptionComponent, canActivate: [AuthGuard] },
   { path: 'profiles/establishments', component: ListEstablishmentComponent },
@@ -29,7 +30,7 @@ const routes: Routes = [
   { path: 'bookings/:id/update', component: BookingFormsComponent, canActivate: [AuthGuard]},
   { path: 'messages/:id', component: ProfilemessageComponent },
   {
-    path: 'establishments/:id/update',
+    path: 'establishments/update/:etablissementId',
     component: EstablishmentInscriptionComponent,
   },
   { path: 'messages/lists', component: ListMessageComponent, canActivate: [AuthGuard] },
