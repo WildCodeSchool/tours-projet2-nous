@@ -1,0 +1,31 @@
+#element {
+    display: block;
+  }
+
+  #container {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .e-input-group .e-input-group-icon,
+  .e-input-group.e-control-wrapper .e-input-group-icon,
+  .e-input-group.e-control-wrapper:not(.e-disabled) .e-input-group-icon:hover {
+    background: none;
+  }
+
+  .e-input-group:not(.e-disabled) .e-input-group-icon:active,
+  .e-input-group.e-control-wrapper:not(.e-disabled) .e-input-group-icon:active {
+    background: rgb(0, 120, 214);
+  }
+  
+  .form-control{
+      background: transparent;
+      border-color:black;
+  }
+  .color{
+      color:black;
+  }
+  .form-control {
+    
+    font-family: Georgia, serif;
+  }
