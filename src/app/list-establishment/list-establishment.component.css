@@ -7,8 +7,6 @@
   position: relative;
   text-align: center;
   cursor: pointer;
-  padding-right: 0px;
-  padding-left: 0px;
 }
 
 .hovereffect img {
@@ -30,12 +28,13 @@
   transition: all .4s ease-in-out;
 }
 
+
 .col {
   padding: 0px;
 }
 
 .card {
-  border: 2px #fff
+  border: 2px #fff;
 }
 
 .hovereffect h2 {
@@ -62,11 +61,12 @@
   border-radius: 15px;
   background-color: rgba(228, 32, 32, 0.6);
   opacity: 0;
+  position: relative;
   filter: alpha(opacity=0);
   -webkit-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out;
-  margin: 170px 0 0;
   padding: 7px 14px;
+  margin-top: 10px;
 }
 
 .hovereffect a.info:hover {

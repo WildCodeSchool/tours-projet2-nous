@@ -8,9 +8,9 @@ import { MessageService } from '../common/services/message.service';
   styleUrls: ['./details-profile.component.css'],
 })
 export class DetailsProfileComponent implements OnInit {
-  public tableEstablishment: [];
+  public establishments: [];
   public listEstablishment;
-  public tableMessage: [];
+  public messages: [];
   public listMessage;
   constructor(
     private service: EstablishmentService,
@@ -22,14 +22,14 @@ export class DetailsProfileComponent implements OnInit {
     this.service.getListEstablishment().subscribe(
       (etam) => {
         this.listEstablishment = etam;
-        this.tableEstablishment = this.listEstablishment;
+        this.establishments = this.listEstablishment;
         console.log(this.listEstablishment);
       });
 
     this.message.getListMessage().subscribe(
       (etam) => {
         this.listMessage = etam;
-        this.tableMessage = this.listMessage;
+        this.messages = this.listMessage;
         console.log(this.listMessage);
       },
     );
