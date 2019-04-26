@@ -4,10 +4,18 @@
 
 .date {
   cursor: pointer;
+  margin-left: 10%;
 }
 
+.persons {
+  margin-left: 2%;
+}
 .search {
-  margin-top: 4px;
+  margin-top: 5px;
+}
+
+.hour {
+  margin-left: 5%;
 }
 
 .container-fluid {
@@ -23,11 +31,16 @@ option {
   text-align: center;
 }
 
+.btn {
+  margin-top: 5px;
+  margin-left: 65%;
+}
+
 select {
   color: rgba(255, 255, 255, 0.6);
   background: transparent;
   outline: none;
-  margin-top: 20px;
+  margin-top: 10px;
   max-width: 200px;
   border: none;
   text-align: center;
@@ -49,7 +62,7 @@ select {
 
 input {
   border: none;
-  height: 45px;
+  height: 35px;
   color: white;
 }
 
