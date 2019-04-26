@@ -11,14 +11,19 @@
     <div class="back ">
       <div class="back-content middle text-center mt-4 mb-4">
         <h2>{{establishment.name}}</h2>
-        <div class="sm mt-4">
+        <div class="sm mt-3">
           <button class="btn btn-danger" [routerLink]="['/bookings/list', establishment._id]">
             Reservation
           </button>
         </div>
-        <div class="sm mt-4">
+        <div class="sm mt-3">
           <button class="btn btn-danger" [routerLink]="['/establishments/update', establishment._id]">
             Update
+          </button>
+        </div>
+        <div class="sm mt-3">
+          <button class="btn btn-danger" (click)="delete(establishment._id, index)">
+            Delete
           </button>
         </div>
       </div>
