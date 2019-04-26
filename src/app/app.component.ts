@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
 import { MessageService } from './common/services/message.service';
-;
-
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  
 })
 export class AppComponent {
   title = 'tours-projet2-nous';
@@ -19,6 +16,6 @@ export class AppComponent {
     // le service est stocké dans PARAM_SERVICE
     this.service  =  PARAM_SERVICE;
   }
-  
+
   public ngOnInit() {}
 }

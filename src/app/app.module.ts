@@ -25,8 +25,6 @@ import { DropDownListModule, DropDownListComponent } from '@syncfusion/ej2-angul
 import { LoginComponent } from './login/login.component';
 import { DetailsProfileComponent } from './details-profile/details-profile.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,8 +53,6 @@ import { DetailsProfileComponent } from './details-profile/details-profile.compo
     HttpClientModule,
     TimePickerModule,
     DropDownListModule,
-   
-    
     JwtModule.forRoot({
       config: {
         whitelistedDomains: ['open-reza.herokuapp.com'],
@@ -66,11 +62,10 @@ import { DetailsProfileComponent } from './details-profile/details-profile.compo
       },
     }),
   ],
- 
   providers: [],
   bootstrap: [AppComponent],
   exports:[
     DropDownListComponent,
-  ]
+  ],
 })
 export class AppModule { }

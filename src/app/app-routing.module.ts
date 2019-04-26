@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'bookings/list/:etablissement', component: ListeBookingComponent },
   { path: 'establishments/details/:id', component: DetailListEstablischmentComponent },
   { path: 'bookings/:establishment', component: BookingFormsComponent },
+// tslint:disable-next-line: max-line-length
   { path: 'establishments/create', component: EstablishmentInscriptionComponent, canActivate: [AuthGuard] },
   { path: 'profiles/establishments', component: ListEstablishmentComponent },
   { path: 'establishments/:id', component: EstablishmentInscriptionComponent },
@@ -27,7 +28,7 @@ const routes: Routes = [
   { path: 'bookings/list', component: ListeBookingComponent, canActivate: [AuthGuard] },
   // { path: 'bookings/create', component: BookingFormsComponent },
   { path: 'bookings/:id', component: BookingFormsComponent },
-  { path: 'bookings/:id/update', component: BookingFormsComponent, canActivate: [AuthGuard]},
+  { path: 'bookings/:id/update', component: BookingFormsComponent, canActivate: [AuthGuard] },
   { path: 'messages/:id', component: ProfilemessageComponent },
   {
     path: 'establishments/update/:etablissementId',
@@ -35,13 +36,11 @@ const routes: Routes = [
   },
   { path: 'messages/lists', component: ListMessageComponent, canActivate: [AuthGuard] },
   { path: 'messages', component: ProfilemessageComponent },
-  { path: 'details/profile', component: DetailsProfileComponent ,canActivate: [AuthGuard]},
+  { path: 'details/profile', component: DetailsProfileComponent , canActivate: [AuthGuard] },
   { path: '', component: CategorieComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
-  
-
     // otherwise redirect to home
-    { path: '**', redirectTo: '' }
+    { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
