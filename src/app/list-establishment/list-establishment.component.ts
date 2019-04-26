@@ -14,10 +14,17 @@ export class ListEstablishmentComponent implements OnInit {
   public categorie = this.service.result;
   public estaDefault;
   public estaCategorie;
+  public research: string ;
 
   constructor(private service: EstablishmentService, public activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
+    this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
+      const search = params.get('search');
+    this.research = search;
+    console.log(this.research)
+  }
+  )
     this.service.getAllEstablishment().subscribe(
       (etam) => {
         this.listEstablishment = etam;

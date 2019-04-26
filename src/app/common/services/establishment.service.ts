@@ -12,7 +12,10 @@ export class EstablishmentService {
   public service: HttpClient;
   public result;
 
+
   constructor(public http: HttpClient) {}
+  
+  public resultSearch;
 
   public getEstablishment(id: string): Observable<Establishment> {
     const obs: Observable<any> = this.http.get(
@@ -85,5 +88,9 @@ export class EstablishmentService {
   }
   getEstablishmentBySort(categorie) {
     this.result = categorie;
+  }
+
+  research(word){
+    this.resultSearch = word;
   }
 }

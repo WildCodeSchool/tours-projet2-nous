@@ -22,6 +22,7 @@ const routes: Routes = [
 // tslint:disable-next-line: max-line-length
   { path: 'establishments/create', component: EstablishmentInscriptionComponent, canActivate: [AuthGuard] },
   { path: 'profiles/establishments', component: ListEstablishmentComponent },
+  { path: 'profiles/establishments/:search', component: ListEstablishmentComponent },
   { path: 'establishments/:id', component: EstablishmentInscriptionComponent },
   { path: '', component: CategorieComponent },
   { path: 'profiles', component: ProfileComponent },
