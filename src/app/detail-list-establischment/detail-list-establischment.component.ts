@@ -43,7 +43,7 @@ export class DetailListEstablischmentComponent implements OnInit {
       const id = params.get('id');
       this.id = id;
       console.log(id);
-      this.service.getEstablishment(this.service.id).subscribe(
+      this.service.getEstablishment(this.id).subscribe(
       (establishment: Establishment) => {
         this.establishment = establishment;
         this.description = establishment.description;

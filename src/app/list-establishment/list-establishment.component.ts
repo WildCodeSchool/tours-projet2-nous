@@ -18,7 +18,7 @@ export class ListEstablishmentComponent implements OnInit {
   constructor(private service: EstablishmentService, public activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    this.service.getListEstablishment().subscribe(
+    this.service.getAllEstablishment().subscribe(
       (etam) => {
         this.listEstablishment = etam;
         this.tableEstablishment = this.listEstablishment;
