@@ -18,6 +18,7 @@ export class DetailListEstablischmentComponent implements OnInit {
   public menus;
   public name;
   public time;
+  public messageForm;
   public commentForm: FormGroup;
 
   public id;
@@ -28,30 +29,45 @@ export class DetailListEstablischmentComponent implements OnInit {
     () => `https://picsum.photos/900/500?random&t=${Math.random()}`,
   );
 
-// tslint:disable-next-line: max-line-length
-  constructor(private fb: FormBuilder, config: NgbCarouselConfig, public serv: BookingService, public service: EstablishmentService, public activatedRoute: ActivatedRoute) {
+  // tslint:disable-next-line: max-line-length
+  constructor(
+    config: NgbCarouselConfig,
+    public serv: BookingService,
+    public service: EstablishmentService,
+    public activatedRoute: ActivatedRoute,
+    public fb: FormBuilder,
+  ) {
+    this.commentForm = this.fb.group({
+      name: [''],
+      comment: [''],
+    });
     // customize default values of carousels used by this component tree
     config.showNavigationArrows = true;
     config.showNavigationIndicators = true;
-    this.commentForm = this.fb.group({
-      name:[''],
-      comment:[''],
-    });
   }
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
       const id = params.get('id');
       this.id = id;
-      console.log(id);
-      this.service.getEstablishment(this.service.id).subscribe(
-      (establishment: Establishment) => {
-        this.establishment = establishment;
-        this.description = establishment.description;
-        this.name = establishment.name;
-        this.time = establishment.time;
-        this.comments = establishment.comments;
-        this.menus = establishment.menus;
-      });
+      this.service
+        .getEstablishment(this.id)
+        .subscribe((establishment: Establishment) => {
+          this.establishment = establishment;
+          this.description = establishment.description;
+          this.name = establishment.name;
+          this.time = establishment.time;
+          this.comments = establishment.comments;
+          this.menus = establishment.menus;
+        });
     });
+  }
+
+  onSubmit() {
+    this.establishment.comments.push(this.commentForm.value);
+    this.service
+      .update(this.id, this.establishment)
+      .subscribe((establishment: Establishment) => {
+        this.comments = establishment.comments;
+      });
   }
 }
