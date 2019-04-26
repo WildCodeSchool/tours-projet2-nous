@@ -1,36 +1,69 @@
 <div class="main">
-  <div class="container-fluid ">
-    <div class="bg-primary  ">
+  <div class="container-fluid">
+    <div>
       <nav class="navbar navbar-expand-md ">
         <div class="row w-100">
-
           <div class="col-lg-3 col-md-4 col-sm-12">
-              <ejs-dropdownlist id='ddlelement' #samples [dataSource]='data' [fields]='fields' [placeholder]='text' [allowFiltering]='true' (filtering)='onFiltering($event)'></ejs-dropdownlist>
-              </div>
+            <input
+              type="text"
+              class="form-control search"
+              placeholder="Search ..."
+            />
+            <!-- <ejs-dropdownlist
+              id="ddlelement"
+              #samples
+              [dataSource]="data"
+              [fields]="fields"
+              [placeholder]="text"
+              [allowFiltering]="true"
+              (filtering)="onFiltering($event)"
+            ></ejs-dropdownlist> -->
+          </div>
 
           <form class="form-inline col-lg-3 col-md-4 col-sm-12 ">
             <div class="form-group">
               <div class="input-group">
-                <input class="form-control color " placeholder="Date" name="dp" [(ngModel)]="model" ngbDatepicker
-                  #d="ngbDatepicker">
-                <div class="input-group-append ">
-                  <button class="btn btn-dark calendar " (click)="d.toggle()" type="button"></button>
-                </div>
+                <input
+                  class="form-control date"
+                  placeholder="Date"
+                  name="dp"
+                  [(ngModel)]="model"
+                  ngbDatepicker
+                  #d="ngbDatepicker"
+                  (click)="d.toggle()"
+                />
               </div>
             </div>
           </form>
 
-         
           <div ngbDropdown class="col-lg-2 col-md-6 col-sm-4">
-              <ejs-dropdownlist id='ddlelement' #samples [dataSource]='data1' [placeholder]='placeholder'></ejs-dropdownlist>
+            <select>
+              <option value="" disabled selected>Number of persons</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="3">4</option>
+              <option value="3">5</option>
+              <option value="3">6</option>
+              <option value="3">7+</option>
+            </select>
+            <!-- <ejs-dropdownlist
+              id="ddlelement"
+              #samples
+              [dataSource]="data1"
+              placeholder="Number of persons"
+            ></ejs-dropdownlist> -->
           </div>
-          <div id="container" placeholder="Choose your ... "type="text">
-              <!-- <input type="text" id="element"> -->
-              <ejs-timepicker [value]='dateValue' [min]='minValue' [max]='maxValue'></ejs-timepicker>
-            </div>
+          <div id="container" placeholder="Choose your ... " type="text">
+            <ejs-timepicker
+              [value]="dateValue"
+              [min]="minValue"
+              [max]="maxValue"
+            ></ejs-timepicker>
+          </div>
 
           <div class="col-lg-2 col-md-6 col-sm-12 ">
-            <button class="btn ml-auto btn-dark m-2">Rechercher</button>
+            <button class="btn ml-auto btn-danger m-2">Research</button>
           </div>
         </div>
       </nav>
