@@ -1,43 +1,72 @@
-<div class="main w-60">
-  <div class="container">
-    <div class="row">
-      <div class="col-10 offset-1 bg-secondary">
-        <nav class="navbar navbar-expand-md ">
-          <input
-            class="btn btn-secondary m-2 bg-light"
-            placeholder="Nom du restaurant ..."
-            type="text"
-          />
-
-          <div class="date" ngbDropdown>
-            <button class="btn btn-danger m-2 " ngbDropdownToggle>Date</button>
-            <div ngbDropdownMenu="dropdownBasic1">
-              <ngb-datepicker #d></ngb-datepicker>
-            </div>
-          </div>
-          <div ngbDropdown>
-            <button class="btn btn-danger m-2" ngbDropdownToggle>Heure</button>
-            <div ngbDropdownMenu="dropdownBasic1">
-            <ngb-timepicker></ngb-timepicker>
-            </div>
+<div class="main">
+  <div class="container-fluid">
+    <div>
+      <nav class="navbar navbar-expand-md ">
+        <div class="row w-100">
+          <div class="col-lg-3 col-md-4 col-sm-12">
+            <input
+              type="text"
+              class="form-control search"
+              placeholder="Search ..."
+            />
+            <!-- <ejs-dropdownlist
+              id="ddlelement"
+              #samples
+              [dataSource]="data"
+              [fields]="fields"
+              [placeholder]="text"
+              [allowFiltering]="true"
+              (filtering)="onFiltering($event)"
+            ></ejs-dropdownlist> -->
           </div>
 
-          <div ngbDropdown>
-            <button class="btn btn-danger m-2" ngbDropdownToggle>
-              Nombre de personnes
-            </button>
-            <div ngbDropdownMenu="dropdownBasic1">
-              <button ngbDropdownItem>1</button>
-              <button ngbDropdownItem>2</button>
-              <button ngbDropdownItem>3</button>
-              <button ngbDropdownItem>4</button>
-              <button ngbDropdownItem>5</button>
-              <button ngbDropdownItem>5+</button>
+          <form class="form-inline col-lg-3 col-md-4 col-sm-12 ">
+            <div class="form-group">
+              <div class="input-group">
+                <input
+                  class="form-control date"
+                  placeholder="Date"
+                  name="dp"
+                  [(ngModel)]="model"
+                  ngbDatepicker
+                  #d="ngbDatepicker"
+                  (click)="d.toggle()"
+                />
+              </div>
             </div>
+          </form>
+
+          <div ngbDropdown class="col-lg-2 col-md-6 col-sm-4">
+            <select>
+              <option value="" disabled selected>Number of persons</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="3">4</option>
+              <option value="3">5</option>
+              <option value="3">6</option>
+              <option value="3">7+</option>
+            </select>
+            <!-- <ejs-dropdownlist
+              id="ddlelement"
+              #samples
+              [dataSource]="data1"
+              placeholder="Number of persons"
+            ></ejs-dropdownlist> -->
           </div>
-          <button class="btn ml-auto btn-dark m-2">Rechercher</button>
-        </nav>
-      </div>
+          <div id="container" placeholder="Choose your ... " type="text">
+            <ejs-timepicker
+              [value]="dateValue"
+              [min]="minValue"
+              [max]="maxValue"
+            ></ejs-timepicker>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-12 ">
+            <button class="btn ml-auto btn-danger m-2">Research</button>
+          </div>
+        </div>
+      </nav>
     </div>
   </div>
 </div>
