@@ -1,4 +1,4 @@
-<!-- <div class="container mt-5 mb-5" [hidden]="estaDefault">
+<div class="container mt-5 mb-5" [hidden]="estaDefault">
   <div class="row">
     <div
       *ngFor="let establishment of tableEstablishment; let index = index"
@@ -15,14 +15,14 @@
             <h2 class="font-weight-bolder">{{ establishment.name }}</h2>
             <a class="info btn btn-danger" [routerLink]="['/establishments/details', establishment._id]">See restaurant</a>
           </div>
-        </div> -->
+        </div>
         <!-- <a class="btn btn-danger" (click)="etaDetail(establishment._id)" routerLink="/establishments/details">See restaurant</a> -->
-      <!-- </div>
+      </div>
     </div>
   </div>
-</div> -->
+</div>
 
-<!-- <div class="container mt-5 mb-5" [hidden]="estaCategorie">
+<div class="container mt-5 mb-5" [hidden]="estaCategorie">
   <div class="row">
     <ng-container
       *ngFor="let establishment of tableEstablishment; let index = index"
@@ -44,14 +44,14 @@
       </div>
     </ng-container>
   </div>
-</div> -->
+</div>
 
 <div class="container mt-5 mb-5">
   <div class="row">
     <ng-container
       *ngFor="let establishment of tableEstablishment; let index = index"
     >
-      <div *ngIf="establishment.name.includes(this.research)" class="col-4">
+      <div *ngIf="establishment.name.toLowerCase().includes(this.research)" class="col-4">
         <div class="card m-4">
           <div class="hovereffect">
             <img

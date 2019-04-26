@@ -12,9 +12,8 @@ export class EstablishmentService {
   public service: HttpClient;
   public result;
 
-
   constructor(public http: HttpClient) {}
-  
+
   public resultSearch;
 
   public getEstablishment(id: string): Observable<Establishment> {
@@ -90,7 +89,7 @@ export class EstablishmentService {
     this.result = categorie;
   }
 
-  research(word){
+  research(word) {
     this.resultSearch = word;
   }
 }

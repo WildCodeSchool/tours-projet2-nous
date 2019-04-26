@@ -14,6 +14,7 @@ export class ListEstablishmentComponent implements OnInit {
   public categorie = this.service.result;
   public estaDefault;
   public estaCategorie;
+  public estaSearch;
   public research: string ;
 
   constructor(private service: EstablishmentService, public activatedRoute: ActivatedRoute) {}
@@ -21,10 +22,14 @@ export class ListEstablishmentComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
       const search = params.get('search');
-    this.research = search;
-    console.log(this.research)
-  }
-  )
+      this.research = search.toLowerCase();
+      if (this.research !== undefined) {
+        this.estaDefault = true;
+        this.estaCategorie = true;
+      }
+      console.log(this.research);
+    },
+  );
     this.service.getAllEstablishment().subscribe(
       (etam) => {
         this.listEstablishment = etam;
