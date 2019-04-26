@@ -16,5 +16,6 @@ export class AppComponent {
     // le service est stocké dans PARAM_SERVICE
     this.service  =  PARAM_SERVICE;
   }
+
   public ngOnInit() {}
 }

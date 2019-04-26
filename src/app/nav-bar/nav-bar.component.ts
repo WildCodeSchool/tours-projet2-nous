@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../common/services/authentication.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -10,8 +11,11 @@ export class NavBarComponent implements OnInit {
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen;
   }
-  constructor() { }
+  constructor(public authenticationService: AuthenticationService) { }
   isCollapsed: boolean = true;
   ngOnInit() {
+  }
+  logout() {
+    this.authenticationService.logout();
   }
 }
