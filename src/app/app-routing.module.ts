@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'bookings/:establishment', component: BookingFormsComponent },
 // tslint:disable-next-line: max-line-length
   { path: 'establishments/create', component: EstablishmentInscriptionComponent, canActivate: [AuthGuard] },
-  { path: 'profiles/establishments', component: ListEstablishmentComponent },
+  { path: 'profiles/establishments/:categorie', component: ListEstablishmentComponent },
   { path: 'profiles/establishments/:search', component: ListEstablishmentComponent },
   { path: 'establishments/:id', component: EstablishmentInscriptionComponent },
   { path: '', component: CategorieComponent },
