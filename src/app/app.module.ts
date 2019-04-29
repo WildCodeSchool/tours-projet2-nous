@@ -19,7 +19,6 @@ import { ListeBookingComponent } from './liste-booking/liste-booking.component';
 import { ListEstablishmentComponent } from './list-establishment/list-establishment.component';
 // tslint:disable-next-line: max-line-length
 import { DetailListEstablischmentComponent } from './detail-list-establischment/detail-list-establischment.component';
-import { ListMessageComponent } from './list-message/list-message.component';
 import { TimePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { DropDownListModule, DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
 import { LoginComponent } from './login/login.component';
@@ -39,7 +38,6 @@ import { DetailsProfileComponent } from './details-profile/details-profile.compo
     ListeBookingComponent,
     ListEstablishmentComponent,
     DetailListEstablischmentComponent,
-    ListMessageComponent,
     AppComponent,
     LoginComponent,
     DetailsProfileComponent,

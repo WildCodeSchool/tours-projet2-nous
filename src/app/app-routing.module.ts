@@ -10,7 +10,6 @@ import { ListeBookingComponent } from './liste-booking/liste-booking.component';
 import { ListEstablishmentComponent } from './list-establishment/list-establishment.component';
 // tslint:disable-next-line: max-line-length
 import { DetailListEstablischmentComponent } from './detail-list-establischment/detail-list-establischment.component';
-import { ListMessageComponent } from './list-message/list-message.component';
 import { DetailsProfileComponent } from './details-profile/details-profile.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards';
@@ -34,7 +33,6 @@ const routes: Routes = [
     path: 'establishments/update/:etablissementId',
     component: EstablishmentInscriptionComponent,
   },
-  { path: 'messages/lists', component: ListMessageComponent, canActivate: [AuthGuard] },
   { path: 'messages', component: ProfilemessageComponent },
   { path: 'details/profile', component: DetailsProfileComponent , canActivate: [AuthGuard] },
   { path: '', component: CategorieComponent, canActivate: [AuthGuard] },

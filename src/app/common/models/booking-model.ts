@@ -8,7 +8,7 @@ export class Booking {
     },
     public owner : {
       name : string,
-      adress : {
+      address : {
         street: String,
         zipCode: String,
         city: String,
