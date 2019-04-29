@@ -8,10 +8,8 @@ import { MessageService } from '../common/services/message.service';
   styleUrls: ['./details-profile.component.css'],
 })
 export class DetailsProfileComponent implements OnInit {
-  public establishments: [];
-  public listEstablishment;
-  public messages: [];
-  public listMessage;
+  public establishments: any;
+  public messages: any;
   constructor(
     private service: EstablishmentService,
     private message: MessageService,
@@ -20,33 +18,28 @@ export class DetailsProfileComponent implements OnInit {
 
   ngOnInit() {
     this.service.getListEstablishment().subscribe(
-      (etam) => {
-        this.listEstablishment = etam;
-        this.establishments = this.listEstablishment;
-        console.log(this.listEstablishment);
+      (establishment) => {
+        this.establishments = establishment;
+
       });
 
     this.message.getListMessage().subscribe(
-      (etam) => {
-        this.listMessage = etam;
-        this.messages = this.listMessage;
-        console.log(this.listMessage);
+      (message) => {
+        this.messages = message;
       },
     );
 
   }
   delete(id, index) {
-    this.service.deleteEtablishment(id).subscribe(
-            (val) => {
-              console.log('DELETE call successful value returned in body',
-                          val);
-              this.listEstablishment.splice(index, 1);
-            },
-            (response) => {
-              console.log('DELETE call in error', response);
-            },
-            () => {
-              console.log('The DELETE observable is now completed.');
-            });
+    this.service.deleteEtablishment(id)
+    .subscribe(this.establishments
+      .splice(index, 1));
+
+  }
+  deleteMessage(id, index) {
+    this.message.delMessage(id)
+    .subscribe(this.messages
+      .splice(index, 1));
+
   }
 }
