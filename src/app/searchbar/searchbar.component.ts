@@ -9,14 +9,12 @@ import { EstablishmentService } from '../common/services/establishment.service';
 
 })
 
-
 export class SearchbarComponent implements OnInit {
 
   constructor(public service :EstablishmentService) {
   }
 
   public inputText :string;
-
 
   ngOnInit() {
   }

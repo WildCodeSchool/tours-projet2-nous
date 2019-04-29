@@ -24,8 +24,6 @@ import { DropDownListModule, DropDownListComponent } from '@syncfusion/ej2-angul
 import { LoginComponent } from './login/login.component';
 import { DetailsProfileComponent } from './details-profile/details-profile.component';
 import { CardComponent } from './card/card.component';
-
-
 @NgModule({
   declarations: [
     AppComponent,
