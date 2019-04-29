@@ -24,6 +24,7 @@ import { TimePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { DropDownListModule, DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
 import { LoginComponent } from './login/login.component';
 import { DetailsProfileComponent } from './details-profile/details-profile.component';
+import { CardComponent } from './card/card.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { DetailsProfileComponent } from './details-profile/details-profile.compo
     AppComponent,
     LoginComponent,
     DetailsProfileComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,
