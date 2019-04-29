@@ -18,11 +18,11 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards';
 
 const routes: Routes = [
+  { path: 'profiles/establishments', component: ListEstablishmentComponent },
   { path: 'bookings/list/:etablissement', component: ListeBookingComponent },
   { path: 'establishments/details/:id', component: DetailListEstablischmentComponent },
   { path: 'bookings/:establishment', component: BookingFormsComponent },
-  { path: 'profiles/establishments', component: ListEstablishmentComponent },
-  { path: 'profiles/establishments/:search', component: ListEstablishmentComponent },
+  { path: 'profiles/establishments/search/:search', component: ListEstablishmentComponent },
   { path: 'profiles/establishments/:categorie', component: ListEstablishmentComponent },
 
   { path: 'establishments/create', component: EstablishmentInscriptionComponent,
