@@ -10,6 +10,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
+
   public id: string;
   public myForm: FormGroup;
   public profil: Profile;
