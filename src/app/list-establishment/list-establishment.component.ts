@@ -16,6 +16,7 @@ export class ListEstablishmentComponent implements OnInit {
   public estaCategorie;
   public estaSearch;
   public research: string ;
+  public address = '/establishments/details';
 
   constructor(private service: EstablishmentService, public activatedRoute: ActivatedRoute) {}
 
