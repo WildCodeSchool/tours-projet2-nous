@@ -10,7 +10,7 @@ import { Establishment } from '../common/models/establishment.model';
 })
 export class ListEstablishmentComponent implements OnInit {
   public tableEstablishment: [];
-  public listEstablishment;
+  establishments: any;
   public categorie;
   public estaDefault;
   public estaCategorie;
@@ -24,7 +24,10 @@ export class ListEstablishmentComponent implements OnInit {
       const categorie = params.get('categorie');
       this.categorie = categorie;
       const search = params.get('search');
-      this.research = search.toLowerCase();
+      if (search) {
+        this.research = search;
+        this.research = this.research.toLowerCase();
+      }
       if (this.research !== undefined) {
         this.estaDefault = true;
         this.estaCategorie = true;
@@ -34,18 +37,14 @@ export class ListEstablishmentComponent implements OnInit {
   );
     this.service.getAllEstablishment().subscribe(
       (etam) => {
-        this.listEstablishment = etam;
-        this.tableEstablishment = this.listEstablishment;
-        console.log(this.listEstablishment);
+        this.establishments = etam;
+        this.tableEstablishment = this.establishments;
+        console.log(this.establishments);
       });
-    if (this.categorie === undefined) {
-      this.estaDefault = false;
-      this.estaCategorie = true;
-    } else {
-      this.estaDefault = true;
-      this.estaCategorie = false;
-    }
     console.log(this.categorie);
+    console.log(this.estaDefault);
+    console.log(this.estaCategorie);
+
   }
 
   delete(id, index) {
@@ -53,7 +52,7 @@ export class ListEstablishmentComponent implements OnInit {
             (val) => {
               console.log('DELETE call successful value returned in body',
                           val);
-              this.listEstablishment.splice(index, 1);
+              this.establishments.splice(index, 1);
             },
             (response) => {
               console.log('DELETE call in error', response);
