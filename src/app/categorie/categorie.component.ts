@@ -13,9 +13,4 @@ export class CategorieComponent implements OnInit {
   ngOnInit() {
   }
 
-  categorieRest(categorie) {
-    const result = categorie;
-    this.service.getEstablishmentBySort(result);
-  }
-
 }

@@ -8,9 +8,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class EstablishmentService {
-  public id;
   public service: HttpClient;
-  public result;
 
   constructor(public http: HttpClient) {}
 
@@ -84,9 +82,6 @@ export class EstablishmentService {
       return response as Establishment;
     };
     return obs.pipe(map(treatment));
-  }
-  getEstablishmentBySort(categorie) {
-    this.result = categorie;
   }
 
   research(word) {

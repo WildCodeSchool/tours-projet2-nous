@@ -11,7 +11,7 @@ import { Establishment } from '../common/models/establishment.model';
 export class ListEstablishmentComponent implements OnInit {
   public tableEstablishment: [];
   public listEstablishment;
-  public categorie = this.service.result;
+  public categorie;
   public estaDefault;
   public estaCategorie;
   public estaSearch;
@@ -21,6 +21,8 @@ export class ListEstablishmentComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
+      const categorie = params.get('categorie');
+      this.categorie = categorie;
       const search = params.get('search');
       this.research = search.toLowerCase();
       if (this.research !== undefined) {
@@ -59,8 +61,5 @@ export class ListEstablishmentComponent implements OnInit {
             () => {
               console.log('The DELETE observable is now completed.');
             });
-  }
-  etaDetail(id) {
-    this.service.id = id;
   }
 }
