@@ -9,8 +9,6 @@ import { EstablishmentService } from '../common/services/establishment.service';
 })
 export class CardComponent implements OnInit {
 
-  image;
-
   @Input() cat:[];
   @Input() categorie: string;
   @Input() path: string;
