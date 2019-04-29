@@ -23,14 +23,12 @@ export class DetailsProfileComponent implements OnInit {
       (etam) => {
         this.listEstablishment = etam;
         this.establishments = this.listEstablishment;
-        console.log(this.listEstablishment);
       });
 
     this.message.getListMessage().subscribe(
       (etam) => {
         this.listMessage = etam;
         this.messages = this.listMessage;
-        console.log(this.listMessage);
       },
     );
 

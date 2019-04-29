@@ -19,7 +19,6 @@ export class ListMessageComponent implements OnInit {
       (message) => {
         this.listMessage = message;
         this.tableLists = this.listMessage;
-        console.log(this.listMessage);
       });
 
   }

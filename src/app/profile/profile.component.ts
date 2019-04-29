@@ -11,14 +11,13 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
   public id: string;
-  public myForm: FormGroup;
-  public profil: Profile;
+  public profile: FormGroup;
 
   constructor(private fb: FormBuilder,
               private service: ProfileService,
               public activetedroute: ActivatedRoute) {
 
-    this.myForm = this.fb.group({
+    this.profile = this.fb.group({
       firstName: [''],
       lastName: [''],
       siret: [''],
@@ -43,20 +42,15 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.service.get().subscribe(
       (profile: Profile) => {
-        this.profil = profile;
-        console.log(profile);
-        this.myForm.patchValue(profile);
+        this.profile.patchValue(profile);
       },
     );
   }
 
   submit() {
-    console.log(this.myForm.valid);
-    this.service.update(this.myForm.value).subscribe(
+    this.service.update(this.profile.value).subscribe(
       (profile: Profile) => {
-        this.profil = profile;
-        console.log(profile);
-        this.myForm.patchValue(profile);
+        this.profile.patchValue(profile);
       },
     );
   }

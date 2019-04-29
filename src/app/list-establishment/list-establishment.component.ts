@@ -18,11 +18,10 @@ export class ListEstablishmentComponent implements OnInit {
   constructor(private service: EstablishmentService, public activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    this.service.getAllEstablishment().subscribe(
+    this.service.getListEstablishment().subscribe(
       (etam) => {
         this.listEstablishment = etam;
         this.tableEstablishment = this.listEstablishment;
-        console.log(this.listEstablishment);
       });
     if (this.categorie === undefined) {
       this.estaDefault = false;
@@ -31,7 +30,6 @@ export class ListEstablishmentComponent implements OnInit {
       this.estaDefault = true;
       this.estaCategorie = false;
     }
-    console.log(this.categorie);
   }
 
   delete(id, index) {
