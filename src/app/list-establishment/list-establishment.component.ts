@@ -46,8 +46,7 @@ export class ListEstablishmentComponent implements OnInit {
                 console.log(this.establishments);
               }
             }
-          }
-          else {
+          }else {
             this.establishments = etam;
             this.tableEstablishment = this.establishments;
           }
