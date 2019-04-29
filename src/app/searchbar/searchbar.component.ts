@@ -25,7 +25,7 @@ export class SearchbarComponent implements OnInit {
   // set placeholder text to DropDownList input element
   public placeholder: string = 'Number of persons';
 
-  search(){
+  search() {
     this.service.research(this.inputText);
   }
 }

@@ -8,14 +8,12 @@ import { EstablishmentService } from '../common/services/establishment.service';
 export class CategorieComponent implements OnInit {
   categories = ['Burger', 'Pizza', 'French food', 'Chinese food', 'Vegan', 'Ocean food'];
   myCat = this.categories[0];
+  public debutPhoto = 'assets/img/';
+  public finPhoto = '.jpg';
+  public address = 'profiles/establishments';
   constructor(private service: EstablishmentService) { }
 
   ngOnInit() {
-  }
-
-  categorieRest(categorie) {
-    const result = categorie;
-    this.service.getEstablishmentBySort(result);
   }
 
 }
