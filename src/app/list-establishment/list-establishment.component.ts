@@ -32,7 +32,7 @@ export class ListEstablishmentComponent implements OnInit {
           console.log(this.establishments);
           this.tableEstablishment = [];
           if (categorie) {
-            for (let i = 0; i < this.establishments.length; i++) {
+            for (let i = 0; i < this.establishments.length; i += 1) {
               if (this.establishments[i].type === this.categorie) {
 
                 this.tableEstablishment.push(this.establishments[i]);
