@@ -25,7 +25,6 @@ export class ListeBookingComponent implements OnInit {
       this.service.getListBooking(etablissement).subscribe(
           (booking) => {
             this.listBooking  =  booking;
-            this.tableLists = this.listBooking;
           });
     });
   }
