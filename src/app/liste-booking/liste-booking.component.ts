@@ -13,7 +13,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class ListeBookingComponent implements OnInit {
 
-  public bookings;
+  public bookings: Booking[];
 
   constructor(public service:BookingService, public serv:EstablishmentService,
               public activatedRoute:ActivatedRoute) {}
@@ -30,16 +30,9 @@ export class ListeBookingComponent implements OnInit {
 
   delete(id, index) {
     this.service.deleteBooking(id).subscribe(
-      (val) => {
-        console.log('DELETE call successful value returned in body',
-                    val);
+      (bookings) => {
         this.bookings.splice(index , 1);
-      },
-      (response) => {
-        console.log('DELETE call in error', response);
-      },
-      () => {
-        console.log('The DELETE observable is now completed.');
       });
   }
+
 }

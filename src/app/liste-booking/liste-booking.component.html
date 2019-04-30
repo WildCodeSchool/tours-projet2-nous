@@ -7,14 +7,14 @@
             <tr>
               <th>#</th>
               <th>Name</th>
-              <th>Address</th>
+              <th>Numbers</th>
               <th>Date</th>
               <th>Update</th>
               <th>Delete</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let book of listBooking; let i = index">
+            <tr *ngFor="let book of bookings; let i = index">
               <th scope="row">{{ i + 1 }}</th>
               <td>{{book.owner.name}}</td>
               <td>{{book.numbers}}</td>

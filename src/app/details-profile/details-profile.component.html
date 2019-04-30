@@ -15,7 +15,7 @@
   </div>
   <div class="row d-flex justify-content-around">
     <div
-      class="card middle sm-12 m-3 col-3"
+      class="card middle  m-3 col-3"
       *ngFor="let establishment of establishments; let index = index"
     >
       <div class="front">
@@ -64,7 +64,7 @@
           <h5 class="mt-2 mb-2 text-center">{{ message.from }}</h5>
           <div class="trait"></div>
           <p class="mt-4 mb-4 ml-4">{{ message.message }}</p>
-          <button class="btn btn-danger messageButton"
+          <button class="btn btn-danger messageButton mb-3"
           (click)="deleteMessage(message._id, index)">Delete</button>
         </div>
       </div>
