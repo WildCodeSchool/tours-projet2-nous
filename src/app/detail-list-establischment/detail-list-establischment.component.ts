@@ -18,7 +18,6 @@ export class DetailListEstablischmentComponent implements OnInit {
   public menus;
   public name;
   public time;
-  public timeHidden;
   public messageForm;
   public commentForm: FormGroup;
 
@@ -55,10 +54,6 @@ export class DetailListEstablischmentComponent implements OnInit {
           this.time = establishment.time;
           this.comments = establishment.comments;
           this.menus = establishment.menus;
-          console.log(this.menus);
-          if (this.time === undefined) {
-            this.timeHidden = true;
-          }
         });
     });
   }
