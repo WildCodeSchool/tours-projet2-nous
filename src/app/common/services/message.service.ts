@@ -46,7 +46,7 @@ export class MessageService {
     return obs.pipe(map(treatment));
   }
 
-  public delMessage(id, i) {
+  public delMessage(id) {
     const obs: Observable<any> = this.http
     .delete(`http://open-reza.herokuapp.com/api/messages/${id}`);
     const treatment = (response: any) => {

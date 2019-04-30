@@ -13,8 +13,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class ListeBookingComponent implements OnInit {
 
-  public listBooking;
-  public tableLists = [];
+  public bookings: Booking[];
 
   constructor(public service:BookingService, public serv:EstablishmentService,
               public activatedRoute:ActivatedRoute) {}
@@ -24,24 +23,16 @@ export class ListeBookingComponent implements OnInit {
       const etablissement = params.get('etablissement');
       this.service.getListBooking(etablissement).subscribe(
           (booking) => {
-            this.listBooking  =  booking;
-            this.tableLists = this.listBooking;
+            this.bookings  =  booking;
           });
     });
   }
 
   delete(id, index) {
     this.service.deleteBooking(id).subscribe(
-      (val) => {
-        console.log('DELETE call successful value returned in body',
-                    val);
-        this.tableLists.splice(index , 1);
-      },
-      (response) => {
-        console.log('DELETE call in error', response);
-      },
-      () => {
-        console.log('The DELETE observable is now completed.');
+      (bookings) => {
+        this.bookings.splice(index , 1);
       });
   }
+
 }

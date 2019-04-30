@@ -10,15 +10,12 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./profilemessage.component.css'],
 })
 export class ProfilemessageComponent implements OnInit {
-  public messageForm: Message;
-  public myForm: FormGroup;
-  id: string;
-  messageService: Message;
+  public message: FormGroup;
 
   constructor(private fb: FormBuilder,
               public service: MessageService,
               public activatedRoute: ActivatedRoute) {
-    this.myForm = this.fb.group({
+    this.message = this.fb.group({
       from: [''],
       to: [''],
       message: [''],
@@ -32,22 +29,16 @@ export class ProfilemessageComponent implements OnInit {
       if (id) {
         this.service.getMessage(id).subscribe(
           (message: Message) => {
-            this.messageForm = message;
-            /// this.myForm.patchValue(pa//message)
-            this.myForm.patchValue(message);
-            console.log(message);
+            this.message.patchValue(message);
           });
       }
     });
   }
 
   onSubmit() {
-    this.service.postMessage(this.myForm.value).subscribe(
+    this.service.postMessage(this.message.value).subscribe(
       (message: Message) => {
-        this.messageForm = message;
-        /// this.myForm.patchValue(pa//message)
-        this.myForm.patchValue(message);
-        console.log(message);
+        this.message.patchValue(message);
       });
   }
 }

@@ -47,7 +47,7 @@ export class BookingService {
     const  obs:Observable<any> = this.service
     .get(`http://open-reza.herokuapp.com/api/establishments/${id}/bookings`);
     const  treatment  = (response:any) => {
-      return  response as Booking;
+      return  response as Booking[];
     };
     return  obs.pipe(map(treatment));
   }

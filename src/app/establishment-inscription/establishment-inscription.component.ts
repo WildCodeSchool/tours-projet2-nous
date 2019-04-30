@@ -11,6 +11,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 export class EstablishmentInscriptionComponent implements OnInit {
   public establishmentForm: FormGroup;
   public establishment: Establishment;
+  public id;
 
   constructor(private fb: FormBuilder,
               private service: EstablishmentService,
@@ -46,6 +47,7 @@ export class EstablishmentInscriptionComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
       const id = params.get('id');
+      this.id = id;
       if (id) {
         this.service.getEstablishment(id).subscribe(
       (establishment: Establishment) => {
@@ -65,24 +67,19 @@ export class EstablishmentInscriptionComponent implements OnInit {
   }
 
   onSubmit() {
-    this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
-      const id = params.get('id');
-      if (id) {
-        console.log(this.establishmentForm.value);
-        this.service.update(id, this.establishmentForm.value).subscribe(
+    if (this.id) {
+      this.service.update(this.id, this.establishmentForm.value).subscribe(
     (establishment: Establishment) => {
       this.establishment = establishment;
       this.establishmentForm.patchValue(establishment);
 // tslint:disable-next-line: brace-style
     }); }else {
-        console.log(this.establishmentForm.value);
-        this.service.create(this.establishmentForm.value).subscribe(
+      this.service.create(this.establishmentForm.value).subscribe(
       (establishment: Establishment) => {
         this.establishment = establishment;
         this.establishmentForm.patchValue(establishment);
 // tslint:disable-next-line: brace-style
       }); }
-    });
-
   }
+
 }

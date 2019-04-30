@@ -1,4 +1,4 @@
-<div class="container mt-4 mb-4 pb-2 rounded">
+<div class="container mt-4 mb-4 pb-2 rounded" *ngIf="establishment">
   <div class="row">
     <div class="col-12 pb-6 caroussel">
       <ngb-carousel
@@ -23,7 +23,7 @@
         {{ this.description }}
       </p>
     </div>
-    <div class="col-4 text-center">
+    <div *ngIf="this.time.open.monday.am.start" class="col-4 text-center">
       <div class="container demo-bg">
         <div class="row">
           <div class="col-sm-12">
@@ -98,12 +98,12 @@
           <tr>
             <th>#</th>
             <th>Menus</th>
-            <th>Prix</th>
+            <th>Price</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let menu of menus; let i = index">
-            <th scope="row">{{i + 1}}</th>
+            <th scope="row">{{ i + 1 }}</th>
             <td>{{ this.menu.name }}</td>
             <td>{{ this.menu.price }}€</td>
           </tr>
@@ -111,9 +111,20 @@
       </table>
     </div>
     <div class="col-3 pl-3">
-      <button type="button" class="btn btn-res ml-4 btn-danger" [routerLink]="['/bookings', this.id]">
-        Réservez !
+      <button
+        type="button"
+        class="btn btn-res ml-4 btn-danger"
+        [routerLink]="['/bookings', this.id]"
+      >
+        Register !
       </button>
+      <button
+      type="button"
+      class="btn btn-res ml-4 btn-danger"
+      routerLink='/messages'
+    >
+      Contact us
+    </button>
     </div>
   </div>
   <div class="row bootstrap snippets">
@@ -121,7 +132,7 @@
       <div class="comment-wrapper">
         <div class="panel panel-info">
           <div class="panel-heading">
-            <h2>Commentaires et avis :</h2>
+            <h2>Comments :</h2>
           </div>
           <div class="panel-body col-12">
             <div class="clearfix"></div>
@@ -141,18 +152,28 @@
                 </div>
               </li>
             </ul>
-            <div class="row">
-              <input type="text" placeholder="Your name" formControlName="name" class="form-control" />
-              <textarea
-                class="form-control ml-5 col-10"
-                formControlName="comments"
-                placeholder="Write a comment..."
-                rows="3"
-              ></textarea>
-              <button type="button" class="btn btn-post btn-danger pull-right">
-                Post
-              </button>
-            </div>
+            <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+              <div class="col-4 m-3">
+                <input
+                  FormControlName="name"
+                  class="form-control"
+                  placeholder="Your name"
+                />
+              </div>
+              <div class="row">
+                <textarea
+                  class="form-control ml-5 col-10"
+                  placeholder="Write a comment..."
+                  FormControlName="comment"
+                  rows="3"
+                ></textarea>
+                <input
+                  value="Post"
+                  type="submit"
+                  class="btn btn-post btn-danger pull-right"
+                >
+              </div>
+            </form>
           </div>
         </div>
       </div>

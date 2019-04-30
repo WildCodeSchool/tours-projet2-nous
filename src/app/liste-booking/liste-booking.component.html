@@ -1,7 +1,30 @@
-<div class="container mt-5 mb-5">
-  <div class="row">
-    <ul class="list-group">
-    <li class="list-group-item list-group-item-dark" *ngFor="let book of tableLists; let i = index"> Name : {{book.owner.name}} | Street : {{book.owner.address.street}}, {{book.owner.address.city}}, {{book.owner.address.number}} | {{book.date.start}} <button routerLink="/bookings/{{book._id}}/update">Update</button> <button (click)="delete(book._id, i)">Delete</button> </li> 
-      </ul>
+<div class="container mt-5 mb-5 rounded">
+  <div class="row text-white ">
+      <div class="offres col-12 text-center">
+        <h2>Bookings</h2>
+        <table class="table text-white">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Numbers</th>
+              <th>Date</th>
+              <th>Update</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let book of bookings; let i = index">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>{{book.owner.name}}</td>
+              <td>{{book.numbers}}</td>
+              <td>{{book.date.start | date}}</td>
+              <td><button class="btn btn-danger" routerLink="/bookings/{{book._id}}/update">
+                Up</button></td>
+              <td><button class="btn btn-danger"(click)="delete(book._id, i)">
+                X</button></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </div>
+</div>
