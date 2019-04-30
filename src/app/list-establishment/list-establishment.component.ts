@@ -51,23 +51,23 @@ export class ListEstablishmentComponent implements OnInit {
             this.tableEstablishment = this.establishments;
           }
         },
-        );
-    },
       );
+    },
+    );
   }
 
   delete(id, index) {
     this.service.deleteEtablishment(id).subscribe(
-        (val) => {
-          console.log('DELETE call successful value returned in body',
-                      val);
-          this.establishments.splice(index, 1);
-        },
-        (response) => {
-          console.log('DELETE call in error', response);
-        },
-        () => {
-          console.log('The DELETE observable is now completed.');
-        });
+      (val) => {
+        console.log('DELETE call successful value returned in body',
+                    val);
+        this.establishments.splice(index, 1);
+      },
+      (response) => {
+        console.log('DELETE call in error', response);
+      },
+      () => {
+        console.log('The DELETE observable is now completed.');
+      });
   }
 }

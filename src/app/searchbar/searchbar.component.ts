@@ -14,7 +14,9 @@ export class SearchbarComponent implements OnInit {
   constructor(public service :EstablishmentService) {
   }
 
-  public inputText :string;
+  public inputText :string = 'tours';
+  public date: Date;
+  public nbPersonne: Number;
 
   ngOnInit() {
   }
@@ -25,5 +27,9 @@ export class SearchbarComponent implements OnInit {
 
   search() {
     this.service.research(this.inputText);
+    this.service.date = this.date;
+    this.service.nbPersonne = this.nbPersonne;
+    console.log(this.date);
+    console.log(this.nbPersonne);
   }
 }
