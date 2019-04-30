@@ -13,8 +13,9 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class ListeBookingComponent implements OnInit {
 
-  public listBooking;
+  public bookings: Booking[];
   public tableLists = [];
+
 
   constructor(public service:BookingService, public serv:EstablishmentService,
               public activatedRoute:ActivatedRoute) {}
@@ -24,12 +25,16 @@ export class ListeBookingComponent implements OnInit {
       const etablissement = params.get('etablissement');
       this.service.getListBooking(etablissement).subscribe(
           (booking) => {
-            this.listBooking  =  booking;
+            this.bookings  =  booking;
           });
     });
   }
 
   delete(id, index) {
-    this.service.deleteBooking(id).subscribe(this.listBooking.splice(index , 1));
+    this.service.deleteBooking(id).subscribe(
+      (bookings) => {
+        this.bookings.splice(index , 1);
+      });
   }
+  
 }
