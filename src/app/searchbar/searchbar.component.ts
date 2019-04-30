@@ -14,7 +14,7 @@ export class SearchbarComponent implements OnInit {
   constructor(public service :EstablishmentService) {
   }
 
-  public inputText :string;
+  public inputText :string = 'tours';
   public date: Date;
   public nbPersonne: Number;
 
