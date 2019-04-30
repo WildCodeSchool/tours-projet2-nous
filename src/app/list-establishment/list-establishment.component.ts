@@ -25,7 +25,7 @@ export class ListEstablishmentComponent implements OnInit {
       const search = params.get('search');
       this.search = search;
 
-      this.service.getAllEstablishment().subscribe(
+      this.service.getListEstablishment().subscribe(
         (etam) => {
           this.establishments = etam;
           this.tableEstablishment = this.establishments;
