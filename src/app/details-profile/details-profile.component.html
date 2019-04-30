@@ -59,11 +59,13 @@
         <h2>Messages</h2>
       </div>
 
-      <div class="media mt-5 mb-4" *ngFor="let message of messages">
+      <div class="media mt-5 mb-4" *ngFor="let message of messages; let index = index">
         <div class="media-body">
           <h5 class="mt-2 mb-2 text-center">{{ message.from }}</h5>
           <div class="trait"></div>
           <p class="mt-4 mb-4 ml-4">{{ message.message }}</p>
+          <button class="btn btn-danger messageButton"
+          (click)="deleteMessage(message._id, index)">Delete</button>
         </div>
       </div>
     </div>

@@ -23,7 +23,7 @@
         {{ this.description }}
       </p>
     </div>
-    <div class="col-4 text-center">
+    <div *ngIf="this.time.open.monday.am.start" class="col-4 text-center">
       <div class="container demo-bg">
         <div class="row">
           <div class="col-sm-12">

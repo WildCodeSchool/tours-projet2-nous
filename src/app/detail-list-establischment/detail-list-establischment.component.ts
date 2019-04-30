@@ -25,13 +25,12 @@ export class DetailListEstablischmentComponent implements OnInit {
   showNavigationArrows = true;
   showNavigationIndicators = true;
   establishment: Establishment;
-  images = [1, 2, 3].map(
+  public images = [1, 2, 3].map(
     () => `https://picsum.photos/900/500?random&t=${Math.random()}`,
   );
 
   // tslint:disable-next-line: max-line-length
   constructor(
-    config: NgbCarouselConfig,
     public serv: BookingService,
     public service: EstablishmentService,
     public activatedRoute: ActivatedRoute,
@@ -41,9 +40,6 @@ export class DetailListEstablischmentComponent implements OnInit {
       name: [''],
       comment: [''],
     });
-    // customize default values of carousels used by this component tree
-    config.showNavigationArrows = true;
-    config.showNavigationIndicators = true;
   }
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {

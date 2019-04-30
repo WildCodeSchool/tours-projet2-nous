@@ -9,9 +9,6 @@
   cursor: pointer;
 }
 
-.container {
-  min-height: 600px;
-}
 .hovereffect img {
   -webkit-transition: all .4s linear;
   transition: all .4s linear;

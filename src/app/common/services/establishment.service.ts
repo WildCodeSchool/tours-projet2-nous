@@ -8,11 +8,11 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class EstablishmentService {
-  public id;
   public service: HttpClient;
-  public result;
 
   constructor(public http: HttpClient) {}
+
+  public resultSearch;
 
   public getEstablishment(id: string): Observable<Establishment> {
     const obs: Observable<any> = this.http.get(
@@ -58,23 +58,15 @@ export class EstablishmentService {
 
   public getListEstablishment() {
     const obs: Observable<any> = this.http.get(
-      'http://open-reza.herokuapp.com/api/profiles/establishments/',
-    );
-    const treatment = (response: any) => {
-      return response as Establishment;
-    };
-    return obs.pipe(map(treatment));
-  }
-  public getAllEstablishment() {
-    const obs: Observable<any> = this.http.get(
       'http://open-reza.herokuapp.com/api/establishments',
     );
     const treatment = (response: any) => {
-      return response as Establishment;
+      return response as Establishment[];
     };
     return obs.pipe(map(treatment));
   }
   deleteEtablishment(id) {
+    // tslint:disable-next-line: max-line-length
     const obs: Observable<any> = this.http.delete(
       `http://open-reza.herokuapp.com/api/establishments/${id}`,
     );
@@ -83,7 +75,8 @@ export class EstablishmentService {
     };
     return obs.pipe(map(treatment));
   }
-  getEstablishmentBySort(categorie) {
-    this.result = categorie;
+
+  research(word) {
+    this.resultSearch = word;
   }
 }
