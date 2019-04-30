@@ -10,7 +10,7 @@ import { Establishment } from '../common/models/establishment.model';
 })
 export class ListEstablishmentComponent implements OnInit {
   public tableEstablishment;
-  establishments;
+  public establishments: Establishment[];
   public categorie;
   public research: string;
   public search;

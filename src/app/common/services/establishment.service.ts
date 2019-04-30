@@ -70,7 +70,7 @@ export class EstablishmentService {
       'http://open-reza.herokuapp.com/api/establishments',
     );
     const treatment = (response: any) => {
-      return response as Establishment;
+      return response as [Establishment];
     };
     return obs.pipe(map(treatment));
   }
