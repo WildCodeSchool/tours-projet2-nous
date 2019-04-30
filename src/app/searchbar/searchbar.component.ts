@@ -15,6 +15,8 @@ export class SearchbarComponent implements OnInit {
   }
 
   public inputText :string;
+  public date: Date;
+  public nbPersonne: Number;
 
   ngOnInit() {
   }
@@ -25,5 +27,9 @@ export class SearchbarComponent implements OnInit {
 
   search() {
     this.service.research(this.inputText);
+    this.service.date = this.date;
+    this.service.nbPersonne = this.nbPersonne;
+    console.log(this.date);
+    console.log(this.nbPersonne);
   }
 }

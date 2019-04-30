@@ -3,6 +3,7 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Booking } from '../common/models/booking-model';
 import { BookingService } from '../common/services/booking.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { EstablishmentService } from '../common/services/establishment.service';
 
 @Component({
   selector: 'app-booking-forms',
@@ -12,9 +13,13 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 export class BookingFormsComponent implements OnInit {
   public booking: FormGroup;
   public id: string;
+  public date;
+  public nbPersonne;
+
 
   constructor(public service: BookingService, public formBuilder: FormBuilder,
-              public activetedroute: ActivatedRoute) {
+              public activetedroute: ActivatedRoute,
+              public establishmentService: EstablishmentService) {
 
     this.booking = this.formBuilder.group({
       date: this.formBuilder.group({
@@ -51,6 +56,8 @@ export class BookingFormsComponent implements OnInit {
             this.booking.patchValue(booking);
           });
       }
+      this.date = `${this.establishmentService.date.day}/${this.establishmentService.date.month}/${this.establishmentService.date.year}`;
+      this.nbPersonne = this.establishmentService.nbPersonne;
     });
   }
 
