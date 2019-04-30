@@ -30,17 +30,6 @@ export class ListeBookingComponent implements OnInit {
   }
 
   delete(id, index) {
-    this.service.deleteBooking(id).subscribe(
-      (val) => {
-        console.log('DELETE call successful value returned in body',
-                    val);
-        this.tableLists.splice(index , 1);
-      },
-      (response) => {
-        console.log('DELETE call in error', response);
-      },
-      () => {
-        console.log('The DELETE observable is now completed.');
-      });
+    this.service.deleteBooking(id).subscribe(this.listBooking.splice(index , 1));
   }
 }
