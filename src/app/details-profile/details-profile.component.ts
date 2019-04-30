@@ -26,10 +26,9 @@ export class DetailsProfileComponent implements OnInit {
     this.message.getListMessage().subscribe(
       (message) => {
         this.messages = message;
-      },
-    );
-
+      });
   }
+
   delete(id, index) {
     this.service.deleteEtablishment(id)
     .subscribe(this.establishments

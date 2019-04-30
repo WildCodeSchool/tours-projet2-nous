@@ -10,16 +10,13 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./booking-forms.component.css'],
 })
 export class BookingFormsComponent implements OnInit {
-  public userForm: FormGroup;
-  public bookingForm: Booking;
-  title = 'BookingService';
+  public booking: FormGroup;
   public id: string;
-  public cacheId = true;
 
   constructor(public service: BookingService, public formBuilder: FormBuilder,
               public activetedroute: ActivatedRoute) {
 
-    this.userForm = this.formBuilder.group({
+    this.booking = this.formBuilder.group({
       date: this.formBuilder.group({
         start: [''],
         end: [''],
@@ -45,47 +42,39 @@ export class BookingFormsComponent implements OnInit {
   ngOnInit() {
     this.activetedroute.paramMap.subscribe((params: ParamMap) => {
       const id = params.get('id');
-      // this.bookingForm.establishment= id;
+      this.id = id;
       const establishment = params.get('establishment');
-      this.userForm.get('establishment').patchValue(establishment);
+      this.booking.get('establishment').patchValue(establishment);
       if (id) {
         this.service.getBoockingForm(id).subscribe(
           (booking: Booking) => {
-            this.bookingForm = booking;
-            this.userForm.patchValue(booking);
-            console.log(booking);
+            this.booking.patchValue(booking);
           });
       }
     });
   }
 
   submit() {
-    this.activetedroute.paramMap.subscribe((params: ParamMap) => {
-      const id = params.get('id');
-      if (id) {
-        this.service.update(this.userForm.value, id).subscribe(
+    if (this.id) {
+      this.service.update(this.booking.value, this.id).subscribe(
           (booking: Booking) => {
-            this.bookingForm = booking;
-            this.userForm.patchValue(booking);
+            this.booking.patchValue(booking);
             console.log('Enregistrement terminé !');
           },
           (error) => {
             console.log(`Erreur ! : ${error}`);
           },
         );
-      } else {
-        console.log(this.userForm.value);
-        this.service.create(this.userForm.value).subscribe(
+    } else {
+      this.service.create(this.booking.value).subscribe(
           (booking: Booking) => {
-            this.bookingForm = booking;
-            this.userForm.patchValue(booking);
+            this.booking.patchValue(booking);
             console.log('Enregistrement terminé !');
           },
           (error) => {
             console.log(`Erreur ! : ${error}`);
           },
         );
-      }
-    });
+    }
   }
 }
