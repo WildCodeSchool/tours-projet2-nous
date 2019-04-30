@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
   public user: boolean;
+  public isLoging:boolean;
   constructor(private http: HttpClient) { }
 
   login(email: string, password: string) {
@@ -28,6 +29,15 @@ export class AuthenticationService {
         // remove user from local storage to log user out
     this.user = false;
     localStorage.removeItem('token');
+  }
+  isLogin(){
+    if (localStorage.getItem('token')) {
+      this.isLoging = true;
+
+    }else {
+      this.isLoging = false;
+    }
+    return this.isLogin;
   }
 
 }
