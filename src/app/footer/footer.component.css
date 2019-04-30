@@ -1,8 +1,11 @@
-.colorFooter{
+.page-footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
   background-color: rgba(65, 62, 62, 0.8);
 }
 
-img{
+img {
   width: 12%;
   margin-right: 13%;
 }
