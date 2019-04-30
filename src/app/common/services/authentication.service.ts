@@ -31,7 +31,7 @@ export class AuthenticationService {
     localStorage.removeItem('token');
   }
   isLogin(){
-    if ('token') {
+    if (localStorage.getItem('token')) {
       this.isLoging = true;
 
     }else {
