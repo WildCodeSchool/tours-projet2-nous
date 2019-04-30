@@ -30,7 +30,7 @@ export class AuthenticationService {
     this.user = false;
     localStorage.removeItem('token');
   }
-  isLogin(){
+  isLogin() {
     if (localStorage.getItem('token')) {
       this.isLoging = true;
 
