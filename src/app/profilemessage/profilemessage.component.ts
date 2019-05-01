@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { MessageService } from '../common/services/message.service';
 import { Message } from '../common/models/message.models';
 import { ActivatedRoute, ParamMap } from '@angular/router';
@@ -11,14 +11,15 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class ProfilemessageComponent implements OnInit {
   public message: FormGroup;
+  public trueMessage: boolean = false;
 
   constructor(private fb: FormBuilder,
               public service: MessageService,
               public activatedRoute: ActivatedRoute) {
     this.message = this.fb.group({
-      from: [''],
-      to: [''],
-      message: [''],
+      from: ['', Validators.required],
+      to: ['', Validators.required],
+      message: ['', Validators.required],
     });
 
   }
@@ -35,10 +36,13 @@ export class ProfilemessageComponent implements OnInit {
     });
   }
 
-  onSubmit() {
-    this.service.postMessage(this.message.value).subscribe(
-      (message: Message) => {
-        this.message.patchValue(message);
-      });
+  submit() {
+    if(this.message.valid){
+      this.trueMessage = true;
+      this.service.postMessage(this.message.value).subscribe(
+        (message: Message) => {
+          this.message.patchValue(message);
+        });
+    }
   }
 }

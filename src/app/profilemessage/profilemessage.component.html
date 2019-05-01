@@ -1,26 +1,33 @@
-<div class="mt-4 mb-4 pt-2 pb-2 bg-opacity-25
-++ container rounded text-center form-horizontal">
-<div class="contact-title">
-  <h3 class="text-center">Information</h3>
+<div class="mt-4 mb-4 pt-2 pb-2  container rounded text-center form-horizontal">
+  <div class="contact-title">
+    <h3 class="text-center">Information</h3>
   </div>
-    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="col-6 mx-auto">
-      <div class="form-group">
-        <label>
-          <input type="text" class="form-control" formControlName="from" placeholder="Your name">
-        </label>
-      </div>
-      <div class="form-group">
-        <label>
+  <form [formGroup]="message" (ngSubmit)="submit()" class="col-12 mx-auto">
+    <div class="form-group">
 
-          <input type="text" class="form-control" formControlName="to" placeholder="Establishment">
-        </label>
-      </div>
-      <div class="form-group">
-        <label>
-          <textarea class="form-control" formControlName="message" placeholder="Message" row="4"></textarea>
-        </label>
-      </div>
-      <input type="submit" class="btn btn-dark">
- 
-    </form>
+      <input type="text" class="form-control" formControlName="from" placeholder="Your name">
+
+    </div>
+    <div class="form-group">
+
+
+      <input type="text" class="form-control" formControlName="to" placeholder="Establishment">
+
+    </div>
+    <div class="form-group">
+
+      <textarea class="form-control" formControlName="message" placeholder="Message" row="4"></textarea>
+
+    </div>
+    <hr>
+    <div *ngIf="this.trueMessage === true">
+      
+      <span class="alert">Message Send</span>
+    </div>
+    <div class="row mt-5 mb-5">
+      <input class="btn btn-res offset-2 col-3 btn-danger" type="submit" />
+
+      <button class="btn btn-res offset-2 col-3 btn-danger" routerLink="profiles/establishments">Return</button>
+    </div>
+  </form>
 </div>
