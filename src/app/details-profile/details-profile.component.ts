@@ -17,7 +17,7 @@ export class DetailsProfileComponent implements OnInit {
     ) {}
 
   ngOnInit() {
-    this.service.getListEstablishment().subscribe(
+    this.service.getListOurEstablishment().subscribe(
       (establishment) => {
         this.establishments = establishment;
 
