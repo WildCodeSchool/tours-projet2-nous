@@ -30,9 +30,8 @@ export class AuthenticationService {
   isLogin() {
     if (localStorage.getItem('token')) {
       return true;
-    }else {
-      return false;
     }
+    return false;
   }
 
 }
