@@ -38,10 +38,10 @@ export class ProfilemessageComponent implements OnInit {
 
   submit() {
     if(this.message.valid){
-      this.trueMessage = true;
       this.service.postMessage(this.message.value).subscribe(
         (message: Message) => {
           this.message.patchValue(message);
+          this.trueMessage = true;
         });
     }
   }
