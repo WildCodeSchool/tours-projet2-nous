@@ -16,6 +16,7 @@ export class BookingFormsComponent implements OnInit {
   public date;
   public nbPersonne;
   public book: boolean = false;
+  public bookDone: boolean = true;
 
   constructor(public service: BookingService, public formBuilder: FormBuilder,
               public activetedroute: ActivatedRoute,
@@ -69,6 +70,7 @@ export class BookingFormsComponent implements OnInit {
       this.service.update(this.booking.value, this.id).subscribe(
           (booking: Booking) => {
             this.booking.patchValue(booking);
+            this.bookDone = false;
             console.log('Enregistrement terminé !');
           },
           (error) => {
@@ -80,6 +82,7 @@ export class BookingFormsComponent implements OnInit {
           (booking: Booking) => {
             this.booking.patchValue(booking);
             console.log('Enregistrement terminé !');
+            this.bookDone = false;
           },
           (error) => {
             console.log(`Erreur ! : ${error}`);
