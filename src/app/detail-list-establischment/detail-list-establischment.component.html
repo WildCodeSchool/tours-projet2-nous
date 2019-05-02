@@ -16,15 +16,21 @@
       </ngb-carousel>
     </div>
   </div>
-  <div class="row mt-6">
-    <div class="description col-8">
+  <div class="row mt-4">
+    <div *ngIf="this.establishment.time.open" class="description col-12 text-center">
       <h2>Description :</h2>
-      <p>
+      <p class="text-center">
         {{ this.description }}
       </p>
     </div>
-    <div *ngIf="this.time.open.monday.am.start" class="col-4 text-center">
-      <div class="container demo-bg">
+    <div *ngIf="!this.establishment.time.open" class="description col-12 text-center">
+      <h2>Description :</h2>
+      <p class="text-center">
+        {{ this.description }}
+      </p>
+    </div>
+    <div *ngIf="this.establishment.time.open" class="col-12 text-center">
+      <div class="container rounded demo-bg">
         <div class="row">
           <div class="col-sm-12">
             <h2 class="title">Opening Hours</h2>
@@ -90,8 +96,8 @@
       </div>
     </div>
   </div>
-  <div class="row text-white">
-    <div class="offres col-9">
+  <div class="row mt-4 text-white">
+    <div *ngIf="this.establishment.menus.length !== 0" class="offres col-12">
       <h2>Menus :</h2>
       <table class="table text-white">
         <thead>
@@ -110,22 +116,22 @@
         </tbody>
       </table>
     </div>
-    <div class="col-3 pl-3">
-      <button
-        type="button"
-        class="btn btn-res ml-4 btn-danger"
-        [routerLink]="['/bookings', this.id]"
-      >
-        Register !
-      </button>
-      <button
+  </div>
+  <div class="row mt-5 mb-5">
+    <button
       type="button"
-      class="btn btn-res ml-4 btn-danger"
-      routerLink='/messages'
+      class="btn btn-res offset-2 col-3 btn-danger"
+      [routerLink]="['/bookings', this.id]"
+    >
+      Register !
+    </button>
+    <button
+      type="button"
+      class="btn btn-res col-3 offset-2 btn-danger"
+      routerLink="/messages"
     >
       Contact us
     </button>
-    </div>
   </div>
   <div class="row bootstrap snippets">
     <div class="col-12">
@@ -171,7 +177,7 @@
                   value="Post"
                   type="submit"
                   class="btn btn-post btn-danger pull-right"
-                >
+                />
               </div>
             </form>
           </div>

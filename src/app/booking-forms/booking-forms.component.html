@@ -1,51 +1,38 @@
-<div
-  class="mt-4 mb-4 pt-2 pb-2 bg-opacity-20 container rounded text-center form-horizontal"
->
+<div class="mt-4 mb-4 pt-2 pb-2  container rounded text-center form-horizontal">
   <h1>Booking registration</h1>
-  <form [formGroup]="userForm" (submit)="submit()">
+  <form [formGroup]="booking" (submit)="submit()">
     <div formGroupName="date">
       <h2 class="pt-2 pb-2">Date</h2>
       <div class="row">
         <div class="col-3"></div>
         <div class="pt-2 pb-2 col-6">
-          <input
-            class="pt-2 pb-2"
-            type="date"
-            formControlName="start"
-            class="form-control"
-          />
+          <input class="pt-2 pb-2" type="date" formControlName="start" class="form-control" value="{{this.date}}" />
         </div>
       </div>
     </div>
-
     <div formGroupName="owner">
       <div class="row">
         <div class="col-3"></div>
         <div class="pt-2 pb-2 col-6">
-          <input
-            type="text"
-            placeholder="Name"
-            formControlName="name"
-            class="form-control"
-          />
+          <input type="text" placeholder="Name" formControlName="name" class="form-control" />
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-3"></div>
       <div class="col-6">
-        <input
-          class="pt-2 pb-2"
-          placeholder="Number of persons"
-          type="number"
-          formControlName="numbers"
-          class="form-control"
-        />
+        <input class="pt-2 pb-2" placeholder="Number of persons" type="number" formControlName="numbers"
+          class="form-control" value="{{this.nbPersonne}}" />
       </div>
     </div>
+    <div *ngIf="this.book === true">
+      <span class="alert">Book done</span>
+    </div>
 
-    <div class="pt-2 pb-2">
-      <input class="btn btn-danger" type="submit" value="Submit" />
+    <div class="row mt-5 mb-5">
+      <input class="btn btn-res offset-2 col-3 btn-danger" type="submit" value="Submit" />
+
+      <button class="btn btn-res offset-2 col-3 btn-danger" routerLink="profiles/establishments">Return</button>
     </div>
   </form>
 </div>

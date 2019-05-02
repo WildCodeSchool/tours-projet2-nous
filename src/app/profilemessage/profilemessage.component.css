@@ -1,7 +1,11 @@
 .container {
     background-color: rgba(0, 0, 0, 0.3);
 }
-
+.alert {
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+}
 .contact-title {
     margin-top: 105px;
     margin-bottom: 25px;
@@ -17,7 +21,7 @@ form {
 
 .form-control {
     color: white;
-    width: 600px;
+
     background: transparent;
     outline: none;
     border-bottom: 2px solid white;
@@ -41,4 +45,11 @@ input {
     height: 45px;
     color: white;
     margin-bottom: 50px;
+}
+.btn-res .btn-post {
+    margin-left: 25%;
+    margin-bottom: 2%;
+}
+button{
+    height: 45px;
 }
