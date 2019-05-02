@@ -2,9 +2,13 @@
   <div class="row">
     <div
       *ngFor="let establishment of tableEstablishment; let index = index"
-      class="col-4"
+      class="col-xl-4 col-md-6 col-sm-12"
     >
-    <app-card [categorie]="establishment.name" [photo]="establishment.medias[0]?.url" [path]="this.address" [code]="establishment._id"></app-card>
+    <app-card 
+      [categorie]="establishment.name" 
+      [photo]="establishment.medias[0]?.url" 
+      [path]="this.address" 
+      [code]="establishment._id"></app-card>
           </div>
         </div>
       </div>

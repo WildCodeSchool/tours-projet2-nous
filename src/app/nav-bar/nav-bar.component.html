@@ -10,19 +10,18 @@
       <li>
         <a routerLink="">Categories</a>
       </li>
-
       <li><a routerLink="profiles/establishments">All restaurants</a></li>
 
-      <div *ngIf="this.resultLog; then thenBlock else elseBlock"></div>
+      <div *ngIf="authenticationService.isLogin(); then thenBlock else elseBlock"></div>
       <ng-template #thenBlock>
         <li><a routerLink="details/profile">Details Profile</a></li>
         <li>
-            <a class="nav-link link color" [routerLink]="['/login']">Login</a>
+          <a class="nav-link link " [routerLink]="[]" (click)="logout()">Logout</a>
         </li>
       </ng-template>
       <ng-template #elseBlock>
         <li>
-            <a class="nav-link link " routerLink="" (click)="logout()">Logout</a>
+          <a class="nav-link link color" [routerLink]="['/login']">Login</a>
         </li>
       </ng-template>
     </ul>
