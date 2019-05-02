@@ -20,8 +20,10 @@ h2 {
 .card {
     border: none;
     cursor: pointer;
-    width: 160px;
-    height: 225px;
+    min-width: 300px;
+    max-width: 300px;
+    width: 300px;
+    height: 300px;
     border-radius: 10px;
     background: transparent;
 }
@@ -58,7 +60,7 @@ h2 {
 }
 
 .create {
-    margin-left: 135%;
+    /* margin-left: 135%; */
     width: 360px;
 
 }
