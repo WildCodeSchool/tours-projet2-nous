@@ -4,8 +4,6 @@ import { map } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
-  public user: boolean;
-  public isLoging:boolean;
   constructor(private http: HttpClient) { }
 
   login(email: string, password: string) {
@@ -17,7 +15,6 @@ export class AuthenticationService {
               if (user && user.token) {
 // tslint:disable-next-line: max-line-length
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
-                this.user = true;
                 localStorage.setItem('token', user.token);
               }
 
@@ -27,17 +24,14 @@ export class AuthenticationService {
 
   logout() {
         // remove user from local storage to log user out
-    this.user = false;
     localStorage.removeItem('token');
   }
-  isLogin(){
-    if (localStorage.getItem('token')) {
-      this.isLoging = true;
 
-    }else {
-      this.isLoging = false;
+  isLogin() {
+    if (localStorage.getItem('token')) {
+      return true;
     }
-    return this.isLogin;
+    return false;
   }
 
 }
