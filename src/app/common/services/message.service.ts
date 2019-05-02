@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Message } from '../models/message.models';
 import { FormGroup } from '@angular/forms';
-import {environment} from 'src/environments/environment';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({

@@ -4,7 +4,7 @@ import { Observable, observable } from 'rxjs';
 import { map } from  'rxjs/operators';
 import { Booking } from '../models/booking-model';
 import { inputs } from '@syncfusion/ej2-angular-calendars/src/timepicker/timepicker.component';
-import {environment} from 'src/environments/environment';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root',
 })

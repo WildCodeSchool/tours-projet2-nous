@@ -4,8 +4,7 @@ import { Observable } from 'rxjs';
 import { Profile } from '../models/profile.model';
 import { map } from 'rxjs/operators';
 import { FormGroup } from '@angular/forms';
-import {environment} from 'src/environments/environment';
-
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
