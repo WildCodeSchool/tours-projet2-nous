@@ -78,3 +78,27 @@ input {
 .e-input-group:not(.e-disabled) .e-input-group-icon:active, .e-input-group.e-control-wrapper:not(.e-disabled) .e-input-group-icon:active {
   background: none;
 }
+
+@media  (max-width: 767px) {
+  .persons{
+    margin-left:22%
+  }
+  .research{
+    margin-left: 38%;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 990px) {
+  .persons{
+    margin-left: 23%
+  }
+}
+
+@media (min-width: 990px) {
+  .persons{
+    margin-left: 4%
+  }
+  .research{
+    margin-left: 7%;
+  }
+}

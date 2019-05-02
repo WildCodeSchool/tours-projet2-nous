@@ -37,7 +37,7 @@ export class ProfilemessageComponent implements OnInit {
   }
 
   submit() {
-    if(this.message.valid){
+    if (this.message.valid) {
       this.service.postMessage(this.message.value).subscribe(
         (message: Message) => {
           this.message.patchValue(message);

@@ -11,7 +11,6 @@
         <a routerLink="">Categories</a>
       </li>
       <li><a routerLink="profiles/establishments">Restaurants</a></li>
-
       <div *ngIf="authenticationService.isLogin(); then thenBlock else elseBlock"></div>
       <ng-template #thenBlock>
         <li><a routerLink="details/profile">Details Profile</a></li>

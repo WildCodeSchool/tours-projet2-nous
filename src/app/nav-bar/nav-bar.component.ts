@@ -7,11 +7,13 @@ import { AuthenticationService } from '../common/services/authentication.service
   styleUrls: ['./nav-bar.component.css'],
 })
 export class NavBarComponent implements OnInit {
+  public resultLog;
   navbarOpen = false;
 
   constructor(public authenticationService: AuthenticationService) { }
   isCollapsed: boolean = true;
   ngOnInit() {
+    this.resultLog = this.authenticationService.isLogin();
   }
 
   logout() {
