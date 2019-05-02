@@ -13,20 +13,21 @@ export class EstablishmentInscriptionComponent implements OnInit {
   public establishment: Establishment;
   public id;
 
+  public createEstablishment: boolean = false;
   constructor(private fb: FormBuilder,
               private service: EstablishmentService,
               public activatedRoute: ActivatedRoute) {
 
     this.establishmentForm = this.fb.group({
-      name: [''],
-      type: [''],
+      name: ['', Validators.required],
+      type: ['', Validators.required],
       address: this.fb.group({
         number: [''],
         street: [''],
         city: [''],
         zipCode: [''],
       }),
-      description: [''],
+      description: ['', Validators.required],
       contact: this.fb.group({
         phone: [''],
         email: [''],
@@ -37,7 +38,7 @@ export class EstablishmentInscriptionComponent implements OnInit {
         link: [''],
       }),
       medias: this.fb.group({
-        url: [''],
+        url: ['', Validators.required],
         order: [''],
       }),
       profile: [''],
@@ -80,6 +81,9 @@ export class EstablishmentInscriptionComponent implements OnInit {
         this.establishmentForm.patchValue(establishment);
 // tslint:disable-next-line: brace-style
       }); }
+    if (this.establishmentForm.valid) {
+      this.createEstablishment = true;
+    }
   }
 
 }
