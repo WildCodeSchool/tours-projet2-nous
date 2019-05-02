@@ -37,7 +37,7 @@ const routes: Routes = [
   { path: 'establishments/:id', component: EstablishmentInscriptionComponent },
   { path: 'messages', component: ProfilemessageComponent },
   { path: 'details/profile', component: DetailsProfileComponent , canActivate: [AuthGuard] },
-  { path: '', component: CategorieComponent, canActivate: [AuthGuard] },
+  { path: '', component: CategorieComponent },
   { path: 'login', component: LoginComponent },
     // otherwise redirect to home
     { path: '**', redirectTo: '' },

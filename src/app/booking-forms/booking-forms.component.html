@@ -42,16 +42,13 @@
         />
       </div>
     </div>
-    <div *ngIf="this.book === true">
+    <!-- <div *ngIf="this.book === true">
       <span class="alert">Book done</span>
-    </div>
+    </div> -->
+    <span class="alert" [hidden]="bookDone">Book done</span>
 
     <div class="row mt-5 mb-5">
-      <input
-        class="btn btn-res offset-2 col-3 btn-danger"
-        type="submit"
-        value="Submit"
-      />
+      <button [disabled]="!this.booking.valid" class="btn btn-res offset-2 col-3 btn-danger" type="submit" >Submit</button>
 
       <button
         class="btn btn-res offset-2 col-3 btn-danger"
