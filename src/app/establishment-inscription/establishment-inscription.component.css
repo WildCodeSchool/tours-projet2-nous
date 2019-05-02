@@ -41,6 +41,11 @@ textarea {
     text-align: center;
 }
 
+.alert {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+}
+
 input {
     border: none;
     height: 45px;

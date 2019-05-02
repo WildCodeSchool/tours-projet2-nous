@@ -17,13 +17,7 @@
     </div>
   </div>
   <div class="row mt-4">
-    <div *ngIf="this.establishment.time.open" class="description col-12 text-center">
-      <h2>Description :</h2>
-      <p class="text-center">
-        {{ this.description }}
-      </p>
-    </div>
-    <div *ngIf="!this.establishment.time.open" class="description col-12 text-center">
+    <div class="col-12 description">
       <h2>Description :</h2>
       <p class="text-center">
         {{ this.description }}
@@ -35,10 +29,9 @@
           <div class="col-sm-12">
             <h2 class="title">Opening Hours</h2>
             <ul class="list-unstyled opening-hours">
-              <li>Sunday : <span class="pull-right">Closed</span></li>
               <li>
                 Monday :
-                <span class="pull-right"
+                <span
                   >{{ this.time.open.monday.am.start | date: "hh:mm" }} -
                   {{ this.time.open.monday.am.end | date: "hh:mm" }} /
                   {{ this.time.open.monday.pm.start | date: "hh:mm" }} -
@@ -47,7 +40,7 @@
               </li>
               <li>
                 Tuesday :
-                <span class="pull-right"
+                <span
                   >{{ this.time.open.tuesday.am.start | date: "hh:mm" }} -
                   {{ this.time.open.tuesday.am.end | date: "hh:mm" }} /
                   {{ this.time.open.tuesday.pm.start | date: "hh:mm" }} -
@@ -56,7 +49,7 @@
               </li>
               <li>
                 Wednesday :
-                <span class="pull-right"
+                <span
                   >{{ this.time.open.wednesday.am.start | date: "hh:mm" }} -
                   {{ this.time.open.wednesday.am.end | date: "hh:mm" }} /
                   {{ this.time.open.wednesday.pm.start | date: "hh:mm" }} -
@@ -65,7 +58,7 @@
               </li>
               <li>
                 Thursday :
-                <span class="pull-right"
+                <span
                   >{{ this.time.open.thursday.am.start | date: "hh:mm" }} -
                   {{ this.time.open.thursday.am.end | date: "hh:mm" }} /
                   {{ this.time.open.thursday.pm.start | date: "hh:mm" }} -
@@ -74,7 +67,7 @@
               </li>
               <li>
                 Friday :
-                <span class="pull-right"
+                <span
                   >{{ this.time.open.friday.am.start | date: "hh:mm" }} -
                   {{ this.time.open.friday.am.end | date: "hh:mm" }} /
                   {{ this.time.open.friday.pm.start | date: "hh:mm" }} -
@@ -83,13 +76,14 @@
               </li>
               <li>
                 Saturday :
-                <span class="pull-right"
+                <span
                   >{{ this.time.open.sunday.am.start | date: "hh:mm" }} -
                   {{ this.time.open.sunday.am.end | date: "hh:mm" }} /
                   {{ this.time.open.sunday.pm.start | date: "hh:mm" }} -
                   {{ this.time.open.sunday.pm.end | date: "hh:mm" }}</span
                 >
               </li>
+              <li>Sunday : <span>Closed</span></li>
             </ul>
           </div>
         </div>

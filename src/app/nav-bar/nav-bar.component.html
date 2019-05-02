@@ -10,13 +10,17 @@
       <li>
         <a routerLink="">Categories</a>
       </li>
-      <li><a routerLink="profiles/establishments">All restaurants</a></li>
+      <li><a routerLink="profiles/establishments">Restaurants</a></li>
 
-      <div *ngIf="authenticationService.isLogin(); then thenBlock else elseBlock"></div>
+      <div
+        *ngIf="authenticationService.isLogin(); then thenBlock; else elseBlock"
+      ></div>
       <ng-template #thenBlock>
         <li><a routerLink="details/profile">Details Profile</a></li>
         <li>
-          <a class="nav-link link " [routerLink]="[]" (click)="logout()">Logout</a>
+          <a class="nav-link link " [routerLink]="['']" (click)="logout()"
+            >Logout</a
+          >
         </li>
       </ng-template>
       <ng-template #elseBlock>

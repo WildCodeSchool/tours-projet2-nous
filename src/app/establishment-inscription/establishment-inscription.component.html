@@ -145,17 +145,14 @@
       <h2>Medias</h2>
       <div class="row">
         <div class="col-6">
-          <label for="url" class="text-center"
-            >Picture :
             <input
               formControlName="url"
               name="url"
-              class="form-control-file"
-              type="file"
-              placeholder=""
+              class="form-control"
+              type="url"
+              placeholder="Picture"
               size="50"
             />
-          </label>
         </div>
         <div class="col-6">
           <label for="order" class="text-center"
@@ -172,6 +169,9 @@
         </div>
       </div>
     </div>
+      <div *ngIf="this.createEstablishment === true">
+        <span class="alert">Register done !</span>
+      </div>
     <div class="row">
       <div class="col-3"></div>
     </div>
