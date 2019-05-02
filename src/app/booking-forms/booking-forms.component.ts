@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Booking } from '../common/models/booking-model';
 import { BookingService } from '../common/services/booking.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
@@ -15,7 +15,7 @@ export class BookingFormsComponent implements OnInit {
   public id: string;
   public date;
   public nbPersonne;
-
+  public book: boolean = false;
 
   constructor(public service: BookingService, public formBuilder: FormBuilder,
               public activetedroute: ActivatedRoute,
@@ -23,11 +23,11 @@ export class BookingFormsComponent implements OnInit {
 
     this.booking = this.formBuilder.group({
       date: this.formBuilder.group({
-        start: [''],
+        start: ['',  Validators.required],
         end: [''],
       }),
       owner: this.formBuilder.group({
-        name: [''],
+        name: ['', Validators.required],
         address: this.formBuilder.group({
           street: [''],
           zipCode: [''],
@@ -39,7 +39,7 @@ export class BookingFormsComponent implements OnInit {
           email: [''],
         }),
       }),
-      numbers: [''],
+      numbers: ['', Validators.required],
       establishment: [''],
     });
   }
@@ -62,6 +62,9 @@ export class BookingFormsComponent implements OnInit {
   }
 
   submit() {
+    if (this.booking.valid) {
+      this.book = true;
+    }
     if (this.id) {
       this.service.update(this.booking.value, this.id).subscribe(
           (booking: Booking) => {

@@ -17,19 +17,19 @@
     </div>
   </div>
   <div class="row mt-4">
-    <div *ngIf="this.establishment.time.open" class="description col-8">
+    <div *ngIf="this.establishment.time.open" class="description col-12 text-center">
       <h2>Description :</h2>
       <p class="text-center">
         {{ this.description }}
       </p>
     </div>
-    <div *ngIf="!this.establishment.time.open" class="description col-12">
+    <div *ngIf="!this.establishment.time.open" class="description col-12 text-center">
       <h2>Description :</h2>
       <p class="text-center">
         {{ this.description }}
       </p>
     </div>
-    <div *ngIf="this.establishment.time.open" class="col-4 text-center">
+    <div *ngIf="this.establishment.time.open" class="col-12 text-center">
       <div class="container rounded demo-bg">
         <div class="row">
           <div class="col-sm-12">
