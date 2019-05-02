@@ -17,13 +17,7 @@
     </div>
   </div>
   <div class="row mt-4">
-    <div
-      [ngClass]="{
-        'col-8': this.establishment.time.open,
-        'col-12': !this.establishment.time.open
-      }"
-      class="description"
-    >
+    <div class="col-12 description">
       <h2>Description :</h2>
       <p class="text-center">
         {{ this.description }}

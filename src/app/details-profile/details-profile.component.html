@@ -2,20 +2,20 @@
   <div class="text-center mt-5">
     <h1>Welcome !</h1>
   </div>
+  <div class="d-flex justify-content-right">
+    <button
+      class="btn btn-danger create col-4 offset-4 pull-right"
+      routerLink="/establishments/create"
+    >
+      Register establishment
+    </button>
+  </div>
   <div class="row">
-    <h2 class="mt-4 text-center col-4">My restaurants :</h2>
-    <div class="d-flex justify-content-right">
-      <button
-        class="btn btn-danger create col-8 pull-right"
-        routerLink="/establishments/create"
-      >
-        Register establishment
-      </button>
-    </div>
+    <h2 class="mt-4 text-center col-12 pull-left">My restaurants :</h2>
   </div>
   <div class="row d-flex justify-content-around">
     <div
-      class="card middle  m-3 col-3"
+      class="card middle m-3 col-xl-4 col-md-6 col-sm-12"
       *ngFor="let establishment of establishments; let index = index"
     >
       <div class="front">
@@ -25,32 +25,31 @@
         <div class="back-content middle text-center mt-4 mb-4">
           <h2>{{ establishment.name }}</h2>
           <div class="sm mt-3">
-            
-              <button
-                class="btn btn-danger booking"
-                [routerLink]="['/bookings/list', establishment._id]"
-              >
-                Bookings
-              </button>
-            </div>
-            <div class="sm mt-3">
-              <button
-                class="btn btn-danger update"
-                [routerLink]="['/establishments/update', establishment._id]"
-              >
-                Update
-              </button>
-            </div>
+            <button
+              class="btn btn-danger booking"
+              [routerLink]="['/bookings/list', establishment._id]"
+            >
+              Bookings
+            </button>
           </div>
           <div class="sm mt-3">
             <button
-              class="btn col-8 delete btn-danger"
-              (click)="delete(establishment._id, index)"
+              class="btn btn-danger update"
+              [routerLink]="['/establishments/update', establishment._id]"
             >
-              Delete
+              Update
             </button>
           </div>
         </div>
+        <div class="sm mt-3">
+          <button
+            class="btn col-8 delete btn-danger"
+            (click)="delete(establishment._id, index)"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
     </div>
   </div>
   <div class="message mt-4">
@@ -59,13 +58,20 @@
         <h2>Messages</h2>
       </div>
 
-      <div class="media mt-5 mb-4" *ngFor="let message of messages; let index = index">
+      <div
+        class="media mt-5 mb-4"
+        *ngFor="let message of messages; let index = index"
+      >
         <div class="media-body">
           <h5 class="mt-2 mb-2 text-center">{{ message.from }}</h5>
           <div class="trait"></div>
           <p class="mt-4 mb-4 ml-4">{{ message.message }}</p>
-          <button class="btn btn-danger messageButton mb-3"
-          (click)="deleteMessage(message._id, index)">Delete</button>
+          <button
+            class="btn btn-danger messageButton mb-3"
+            (click)="deleteMessage(message._id, index)"
+          >
+            Delete
+          </button>
         </div>
       </div>
     </div>
