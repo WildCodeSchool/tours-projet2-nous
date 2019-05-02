@@ -29,21 +29,18 @@ export class ListEstablishmentComponent implements OnInit {
         (etam) => {
           this.establishments = etam;
           this.tableEstablishment = this.establishments;
-          console.log(this.establishments);
           this.tableEstablishment = [];
           if (categorie) {
             for (let i = 0; i < this.establishments.length; i += 1) {
               if (this.establishments[i].type === this.categorie) {
 
                 this.tableEstablishment.push(this.establishments[i]);
-                console.log(this.establishments);
               }
             }
           }else if (search) {
             for (let i = 0; i < this.establishments.length; i += 1) {
               if (this.establishments[i].name.toLowerCase().includes(search)) {
                 this.tableEstablishment.push(this.establishments[i]);
-                console.log(this.establishments);
               }
             }
           }else {

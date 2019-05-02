@@ -6,7 +6,13 @@
       <div class="row">
         <div class="col-3"></div>
         <div class="pt-2 pb-2 col-6">
-          <input class="pt-2 pb-2" type="date" formControlName="start" class="form-control" value="{{this.date}}" />
+          <input
+            class="pt-2 pb-2"
+            type="date"
+            formControlName="start"
+            class="form-control"
+            value="{{ this.date }}"
+          />
         </div>
       </div>
     </div>
@@ -14,15 +20,26 @@
       <div class="row">
         <div class="col-3"></div>
         <div class="pt-2 pb-2 col-6">
-          <input type="text" placeholder="Name" formControlName="name" class="form-control" />
+          <input
+            type="text"
+            placeholder="Name"
+            formControlName="name"
+            class="form-control"
+          />
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-3"></div>
       <div class="col-6">
-        <input class="pt-2 pb-2" placeholder="Number of persons" type="number" formControlName="numbers"
-          class="form-control" value="{{this.nbPersonne}}" />
+        <input
+          class="pt-2 pb-2"
+          placeholder="Number of persons"
+          type="number"
+          formControlName="numbers"
+          class="form-control"
+          value="{{ this.nbPersonne }}"
+        />
       </div>
     </div>
     <div *ngIf="this.book === true">
@@ -30,9 +47,18 @@
     </div>
 
     <div class="row mt-5 mb-5">
-      <input class="btn btn-res offset-2 col-3 btn-danger" type="submit" value="Submit" />
+      <input
+        class="btn btn-res offset-2 col-3 btn-danger"
+        type="submit"
+        value="Submit"
+      />
 
-      <button class="btn btn-res offset-2 col-3 btn-danger" routerLink="profiles/establishments">Return</button>
+      <button
+        class="btn btn-res offset-2 col-3 btn-danger"
+        routerLink="profiles/establishments"
+      >
+        Return
+      </button>
     </div>
   </form>
 </div>

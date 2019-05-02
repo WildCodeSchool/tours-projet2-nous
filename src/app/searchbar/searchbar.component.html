@@ -40,9 +40,9 @@
           <div ngbDropdown class="col-lg-2 col-md-6 col-sm-4 persons">
             <select [(ngModel)]="nbPersonne">
               <option value="" disabled selected>Number of persons</option>
-              <option value="1" >1</option>
-              <option value="2" >2</option>
-              <option value="3" >3</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
               <option value="4">4</option>
               <option value="5">5</option>
               <option value="6">6</option>
@@ -85,7 +85,13 @@
           </div> -->
 
           <div class="col-lg-2 col-md-6 col-sm-12 ml-5">
-            <button class="btn ml-auto btn-danger m-2" [routerLink]="['/profiles/establishments/search/', inputText]" (click)="search()">Research</button>
+            <button
+              class="btn ml-auto btn-danger m-2"
+              [routerLink]="['/profiles/establishments/search/', inputText]"
+              (click)="search()"
+            >
+              Research
+            </button>
           </div>
         </div>
       </nav>

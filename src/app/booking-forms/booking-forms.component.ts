@@ -56,6 +56,8 @@ export class BookingFormsComponent implements OnInit {
             this.booking.patchValue(booking);
           });
       }
+      console.log(this.establishmentService.date);
+// tslint:disable-next-line: max-line-length
       this.date = `${this.establishmentService.date.day}/${this.establishmentService.date.month}/${this.establishmentService.date.year}`;
       this.nbPersonne = this.establishmentService.nbPersonne;
     });

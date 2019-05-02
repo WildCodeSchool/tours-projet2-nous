@@ -29,7 +29,5 @@ export class SearchbarComponent implements OnInit {
     this.service.research(this.inputText);
     this.service.date = this.date;
     this.service.nbPersonne = this.nbPersonne;
-    console.log(this.date);
-    console.log(this.nbPersonne);
   }
 }
