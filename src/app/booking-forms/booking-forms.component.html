@@ -2,7 +2,7 @@
   class="mt-4 mb-4 pt-2 pb-2 bg-opacity-20 container rounded text-center form-horizontal"
 >
   <h1>Booking registration</h1>
-  <form [formGroup]="userForm" (submit)="submit()">
+  <form [formGroup]="booking" (submit)="submit()">
     <div formGroupName="date">
       <h2 class="pt-2 pb-2">Date</h2>
       <div class="row">
@@ -13,6 +13,7 @@
             type="date"
             formControlName="start"
             class="form-control"
+            value="{{this.date}}"
           />
         </div>
       </div>
@@ -40,6 +41,7 @@
           type="number"
           formControlName="numbers"
           class="form-control"
+          value="{{this.nbPersonne}}"
         />
       </div>
     </div>

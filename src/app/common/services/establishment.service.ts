@@ -9,6 +9,8 @@ import { map } from 'rxjs/operators';
 })
 export class EstablishmentService {
   public service: HttpClient;
+  public date;
+  public nbPersonne;
 
   constructor(public http: HttpClient) {}
 
