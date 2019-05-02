@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, observable } from 'rxjs';
 import { map } from  'rxjs/operators';
 import { Booking } from '../models/booking-model';
+import { inputs } from '@syncfusion/ej2-angular-calendars/src/timepicker/timepicker.component';
 
 @Injectable({
   providedIn: 'root',
