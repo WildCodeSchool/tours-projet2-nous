@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { Profile } from '../models/profile.model';
 import { map } from 'rxjs/operators';
 import { FormGroup } from '@angular/forms';
+import {environment} from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +17,7 @@ export class ProfileService {
   }
 
   public get ():  Observable<Profile> {
-    const  obs1:Observable<any> = this.http.get('http://open-reza.herokuapp.com/api/profiles/');
+    const  obs1:Observable<any> = this.http.get(`${environment.apiUrl}/profiles/`);
     const  treatment  = (response:any) => {
       return  response as Profile;
     };
@@ -24,7 +26,7 @@ export class ProfileService {
   }
   public update (myForm): Observable<Profile> {
 // tslint:disable-next-line: max-line-length
-    const obs2:Observable<any> = this.http.put('http://open-reza.herokuapp.com/api/profiles/', myForm);
+    const obs2:Observable<any> = this.http.put(`${environment.apiUrl}/profiles/`, myForm);
     const  treatment  = (response:any) => {
       return  response as Profile;
     };

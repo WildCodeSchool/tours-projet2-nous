@@ -4,7 +4,7 @@ import { Observable, observable } from 'rxjs';
 import { map } from  'rxjs/operators';
 import { Booking } from '../models/booking-model';
 import { inputs } from '@syncfusion/ej2-angular-calendars/src/timepicker/timepicker.component';
-
+import {environment} from 'src/environments/environment';
 @Injectable({
   providedIn: 'root',
 })
@@ -19,7 +19,7 @@ export class BookingService {
 
   public getBoockingForm(id:string): Observable<Booking> {
     const  obs:Observable<any> = this.service
-    .get(`http://open-reza.herokuapp.com/api/bookings/${id}`);
+    .get(`${environment.apiUrl}/bookings/${id}`);
     const  treatment  = (response:any) => {
       return  response as Booking;
     };
@@ -28,7 +28,7 @@ export class BookingService {
 
   public create (form:Booking) {
     const  obs:Observable<any> = this.service
-    .post('http://open-reza.herokuapp.com/api/bookings', form);
+    .post(`${environment.apiUrl}/bookings`, form);
     const  treatment  = (response:any) => {
       return  response as Booking;
     };
@@ -37,7 +37,7 @@ export class BookingService {
 
   public update (form:Booking, id:string) {
     const  obs:Observable<any> = this.service
-    .put(`http://open-reza.herokuapp.com/api/bookings/${id}`, form);
+    .put(`${environment.apiUrl}/bookings/${id}`, form);
     const  treatment  = (response:any) => {
       return  response as Booking;
     };
@@ -46,7 +46,7 @@ export class BookingService {
 
   public getListBooking(id) {
     const  obs:Observable<any> = this.service
-    .get(`http://open-reza.herokuapp.com/api/establishments/${id}/bookings`);
+    .get(`${environment.apiUrl}/establishments/${id}/bookings`);
     const  treatment  = (response:any) => {
       return  response as Booking[];
     };
@@ -55,7 +55,7 @@ export class BookingService {
 
   public deleteBooking(id) {
     const  obs:Observable<any> = this.service
-    .delete(`http://open-reza.herokuapp.com/api/bookings/${id}`);
+    .delete(`${environment.apiUrl}/bookings/${id}`);
     const  treatment  = (response:any) => {
       return  response as Booking;
     };

@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Establishment } from '../models/establishment.model';
 import { map } from 'rxjs/operators';
+import {environment} from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +20,7 @@ export class EstablishmentService {
 
   public getEstablishment(id: string): Observable<Establishment> {
     const obs: Observable<any> = this.http.get(
-      `http://open-reza.herokuapp.com/api/establishments/${id}`,
+      `${environment.apiUrl}/establishments/${id}`,
     );
     const treatment = (response: any) => {
       return response as Establishment;
@@ -27,7 +29,7 @@ export class EstablishmentService {
   }
   public update(id: string, myForm: Establishment) {
     const obs: Observable<any> = this.http.put(
-      `http://open-reza.herokuapp.com/api/establishments/${id}`,
+      `${environment.apiUrl}/establishments/${id}`,
       myForm,
     );
     const treatment = (response: any) => {
@@ -38,7 +40,7 @@ export class EstablishmentService {
 
   public createCom(myCom: string) {
     const obs: Observable<any> = this.http.post(
-      'http://open-reza.herokuapp.com/api/establishments/',
+      `${environment.apiUrl}/establishments/`,
       myCom,
     );
     const treatment = (response: any) => {
@@ -49,7 +51,7 @@ export class EstablishmentService {
 
   public create(myForm: Establishment) {
     const obs: Observable<any> = this.http.post(
-      'http://open-reza.herokuapp.com/api/establishments/',
+      `${environment.apiUrl}/establishments/`,
       myForm,
     );
     const treatment = (response: any) => {
@@ -60,7 +62,7 @@ export class EstablishmentService {
 
   public getListEstablishment() {
     const obs: Observable<any> = this.http.get(
-      'http://open-reza.herokuapp.com/api/establishments',
+      `${environment.apiUrl}/establishments`,
     );
     const treatment = (response: any) => {
       return response as Establishment[];
@@ -70,7 +72,7 @@ export class EstablishmentService {
   deleteEtablishment(id) {
     // tslint:disable-next-line: max-line-length
     const obs: Observable<any> = this.http.delete(
-      `http://open-reza.herokuapp.com/api/establishments/${id}`,
+      `${environment.apiUrl}/establishments/${id}`,
     );
     const treatment = (response: any) => {
       return response as Establishment;

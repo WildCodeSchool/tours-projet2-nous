@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Message } from '../models/message.models';
 import { FormGroup } from '@angular/forms';
+import {environment} from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +17,7 @@ export class MessageService {
 
   public getMessage(id: string): Observable<Message> {
     // tslint:disable-next-line: max-line-length
-    const obs: Observable<any> = this.http.get(`http://open-reza.herokuapp.com/api/messages/${id}`) ;
+    const obs: Observable<any> = this.http.get(`${environment.apiUrl}/messages/${id}`) ;
 
     const treatment = (response: any) => {
       return response as Message;
@@ -26,7 +28,7 @@ export class MessageService {
 
   public postMessage(myForm:any):Observable<Message> {
     const obs: Observable<any> = this.httpClient
-    .post('http://open-reza.herokuapp.com/api/messages', myForm);
+    .post(`${environment.apiUrl}/messages`, myForm);
 
     const treatment = (response: any) => {
       return response as Message;
@@ -37,7 +39,7 @@ export class MessageService {
 
   public getListMessage() {
   // tslint:disable-next-line: max-line-length
-    const obs: Observable<any> = this.http.get('http://open-reza.herokuapp.com/api/messages') ;
+    const obs: Observable<any> = this.http.get(`${environment.apiUrl}/messages`) ;
 
     const treatment = (response: any) => {
       return response as Message;
@@ -48,7 +50,7 @@ export class MessageService {
 
   public delMessage(id) {
     const obs: Observable<any> = this.http
-    .delete(`http://open-reza.herokuapp.com/api/messages/${id}`);
+    .delete(`${environment.apiUrl}/messages/${id}`);
     const treatment = (response: any) => {
       return response as Message;
     };
